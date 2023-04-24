@@ -1,0 +1,37 @@
+module SOMADOR_1bit (
+    input wire X,
+    input wire Y,
+    input wire Cin,
+    output wire S,
+    output wire Cout
+);
+
+    assign xor1 = X ^ Y;
+    assign S = xor1 ^ Cin;
+    assign Cout = (X & Y) | (Cin & xor1);
+
+endmodule
+
+
+module SOMADOR #(parameter SIZE=32) (
+    input wire[SIZE-1:0] X,
+    input wire[SIZE-1:0] Y,
+    input wire Cin,
+    output wire[SIZE-1:0] S,
+    output wire Cout
+);
+    wire[SIZE:0] cins;
+    genvar i;
+
+    assign cins[0] = 1'b0;
+
+    generate
+      for (i=0; i < SIZE; i = i + 1)
+        SOMADOR_1bit SOMA (.X(X[i]), .Y(Y[i]), .S(S[i]), .Cin(cins[i]), .Cout(cins[i+1]));
+    endgenerate
+
+    assign cout = cins[SIZE];
+
+    
+
+endmodule
