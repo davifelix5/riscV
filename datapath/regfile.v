@@ -1,4 +1,5 @@
 `include "datapath/reg.v"
+`include "datapath/decoder.v"
 /* 
     Arquivo de registradores: parametrizado pelo tamanho das palavras e quantidade de registradores
     OBS: Para um banco de registradores com n registradores, haverá log2(n) bits nos seletores
@@ -21,13 +22,18 @@ module REGFILE #(parameter N = 32, parameter SIZE = 64) (
     genvar i; // Variável de controle para gerar os registradores
 
     wire[SIZE-1:0] r[N-1:0];
+    wire[N-1:0] loaders;
+
+    LOAD_DECODER DECODER (
+        .IN(Rw),
+        .OUT(loaders),
+        .EN(WE)
+    );
 
     assign r[0] = 64'b0; // x0
     generate
         for (i = 1; i < N; i = i + 1) begin
-            wire load_reg;
-            assign load_reg = (Rw == i) ? 1 : 0;
-            REG xN (.IN(Din), .LOAD(WE & load_reg), .CLK(CLK), .OUT(r[i]));
+            REG xN (.IN(Din), .LOAD(loaders[i]), .CLK(CLK), .OUT(r[i]));
         end
     endgenerate
 
