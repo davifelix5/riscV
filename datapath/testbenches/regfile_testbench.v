@@ -1,4 +1,4 @@
-`include "./regfile.v"
+`include "datapath/regfile.v"
 
 module regfile_testbench ();
 

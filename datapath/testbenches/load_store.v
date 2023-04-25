@@ -20,11 +20,11 @@ Ele pode ser aberto pelo comando:
 
 **************************************************************************/
 
-`include "./datamemory.v"
-`include "./regfile.v"
-`include "./somador.v"
+`include "datapath/datamemory.v"
+`include "datapath/regfile.v"
+`include "datapath/somador.v"
 
-module DATAPATH (
+module LOAD_STORE (
     input wire[4:0] Ra,
     input wire[4:0] Rb,
     input wire[4:0] C,

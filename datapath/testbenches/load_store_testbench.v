@@ -20,15 +20,15 @@ Ele pode ser aberto pelo comando:
 
 **************************************************************************/
 
-`include "./datapath.v"
+`include "datapath/testbenches/load_store.v"
 
-module DATAPATH_testbench;
+module LOAD_STORE_testbench;
 
     reg[4:0] Ra, Rb, Rw, C;
     reg CLK, WE_RF, WE_MEM;
     wire[63:0] Dout, Ra_out;
 
-    DATAPATH UUT (
+    LOAD_STORE UUT (
         .Ra(Ra),
         .Rb(Rb),
         .C(C), 
@@ -41,14 +41,15 @@ module DATAPATH_testbench;
     );
 
     initial begin
-        $dumpfile("waveforms2.vcd");
-        $dumpvars(0,DATAPATH_testbench);
+        $dumpfile("datapath/testbenches/vvp/waveforms2.vcd");
+        $dumpvars(0,LOAD_STORE_testbench);
         $monitor("Dout = %d; RA_out = %d; CLK = %b", Dout, Ra_out, CLK);
         CLK = 0;
         
         // ld x1, 16(x0)
         Rw = 1'b1; // Escrita no registrador x1
         Rb = 1'b0; // Registrador x0
+        Ra = 0;
         C = 5'd16;  // Palavra 16 na memória
         WE_RF = 1'b1; // Habilita escrita nos registradores
         WE_MEM = 1'b0; // Desabilita escrita na memória

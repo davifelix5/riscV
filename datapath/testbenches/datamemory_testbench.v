@@ -1,4 +1,4 @@
-`include "./datamemory.v"
+`include "datapath/datamemory.v"
 
 module DATAMEMORY_testbench;
 
