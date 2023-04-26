@@ -1,5 +1,5 @@
 `include "datapath/reg.v"
-`include "datapath/decoder.v"
+`include "datapath/decoder5to32.v"
 /* 
     Arquivo de registradores: parametrizado pelo tamanho das palavras e quantidade de registradores
     OBS: Para um banco de registradores com n registradores, haverá log2(n) bits nos seletores
@@ -24,7 +24,7 @@ module REGFILE #(parameter SIZE = 64) (
     wire[SIZE-1:0] r[31:0];
     wire[31:0] loaders;
 
-    LOAD_DECODER DECODER (
+    decoder5to32 LOAD_DECODER (
         .IN(Rw),
         .OUT(loaders),
         .EN(WE)

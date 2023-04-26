@@ -1,4 +1,4 @@
-module LOAD_DECODER (
+module decoder5to32 (
     input wire EN,
     input wire[4:0] IN,
     output wire[31:0] OUT
