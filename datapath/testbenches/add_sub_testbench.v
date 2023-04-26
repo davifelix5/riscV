@@ -55,26 +55,14 @@ module LOAD_STORE_testbench;
         R_type = 0;
         sub = 0;
         immediate = 12'd16;  // Palavra 16 na memória
-        WE_RF = 1'b1; // Habilita escrita nos registradores
-        WE_MEM = 1'b0; // Desabilita escrita na memória
+        WE_RF = 1; // Habilita escrita nos registradores
+        WE_MEM = 0; // Desabilita escrita na memória
         #10;
-
-        // st x1, 20(x0)
-        rd = 1; // Escrita no registrador x1
-        rs2 = 0; // Registrador x0
-        rs1 = 1;
-        I_type = 1;
-        R_type = 0;
-        sub = 0;
-        immediate = 12'd20;  // Palavra 10 na memória
-        WE_RF = 0; // Desabilita escrita nos registradores
-        WE_MEM = 1; // Habilita escrita na memória
-        #10
 
         // ld x5, 21(x0)
         rd = 5;
         rs2 = 0;
-        rs1 = 1;
+        rs1 = 0;
         I_type = 1;
         R_type = 0;
         sub = 0;
@@ -90,46 +78,47 @@ module LOAD_STORE_testbench;
         I_type = 0;
         R_type = 1;
         sub = 0;
-        immediate = 12'd20; 
+        immediate = 12'bx; 
         WE_RF = 1;
         WE_MEM = 0;
         #10
 
-        // ld x11, 30(x0)
-        rd = 11;
-        rs1 = 1;
+        // sub x20, x5, x1
+        rd = 20;
+        rs1 = 5;
+        rs2 = 1;
+        I_type = 0;
+        R_type = 1;
+        sub = 1;
+        immediate = 12'dx; 
+        WE_RF = 1;
+        WE_MEM = 0;
+        #10
+
+        // st x10, 10(x0)
+        rd = 0;
+        rs1 = 10;
         rs2 = 0;
         I_type = 1;
         R_type = 0;
         sub = 0;
-        immediate = 12'd30; 
-        WE_RF = 1;
-        WE_MEM = 0;
+        immediate = 12'd10;
+        WE_RF = 0;
+        WE_MEM = 1;
         #10
 
-        // sub x20, x5, x11 
-        rd = 20;
-        rs1 = 5;
-        rs2 = 11;
-        I_type = 0;
-        R_type = 1;
-        sub = 1;
-        immediate = 12'd30; 
-        WE_RF = 1;
-        WE_MEM = 0;
+        // st x20, 11(x0)
+        rd = 0;
+        rs1 = 20;
+        rs2 = 0;
+        I_type = 1;
+        R_type = 0;
+        sub = 0;
+        immediate = 12'd11;
+        WE_RF = 0;
+        WE_MEM = 1;
         #10
-
-        // sub x21, x10, x11 
-        rd = 21;
-        rs1 = 10;
-        rs2 = 11;
-        I_type = 0;
-        R_type = 1;
-        sub = 1;
-        immediate = 12'd30; 
-        WE_RF = 1;
-        WE_MEM = 0;
-        #200;
+        
         $finish;
     end
 
