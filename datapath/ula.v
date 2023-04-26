@@ -10,8 +10,10 @@ module ula (
   wire[63:0] converted;
   wire[63:0] final_s2;
 
+  // Mux para decidir se a soma é feita com o número original ou em complemento de 2
   assign final_s2 = sub ? converted : s2;
 
+  // Somador para converter em complemento de 2
   SOMADOR #(.SIZE(64)) SOMADOR_CONVERTER (
     .X(~s2),
     .Y(64'b1),
@@ -19,6 +21,7 @@ module ula (
     .Cin(1'b0)
   );
 
+  // Somador para calcular o resultado final
   SOMADOR #(.SIZE(64)) SOMADOR_FINAL (
     .X(s1),
     .Y(final_s2),

@@ -20,8 +20,8 @@ module ADD_SUB (
     input wire sub, // entra nas functs
     input WE_RF,
     input WE_MEM,
-    input wire R_type,
-    input wire I_type,
+    input wire R_type, // indica se a instrução é do tipo R
+    input wire I_type, // indica se a instrução é do tipo I
     input wire CLK
 );
     // Fios do datapath
