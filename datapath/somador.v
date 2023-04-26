@@ -23,7 +23,7 @@ module SOMADOR #(parameter SIZE=32) (
     wire[SIZE:0] cins;
     genvar i;
 
-    assign cins[0] = 1'b0;
+    assign cins[0] = Cin;
 
     generate
       for (i=0; i < SIZE; i = i + 1)

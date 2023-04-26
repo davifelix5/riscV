@@ -1,0 +1,1827 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x559fbf293c50 .scope module, "ula_testbench" "ula_testbench" 2 3;
+ .timescale 0 0;
+v0x559fbf2a90a0_0 .net "res", 63 0, L_0x559fbf2ccdf0;  1 drivers
+v0x559fbf2a91d0_0 .var "s1", 63 0;
+v0x559fbf2a92e0_0 .var "s2", 63 0;
+v0x559fbf2a9380_0 .var "sub", 0 0;
+S_0x559fbf291240 .scope module, "UUT" "ula" 2 9, 3 3 0, S_0x559fbf293c50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 64 "s1";
+    .port_info 1 /INPUT 64 "s2";
+    .port_info 2 /INPUT 1 "sub";
+    .port_info 3 /OUTPUT 64 "res";
+L_0x559fbf2ce700 .functor XOR 64, v0x559fbf2a92e0_0, L_0x559fbf2ce660, C4<0000000000000000000000000000000000000000000000000000000000000000>, C4<0000000000000000000000000000000000000000000000000000000000000000>;
+v0x559fbf2a8bc0_0 .net *"_ivl_0", 63 0, L_0x559fbf2ce660;  1 drivers
+v0x559fbf2a8cc0_0 .net "res", 63 0, L_0x559fbf2ccdf0;  alias, 1 drivers
+v0x559fbf2a8d80_0 .net "s1", 63 0, v0x559fbf2a91d0_0;  1 drivers
+v0x559fbf2a8e80_0 .net "s2", 63 0, v0x559fbf2a92e0_0;  1 drivers
+v0x559fbf2a8f20_0 .net "sub", 0 0, v0x559fbf2a9380_0;  1 drivers
+LS_0x559fbf2ce660_0_0 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_4 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_8 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_12 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_16 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_20 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_24 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_28 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_32 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_36 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_40 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_44 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_48 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_52 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_56 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_0_60 .concat [ 1 1 1 1], v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0, v0x559fbf2a9380_0;
+LS_0x559fbf2ce660_1_0 .concat [ 4 4 4 4], LS_0x559fbf2ce660_0_0, LS_0x559fbf2ce660_0_4, LS_0x559fbf2ce660_0_8, LS_0x559fbf2ce660_0_12;
+LS_0x559fbf2ce660_1_4 .concat [ 4 4 4 4], LS_0x559fbf2ce660_0_16, LS_0x559fbf2ce660_0_20, LS_0x559fbf2ce660_0_24, LS_0x559fbf2ce660_0_28;
+LS_0x559fbf2ce660_1_8 .concat [ 4 4 4 4], LS_0x559fbf2ce660_0_32, LS_0x559fbf2ce660_0_36, LS_0x559fbf2ce660_0_40, LS_0x559fbf2ce660_0_44;
+LS_0x559fbf2ce660_1_12 .concat [ 4 4 4 4], LS_0x559fbf2ce660_0_48, LS_0x559fbf2ce660_0_52, LS_0x559fbf2ce660_0_56, LS_0x559fbf2ce660_0_60;
+L_0x559fbf2ce660 .concat [ 16 16 16 16], LS_0x559fbf2ce660_1_0, LS_0x559fbf2ce660_1_4, LS_0x559fbf2ce660_1_8, LS_0x559fbf2ce660_1_12;
+S_0x559fbf2825d0 .scope module, "SOMADOR_FINAL" "SOMADOR" 3 11, 4 16 0, S_0x559fbf291240;
+ .timescale 0 0;
+    .port_info 0 /INPUT 64 "X";
+    .port_info 1 /INPUT 64 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 64 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+P_0x559fbf265f90 .param/l "SIZE" 0 4 16, +C4<00000000000000000000000001000000>;
+L_0x559fbf2ce550 .functor BUFZ 1, v0x559fbf2a9380_0, C4<0>, C4<0>, C4<0>;
+v0x559fbf2a8430_0 .net "Cin", 0 0, v0x559fbf2a9380_0;  alias, 1 drivers
+o0x7f4ebc925c48 .functor BUFZ 1, C4<z>; HiZ drive
+v0x559fbf2a8510_0 .net "Cout", 0 0, o0x7f4ebc925c48;  0 drivers
+v0x559fbf2a85d0_0 .net "S", 63 0, L_0x559fbf2ccdf0;  alias, 1 drivers
+v0x559fbf2a8690_0 .net "X", 63 0, v0x559fbf2a91d0_0;  alias, 1 drivers
+v0x559fbf2a8770_0 .net "Y", 63 0, L_0x559fbf2ce700;  1 drivers
+v0x559fbf2a88a0_0 .net *"_ivl_453", 0 0, L_0x559fbf2ce550;  1 drivers
+v0x559fbf2a8980_0 .net "cins", 64 0, L_0x559fbf2cf9c0;  1 drivers
+v0x559fbf2a8a60_0 .net "cout", 0 0, L_0x559fbf2ce5c0;  1 drivers
+L_0x559fbf2a9710 .part v0x559fbf2a91d0_0, 0, 1;
+L_0x559fbf2a97b0 .part L_0x559fbf2ce700, 0, 1;
+L_0x559fbf2a9850 .part L_0x559fbf2cf9c0, 0, 1;
+L_0x559fbf2a9d10 .part v0x559fbf2a91d0_0, 1, 1;
+L_0x559fbf2a9de0 .part L_0x559fbf2ce700, 1, 1;
+L_0x559fbf2a9e80 .part L_0x559fbf2cf9c0, 1, 1;
+L_0x559fbf2aa3f0 .part v0x559fbf2a91d0_0, 2, 1;
+L_0x559fbf2aa490 .part L_0x559fbf2ce700, 2, 1;
+L_0x559fbf2aa580 .part L_0x559fbf2cf9c0, 2, 1;
+L_0x559fbf2aaa90 .part v0x559fbf2a91d0_0, 3, 1;
+L_0x559fbf2aab90 .part L_0x559fbf2ce700, 3, 1;
+L_0x559fbf2aacc0 .part L_0x559fbf2cf9c0, 3, 1;
+L_0x559fbf2ab210 .part v0x559fbf2a91d0_0, 4, 1;
+L_0x559fbf2ab2b0 .part L_0x559fbf2ce700, 4, 1;
+L_0x559fbf2ab3d0 .part L_0x559fbf2cf9c0, 4, 1;
+L_0x559fbf2ab870 .part v0x559fbf2a91d0_0, 5, 1;
+L_0x559fbf2ab9a0 .part L_0x559fbf2ce700, 5, 1;
+L_0x559fbf2aba40 .part L_0x559fbf2cf9c0, 5, 1;
+L_0x559fbf2ac020 .part v0x559fbf2a91d0_0, 6, 1;
+L_0x559fbf2ac0c0 .part L_0x559fbf2ce700, 6, 1;
+L_0x559fbf2abae0 .part L_0x559fbf2cf9c0, 6, 1;
+L_0x559fbf2ac680 .part v0x559fbf2a91d0_0, 7, 1;
+L_0x559fbf2ac7e0 .part L_0x559fbf2ce700, 7, 1;
+L_0x559fbf2ac880 .part L_0x559fbf2cf9c0, 7, 1;
+L_0x559fbf2acfa0 .part v0x559fbf2a91d0_0, 8, 1;
+L_0x559fbf2ad040 .part L_0x559fbf2ce700, 8, 1;
+L_0x559fbf2ad1c0 .part L_0x559fbf2cf9c0, 8, 1;
+L_0x559fbf2ad6d0 .part v0x559fbf2a91d0_0, 9, 1;
+L_0x559fbf2ad860 .part L_0x559fbf2ce700, 9, 1;
+L_0x559fbf2ad900 .part L_0x559fbf2cf9c0, 9, 1;
+L_0x559fbf2adee0 .part v0x559fbf2a91d0_0, 10, 1;
+L_0x559fbf2adf80 .part L_0x559fbf2ce700, 10, 1;
+L_0x559fbf2ae130 .part L_0x559fbf2cf9c0, 10, 1;
+L_0x559fbf2ae670 .part v0x559fbf2a91d0_0, 11, 1;
+L_0x559fbf2ae830 .part L_0x559fbf2ce700, 11, 1;
+L_0x559fbf2ae8d0 .part L_0x559fbf2cf9c0, 11, 1;
+L_0x559fbf2aee30 .part v0x559fbf2a91d0_0, 12, 1;
+L_0x559fbf2aeed0 .part L_0x559fbf2ce700, 12, 1;
+L_0x559fbf2af0b0 .part L_0x559fbf2cf9c0, 12, 1;
+L_0x559fbf2af5f0 .part v0x559fbf2a91d0_0, 13, 1;
+L_0x559fbf2af9f0 .part L_0x559fbf2ce700, 13, 1;
+L_0x559fbf2afa90 .part L_0x559fbf2cf9c0, 13, 1;
+L_0x559fbf2b0130 .part v0x559fbf2a91d0_0, 14, 1;
+L_0x559fbf2b01d0 .part L_0x559fbf2ce700, 14, 1;
+L_0x559fbf2b03e0 .part L_0x559fbf2cf9c0, 14, 1;
+L_0x559fbf2b0920 .part v0x559fbf2a91d0_0, 15, 1;
+L_0x559fbf2b0b40 .part L_0x559fbf2ce700, 15, 1;
+L_0x559fbf2b0df0 .part L_0x559fbf2cf9c0, 15, 1;
+L_0x559fbf2b16d0 .part v0x559fbf2a91d0_0, 16, 1;
+L_0x559fbf2b1770 .part L_0x559fbf2ce700, 16, 1;
+L_0x559fbf2b19b0 .part L_0x559fbf2cf9c0, 16, 1;
+L_0x559fbf2b1ef0 .part v0x559fbf2a91d0_0, 17, 1;
+L_0x559fbf2b2140 .part L_0x559fbf2ce700, 17, 1;
+L_0x559fbf2b21e0 .part L_0x559fbf2cf9c0, 17, 1;
+L_0x559fbf2b28b0 .part v0x559fbf2a91d0_0, 18, 1;
+L_0x559fbf2b2950 .part L_0x559fbf2ce700, 18, 1;
+L_0x559fbf2b2bc0 .part L_0x559fbf2cf9c0, 18, 1;
+L_0x559fbf2b30d0 .part v0x559fbf2a91d0_0, 19, 1;
+L_0x559fbf2b3350 .part L_0x559fbf2ce700, 19, 1;
+L_0x559fbf2b33f0 .part L_0x559fbf2cf9c0, 19, 1;
+L_0x559fbf2b3af0 .part v0x559fbf2a91d0_0, 20, 1;
+L_0x559fbf2b3b90 .part L_0x559fbf2ce700, 20, 1;
+L_0x559fbf2b3e30 .part L_0x559fbf2cf9c0, 20, 1;
+L_0x559fbf2b4310 .part v0x559fbf2a91d0_0, 21, 1;
+L_0x559fbf2b45c0 .part L_0x559fbf2ce700, 21, 1;
+L_0x559fbf2b4660 .part L_0x559fbf2cf9c0, 21, 1;
+L_0x559fbf2b4dc0 .part v0x559fbf2a91d0_0, 22, 1;
+L_0x559fbf2b4e60 .part L_0x559fbf2ce700, 22, 1;
+L_0x559fbf2b5130 .part L_0x559fbf2cf9c0, 22, 1;
+L_0x559fbf2b5640 .part v0x559fbf2a91d0_0, 23, 1;
+L_0x559fbf2b5920 .part L_0x559fbf2ce700, 23, 1;
+L_0x559fbf2b59c0 .part L_0x559fbf2cf9c0, 23, 1;
+L_0x559fbf2b6120 .part v0x559fbf2a91d0_0, 24, 1;
+L_0x559fbf2b61c0 .part L_0x559fbf2ce700, 24, 1;
+L_0x559fbf2b64c0 .part L_0x559fbf2cf9c0, 24, 1;
+L_0x559fbf2b6a00 .part v0x559fbf2a91d0_0, 25, 1;
+L_0x559fbf2b6d10 .part L_0x559fbf2ce700, 25, 1;
+L_0x559fbf2b6db0 .part L_0x559fbf2cf9c0, 25, 1;
+L_0x559fbf2b7510 .part v0x559fbf2a91d0_0, 26, 1;
+L_0x559fbf2b75b0 .part L_0x559fbf2ce700, 26, 1;
+L_0x559fbf2b78e0 .part L_0x559fbf2cf9c0, 26, 1;
+L_0x559fbf2b7e20 .part v0x559fbf2a91d0_0, 27, 1;
+L_0x559fbf2b8160 .part L_0x559fbf2ce700, 27, 1;
+L_0x559fbf2b8200 .part L_0x559fbf2cf9c0, 27, 1;
+L_0x559fbf2b89c0 .part v0x559fbf2a91d0_0, 28, 1;
+L_0x559fbf2b8a60 .part L_0x559fbf2ce700, 28, 1;
+L_0x559fbf2b8dc0 .part L_0x559fbf2cf9c0, 28, 1;
+L_0x559fbf2b9300 .part v0x559fbf2a91d0_0, 29, 1;
+L_0x559fbf2b9a80 .part L_0x559fbf2ce700, 29, 1;
+L_0x559fbf2b9b20 .part L_0x559fbf2cf9c0, 29, 1;
+L_0x559fbf2ba340 .part v0x559fbf2a91d0_0, 30, 1;
+L_0x559fbf2ba3e0 .part L_0x559fbf2ce700, 30, 1;
+L_0x559fbf2ba770 .part L_0x559fbf2cf9c0, 30, 1;
+L_0x559fbf2bacb0 .part v0x559fbf2a91d0_0, 31, 1;
+L_0x559fbf2bb050 .part L_0x559fbf2ce700, 31, 1;
+L_0x559fbf2bb500 .part L_0x559fbf2cf9c0, 31, 1;
+L_0x559fbf2bc160 .part v0x559fbf2a91d0_0, 32, 1;
+L_0x559fbf2bc200 .part L_0x559fbf2ce700, 32, 1;
+L_0x559fbf2bc5c0 .part L_0x559fbf2cf9c0, 32, 1;
+L_0x559fbf2bcb00 .part v0x559fbf2a91d0_0, 33, 1;
+L_0x559fbf2bced0 .part L_0x559fbf2ce700, 33, 1;
+L_0x559fbf2bcf70 .part L_0x559fbf2cf9c0, 33, 1;
+L_0x559fbf2bd7f0 .part v0x559fbf2a91d0_0, 34, 1;
+L_0x559fbf2bd890 .part L_0x559fbf2ce700, 34, 1;
+L_0x559fbf2bdc80 .part L_0x559fbf2cf9c0, 34, 1;
+L_0x559fbf2be190 .part v0x559fbf2a91d0_0, 35, 1;
+L_0x559fbf2be590 .part L_0x559fbf2ce700, 35, 1;
+L_0x559fbf2be630 .part L_0x559fbf2cf9c0, 35, 1;
+L_0x559fbf2beeb0 .part v0x559fbf2a91d0_0, 36, 1;
+L_0x559fbf2bef50 .part L_0x559fbf2ce700, 36, 1;
+L_0x559fbf2bf370 .part L_0x559fbf2cf9c0, 36, 1;
+L_0x559fbf2bf8b0 .part v0x559fbf2a91d0_0, 37, 1;
+L_0x559fbf2bfce0 .part L_0x559fbf2ce700, 37, 1;
+L_0x559fbf2bfd80 .part L_0x559fbf2cf9c0, 37, 1;
+L_0x559fbf2c0660 .part v0x559fbf2a91d0_0, 38, 1;
+L_0x559fbf2c0700 .part L_0x559fbf2ce700, 38, 1;
+L_0x559fbf2c0b50 .part L_0x559fbf2cf9c0, 38, 1;
+L_0x559fbf2c1090 .part v0x559fbf2a91d0_0, 39, 1;
+L_0x559fbf2c14f0 .part L_0x559fbf2ce700, 39, 1;
+L_0x559fbf2c1590 .part L_0x559fbf2cf9c0, 39, 1;
+L_0x559fbf2c1ea0 .part v0x559fbf2a91d0_0, 40, 1;
+L_0x559fbf2c1f40 .part L_0x559fbf2ce700, 40, 1;
+L_0x559fbf2c23c0 .part L_0x559fbf2cf9c0, 40, 1;
+L_0x559fbf2c2900 .part v0x559fbf2a91d0_0, 41, 1;
+L_0x559fbf2c2d90 .part L_0x559fbf2ce700, 41, 1;
+L_0x559fbf2c2e30 .part L_0x559fbf2cf9c0, 41, 1;
+L_0x559fbf2c3770 .part v0x559fbf2a91d0_0, 42, 1;
+L_0x559fbf2c3810 .part L_0x559fbf2ce700, 42, 1;
+L_0x559fbf2c3cc0 .part L_0x559fbf2cf9c0, 42, 1;
+L_0x559fbf2c4200 .part v0x559fbf2a91d0_0, 43, 1;
+L_0x559fbf2c46c0 .part L_0x559fbf2ce700, 43, 1;
+L_0x559fbf2c4760 .part L_0x559fbf2cf9c0, 43, 1;
+L_0x559fbf2c4cd0 .part v0x559fbf2a91d0_0, 44, 1;
+L_0x559fbf2c4d70 .part L_0x559fbf2ce700, 44, 1;
+L_0x559fbf2c4800 .part L_0x559fbf2cf9c0, 44, 1;
+L_0x559fbf2c5360 .part v0x559fbf2a91d0_0, 45, 1;
+L_0x559fbf2c4e10 .part L_0x559fbf2ce700, 45, 1;
+L_0x559fbf2c4eb0 .part L_0x559fbf2cf9c0, 45, 1;
+L_0x559fbf2c5a10 .part v0x559fbf2a91d0_0, 46, 1;
+L_0x559fbf2c5ab0 .part L_0x559fbf2ce700, 46, 1;
+L_0x559fbf2c5400 .part L_0x559fbf2cf9c0, 46, 1;
+L_0x559fbf2c60d0 .part v0x559fbf2a91d0_0, 47, 1;
+L_0x559fbf2c5b50 .part L_0x559fbf2ce700, 47, 1;
+L_0x559fbf2c5bf0 .part L_0x559fbf2cf9c0, 47, 1;
+L_0x559fbf2c6740 .part v0x559fbf2a91d0_0, 48, 1;
+L_0x559fbf2c67e0 .part L_0x559fbf2ce700, 48, 1;
+L_0x559fbf2c6170 .part L_0x559fbf2cf9c0, 48, 1;
+L_0x559fbf2c6de0 .part v0x559fbf2a91d0_0, 49, 1;
+L_0x559fbf2c6880 .part L_0x559fbf2ce700, 49, 1;
+L_0x559fbf2c6920 .part L_0x559fbf2cf9c0, 49, 1;
+L_0x559fbf2c7480 .part v0x559fbf2a91d0_0, 50, 1;
+L_0x559fbf2c7520 .part L_0x559fbf2ce700, 50, 1;
+L_0x559fbf2c6e80 .part L_0x559fbf2cf9c0, 50, 1;
+L_0x559fbf2c7b30 .part v0x559fbf2a91d0_0, 51, 1;
+L_0x559fbf2c75c0 .part L_0x559fbf2ce700, 51, 1;
+L_0x559fbf2c7660 .part L_0x559fbf2cf9c0, 51, 1;
+L_0x559fbf2c81d0 .part v0x559fbf2a91d0_0, 52, 1;
+L_0x559fbf2c8270 .part L_0x559fbf2ce700, 52, 1;
+L_0x559fbf2c7bd0 .part L_0x559fbf2cf9c0, 52, 1;
+L_0x559fbf2c8860 .part v0x559fbf2a91d0_0, 53, 1;
+L_0x559fbf2c8310 .part L_0x559fbf2ce700, 53, 1;
+L_0x559fbf2c83b0 .part L_0x559fbf2cf9c0, 53, 1;
+L_0x559fbf2c8f30 .part v0x559fbf2a91d0_0, 54, 1;
+L_0x559fbf2c8fd0 .part L_0x559fbf2ce700, 54, 1;
+L_0x559fbf2c8900 .part L_0x559fbf2cf9c0, 54, 1;
+L_0x559fbf2c95a0 .part v0x559fbf2a91d0_0, 55, 1;
+L_0x559fbf2c9070 .part L_0x559fbf2ce700, 55, 1;
+L_0x559fbf2c9110 .part L_0x559fbf2cf9c0, 55, 1;
+L_0x559fbf2c9c50 .part v0x559fbf2a91d0_0, 56, 1;
+L_0x559fbf2c9cf0 .part L_0x559fbf2ce700, 56, 1;
+L_0x559fbf2c9640 .part L_0x559fbf2cf9c0, 56, 1;
+L_0x559fbf2ca2f0 .part v0x559fbf2a91d0_0, 57, 1;
+L_0x559fbf2c9d90 .part L_0x559fbf2ce700, 57, 1;
+L_0x559fbf2c9e30 .part L_0x559fbf2cf9c0, 57, 1;
+L_0x559fbf2ca9b0 .part v0x559fbf2a91d0_0, 58, 1;
+L_0x559fbf2caa50 .part L_0x559fbf2ce700, 58, 1;
+L_0x559fbf2ca390 .part L_0x559fbf2cf9c0, 58, 1;
+L_0x559fbf2cb080 .part v0x559fbf2a91d0_0, 59, 1;
+L_0x559fbf2caaf0 .part L_0x559fbf2ce700, 59, 1;
+L_0x559fbf2cab90 .part L_0x559fbf2cf9c0, 59, 1;
+L_0x559fbf2cb720 .part v0x559fbf2a91d0_0, 60, 1;
+L_0x559fbf2cb7c0 .part L_0x559fbf2ce700, 60, 1;
+L_0x559fbf2cb120 .part L_0x559fbf2cf9c0, 60, 1;
+L_0x559fbf2cbe20 .part v0x559fbf2a91d0_0, 61, 1;
+L_0x559fbf2cb860 .part L_0x559fbf2ce700, 61, 1;
+L_0x559fbf2cb900 .part L_0x559fbf2cf9c0, 61, 1;
+L_0x559fbf2cccb0 .part v0x559fbf2a91d0_0, 62, 1;
+L_0x559fbf2ccd50 .part L_0x559fbf2ce700, 62, 1;
+L_0x559fbf2cc6d0 .part L_0x559fbf2cf9c0, 62, 1;
+L_0x559fbf2ccbc0 .part v0x559fbf2a91d0_0, 63, 1;
+L_0x559fbf2cd3f0 .part L_0x559fbf2ce700, 63, 1;
+L_0x559fbf2cdca0 .part L_0x559fbf2cf9c0, 63, 1;
+LS_0x559fbf2ccdf0_0_0 .concat8 [ 1 1 1 1], L_0x559fbf2370e0, L_0x559fbf243200, L_0x559fbf2aa020, L_0x559fbf2aa690;
+LS_0x559fbf2ccdf0_0_4 .concat8 [ 1 1 1 1], L_0x559fbf2aaed0, L_0x559fbf2ab470, L_0x559fbf2abbf0, L_0x559fbf2ac280;
+LS_0x559fbf2ccdf0_0_8 .concat8 [ 1 1 1 1], L_0x559fbf2acb70, L_0x559fbf2ad2d0, L_0x559fbf2adb10, L_0x559fbf2ae240;
+LS_0x559fbf2ccdf0_0_12 .concat8 [ 1 1 1 1], L_0x559fbf2ae780, L_0x559fbf2af1c0, L_0x559fbf2afd00, L_0x559fbf2b04f0;
+LS_0x559fbf2ccdf0_0_16 .concat8 [ 1 1 1 1], L_0x559fbf2b12a0, L_0x559fbf2b1ac0, L_0x559fbf2b24b0, L_0x559fbf2b2cd0;
+LS_0x559fbf2ccdf0_0_20 .concat8 [ 1 1 1 1], L_0x559fbf2b36f0, L_0x559fbf2b3f40, L_0x559fbf2b4990, L_0x559fbf2b5240;
+LS_0x559fbf2ccdf0_0_24 .concat8 [ 1 1 1 1], L_0x559fbf2b5d20, L_0x559fbf2b65d0, L_0x559fbf2b7140, L_0x559fbf2b79f0;
+LS_0x559fbf2ccdf0_0_28 .concat8 [ 1 1 1 1], L_0x559fbf2b85c0, L_0x559fbf2b8ed0, L_0x559fbf2b9f10, L_0x559fbf2ba880;
+LS_0x559fbf2ccdf0_0_32 .concat8 [ 1 1 1 1], L_0x559fbf2bbd30, L_0x559fbf2bc6d0, L_0x559fbf2bd3c0, L_0x559fbf2bdd90;
+LS_0x559fbf2ccdf0_0_36 .concat8 [ 1 1 1 1], L_0x559fbf2beab0, L_0x559fbf2bf480, L_0x559fbf2c0230, L_0x559fbf2c0c60;
+LS_0x559fbf2ccdf0_0_40 .concat8 [ 1 1 1 1], L_0x559fbf2c1a70, L_0x559fbf2c24d0, L_0x559fbf2c3340, L_0x559fbf2c3dd0;
+LS_0x559fbf2ccdf0_0_44 .concat8 [ 1 1 1 1], L_0x559fbf2c4310, L_0x559fbf2c4910, L_0x559fbf2c4fc0, L_0x559fbf2c5510;
+LS_0x559fbf2ccdf0_0_48 .concat8 [ 1 1 1 1], L_0x559fbf2c5d00, L_0x559fbf2c6280, L_0x559fbf2c6a30, L_0x559fbf2c6f90;
+LS_0x559fbf2ccdf0_0_52 .concat8 [ 1 1 1 1], L_0x559fbf2c7770, L_0x559fbf2c7ce0, L_0x559fbf2c84c0, L_0x559fbf2c8a10;
+LS_0x559fbf2ccdf0_0_56 .concat8 [ 1 1 1 1], L_0x559fbf2c9220, L_0x559fbf2c9750, L_0x559fbf2c9f40, L_0x559fbf2ca4a0;
+LS_0x559fbf2ccdf0_0_60 .concat8 [ 1 1 1 1], L_0x559fbf2caca0, L_0x559fbf2cb230, L_0x559fbf2cb9a0, L_0x559fbf2cc7e0;
+LS_0x559fbf2ccdf0_1_0 .concat8 [ 4 4 4 4], LS_0x559fbf2ccdf0_0_0, LS_0x559fbf2ccdf0_0_4, LS_0x559fbf2ccdf0_0_8, LS_0x559fbf2ccdf0_0_12;
+LS_0x559fbf2ccdf0_1_4 .concat8 [ 4 4 4 4], LS_0x559fbf2ccdf0_0_16, LS_0x559fbf2ccdf0_0_20, LS_0x559fbf2ccdf0_0_24, LS_0x559fbf2ccdf0_0_28;
+LS_0x559fbf2ccdf0_1_8 .concat8 [ 4 4 4 4], LS_0x559fbf2ccdf0_0_32, LS_0x559fbf2ccdf0_0_36, LS_0x559fbf2ccdf0_0_40, LS_0x559fbf2ccdf0_0_44;
+LS_0x559fbf2ccdf0_1_12 .concat8 [ 4 4 4 4], LS_0x559fbf2ccdf0_0_48, LS_0x559fbf2ccdf0_0_52, LS_0x559fbf2ccdf0_0_56, LS_0x559fbf2ccdf0_0_60;
+L_0x559fbf2ccdf0 .concat8 [ 16 16 16 16], LS_0x559fbf2ccdf0_1_0, LS_0x559fbf2ccdf0_1_4, LS_0x559fbf2ccdf0_1_8, LS_0x559fbf2ccdf0_1_12;
+LS_0x559fbf2cf9c0_0_0 .concat8 [ 1 1 1 1], L_0x559fbf2ce550, L_0x559fbf23e4c0, L_0x559fbf2a9c00, L_0x559fbf2aa2e0;
+LS_0x559fbf2cf9c0_0_4 .concat8 [ 1 1 1 1], L_0x559fbf2aa980, L_0x559fbf2ab100, L_0x559fbf2ab760, L_0x559fbf2abf10;
+LS_0x559fbf2cf9c0_0_8 .concat8 [ 1 1 1 1], L_0x559fbf2ac570, L_0x559fbf2ace90, L_0x559fbf2ad5c0, L_0x559fbf2addd0;
+LS_0x559fbf2cf9c0_0_12 .concat8 [ 1 1 1 1], L_0x559fbf2ae560, L_0x559fbf2aed20, L_0x559fbf2af4e0, L_0x559fbf2b0020;
+LS_0x559fbf2cf9c0_0_16 .concat8 [ 1 1 1 1], L_0x559fbf2b0810, L_0x559fbf2b15c0, L_0x559fbf2b1de0, L_0x559fbf2b27a0;
+LS_0x559fbf2cf9c0_0_20 .concat8 [ 1 1 1 1], L_0x559fbf2b2fc0, L_0x559fbf2b39e0, L_0x559fbf2b4200, L_0x559fbf2b4cb0;
+LS_0x559fbf2cf9c0_0_24 .concat8 [ 1 1 1 1], L_0x559fbf2b5530, L_0x559fbf2b6010, L_0x559fbf2b68f0, L_0x559fbf2b7400;
+LS_0x559fbf2cf9c0_0_28 .concat8 [ 1 1 1 1], L_0x559fbf2b7d10, L_0x559fbf2b88b0, L_0x559fbf2b91f0, L_0x559fbf2ba230;
+LS_0x559fbf2cf9c0_0_32 .concat8 [ 1 1 1 1], L_0x559fbf2baba0, L_0x559fbf2bc050, L_0x559fbf2bc9f0, L_0x559fbf2bd6e0;
+LS_0x559fbf2cf9c0_0_36 .concat8 [ 1 1 1 1], L_0x559fbf2be080, L_0x559fbf2beda0, L_0x559fbf2bf7a0, L_0x559fbf2c0550;
+LS_0x559fbf2cf9c0_0_40 .concat8 [ 1 1 1 1], L_0x559fbf2c0f80, L_0x559fbf2c1d90, L_0x559fbf2c27f0, L_0x559fbf2c3660;
+LS_0x559fbf2cf9c0_0_44 .concat8 [ 1 1 1 1], L_0x559fbf2c40f0, L_0x559fbf2c4630, L_0x559fbf2c5250, L_0x559fbf2c5900;
+LS_0x559fbf2cf9c0_0_48 .concat8 [ 1 1 1 1], L_0x559fbf2c5fc0, L_0x559fbf2c6630, L_0x559fbf2c6d20, L_0x559fbf2c7370;
+LS_0x559fbf2cf9c0_0_52 .concat8 [ 1 1 1 1], L_0x559fbf2c72b0, L_0x559fbf2c80c0, L_0x559fbf2c8000, L_0x559fbf2c8e20;
+LS_0x559fbf2cf9c0_0_56 .concat8 [ 1 1 1 1], L_0x559fbf2c8d00, L_0x559fbf2c9b90, L_0x559fbf2c9a70, L_0x559fbf2ca260;
+LS_0x559fbf2cf9c0_0_60 .concat8 [ 1 1 1 1], L_0x559fbf2ca7c0, L_0x559fbf2cafc0, L_0x559fbf2cb550, L_0x559fbf2cbcc0;
+LS_0x559fbf2cf9c0_0_64 .concat8 [ 1 0 0 0], L_0x559fbf2ccab0;
+LS_0x559fbf2cf9c0_1_0 .concat8 [ 4 4 4 4], LS_0x559fbf2cf9c0_0_0, LS_0x559fbf2cf9c0_0_4, LS_0x559fbf2cf9c0_0_8, LS_0x559fbf2cf9c0_0_12;
+LS_0x559fbf2cf9c0_1_4 .concat8 [ 4 4 4 4], LS_0x559fbf2cf9c0_0_16, LS_0x559fbf2cf9c0_0_20, LS_0x559fbf2cf9c0_0_24, LS_0x559fbf2cf9c0_0_28;
+LS_0x559fbf2cf9c0_1_8 .concat8 [ 4 4 4 4], LS_0x559fbf2cf9c0_0_32, LS_0x559fbf2cf9c0_0_36, LS_0x559fbf2cf9c0_0_40, LS_0x559fbf2cf9c0_0_44;
+LS_0x559fbf2cf9c0_1_12 .concat8 [ 4 4 4 4], LS_0x559fbf2cf9c0_0_48, LS_0x559fbf2cf9c0_0_52, LS_0x559fbf2cf9c0_0_56, LS_0x559fbf2cf9c0_0_60;
+LS_0x559fbf2cf9c0_1_16 .concat8 [ 1 0 0 0], LS_0x559fbf2cf9c0_0_64;
+LS_0x559fbf2cf9c0_2_0 .concat8 [ 16 16 16 16], LS_0x559fbf2cf9c0_1_0, LS_0x559fbf2cf9c0_1_4, LS_0x559fbf2cf9c0_1_8, LS_0x559fbf2cf9c0_1_12;
+LS_0x559fbf2cf9c0_2_4 .concat8 [ 1 0 0 0], LS_0x559fbf2cf9c0_1_16;
+L_0x559fbf2cf9c0 .concat8 [ 64 1 0 0], LS_0x559fbf2cf9c0_2_0, LS_0x559fbf2cf9c0_2_4;
+L_0x559fbf2ce5c0 .part L_0x559fbf2cf9c0, 64, 1;
+S_0x559fbf284ca0 .scope generate, "genblk1[0]" "genblk1[0]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf20e930 .param/l "i" 0 4 29, +C4<00>;
+S_0x559fbf287370 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf284ca0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf234a40 .functor XOR 1, L_0x559fbf2a9710, L_0x559fbf2a97b0, C4<0>, C4<0>;
+L_0x559fbf2370e0 .functor XOR 1, L_0x559fbf234a40, L_0x559fbf2a9850, C4<0>, C4<0>;
+L_0x559fbf239780 .functor AND 1, L_0x559fbf2a9710, L_0x559fbf2a97b0, C4<1>, C4<1>;
+L_0x559fbf23be20 .functor AND 1, L_0x559fbf2a9850, L_0x559fbf234a40, C4<1>, C4<1>;
+L_0x559fbf23e4c0 .functor OR 1, L_0x559fbf239780, L_0x559fbf23be20, C4<0>, C4<0>;
+v0x559fbf21ae80_0 .net "Cin", 0 0, L_0x559fbf2a9850;  1 drivers
+v0x559fbf2187e0_0 .net "Cout", 0 0, L_0x559fbf23e4c0;  1 drivers
+v0x559fbf202c40_0 .net "S", 0 0, L_0x559fbf2370e0;  1 drivers
+v0x559fbf2005a0_0 .net "X", 0 0, L_0x559fbf2a9710;  1 drivers
+v0x559fbf1fdf00_0 .net "Y", 0 0, L_0x559fbf2a97b0;  1 drivers
+v0x559fbf1fb860_0 .net *"_ivl_4", 0 0, L_0x559fbf239780;  1 drivers
+v0x559fbf1f8f80_0 .net *"_ivl_6", 0 0, L_0x559fbf23be20;  1 drivers
+v0x559fbf201b50_0 .net "xor1", 0 0, L_0x559fbf234a40;  1 drivers
+S_0x559fbf289a40 .scope generate, "genblk1[1]" "genblk1[1]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf207550 .param/l "i" 0 4 29, +C4<01>;
+S_0x559fbf28c110 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf289a40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf240b60 .functor XOR 1, L_0x559fbf2a9d10, L_0x559fbf2a9de0, C4<0>, C4<0>;
+L_0x559fbf243200 .functor XOR 1, L_0x559fbf240b60, L_0x559fbf2a9e80, C4<0>, C4<0>;
+L_0x559fbf2a99d0 .functor AND 1, L_0x559fbf2a9d10, L_0x559fbf2a9de0, C4<1>, C4<1>;
+L_0x559fbf2a9b10 .functor AND 1, L_0x559fbf2a9e80, L_0x559fbf240b60, C4<1>, C4<1>;
+L_0x559fbf2a9c00 .functor OR 1, L_0x559fbf2a99d0, L_0x559fbf2a9b10, C4<0>, C4<0>;
+v0x559fbf1fcd10_0 .net "Cin", 0 0, L_0x559fbf2a9e80;  1 drivers
+v0x559fbf1fcdf0_0 .net "Cout", 0 0, L_0x559fbf2a9c00;  1 drivers
+v0x559fbf1fa670_0 .net "S", 0 0, L_0x559fbf243200;  1 drivers
+v0x559fbf1fa710_0 .net "X", 0 0, L_0x559fbf2a9d10;  1 drivers
+v0x559fbf21b0c0_0 .net "Y", 0 0, L_0x559fbf2a9de0;  1 drivers
+v0x559fbf21b180_0 .net *"_ivl_4", 0 0, L_0x559fbf2a99d0;  1 drivers
+v0x559fbf21d760_0 .net *"_ivl_6", 0 0, L_0x559fbf2a9b10;  1 drivers
+v0x559fbf21d820_0 .net "xor1", 0 0, L_0x559fbf240b60;  1 drivers
+S_0x559fbf28e7e0 .scope generate, "genblk1[2]" "genblk1[2]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf1fbae0 .param/l "i" 0 4 29, +C4<010>;
+S_0x559fbf290eb0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf28e7e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2a9fb0 .functor XOR 1, L_0x559fbf2aa3f0, L_0x559fbf2aa490, C4<0>, C4<0>;
+L_0x559fbf2aa020 .functor XOR 1, L_0x559fbf2a9fb0, L_0x559fbf2aa580, C4<0>, C4<0>;
+L_0x559fbf2aa0e0 .functor AND 1, L_0x559fbf2aa3f0, L_0x559fbf2aa490, C4<1>, C4<1>;
+L_0x559fbf2aa1f0 .functor AND 1, L_0x559fbf2aa580, L_0x559fbf2a9fb0, C4<1>, C4<1>;
+L_0x559fbf2aa2e0 .functor OR 1, L_0x559fbf2aa0e0, L_0x559fbf2aa1f0, C4<0>, C4<0>;
+v0x559fbf1fe140_0 .net "Cin", 0 0, L_0x559fbf2aa580;  1 drivers
+v0x559fbf1fe220_0 .net "Cout", 0 0, L_0x559fbf2aa2e0;  1 drivers
+v0x559fbf2007e0_0 .net "S", 0 0, L_0x559fbf2aa020;  1 drivers
+v0x559fbf2008b0_0 .net "X", 0 0, L_0x559fbf2aa3f0;  1 drivers
+v0x559fbf202e80_0 .net "Y", 0 0, L_0x559fbf2aa490;  1 drivers
+v0x559fbf202f40_0 .net *"_ivl_4", 0 0, L_0x559fbf2aa0e0;  1 drivers
+v0x559fbf205520_0 .net *"_ivl_6", 0 0, L_0x559fbf2aa1f0;  1 drivers
+v0x559fbf2055e0_0 .net "xor1", 0 0, L_0x559fbf2a9fb0;  1 drivers
+S_0x559fbf207be0 .scope generate, "genblk1[3]" "genblk1[3]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf20a2d0 .param/l "i" 0 4 29, +C4<011>;
+S_0x559fbf20c900 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf207be0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2aa620 .functor XOR 1, L_0x559fbf2aaa90, L_0x559fbf2aab90, C4<0>, C4<0>;
+L_0x559fbf2aa690 .functor XOR 1, L_0x559fbf2aa620, L_0x559fbf2aacc0, C4<0>, C4<0>;
+L_0x559fbf2aa750 .functor AND 1, L_0x559fbf2aaa90, L_0x559fbf2aab90, C4<1>, C4<1>;
+L_0x559fbf2aa890 .functor AND 1, L_0x559fbf2aacc0, L_0x559fbf2aa620, C4<1>, C4<1>;
+L_0x559fbf2aa980 .functor OR 1, L_0x559fbf2aa750, L_0x559fbf2aa890, C4<0>, C4<0>;
+v0x559fbf20efa0_0 .net "Cin", 0 0, L_0x559fbf2aacc0;  1 drivers
+v0x559fbf20f060_0 .net "Cout", 0 0, L_0x559fbf2aa980;  1 drivers
+v0x559fbf211640_0 .net "S", 0 0, L_0x559fbf2aa690;  1 drivers
+v0x559fbf2116e0_0 .net "X", 0 0, L_0x559fbf2aaa90;  1 drivers
+v0x559fbf213ce0_0 .net "Y", 0 0, L_0x559fbf2aab90;  1 drivers
+v0x559fbf213df0_0 .net *"_ivl_4", 0 0, L_0x559fbf2aa750;  1 drivers
+v0x559fbf216380_0 .net *"_ivl_6", 0 0, L_0x559fbf2aa890;  1 drivers
+v0x559fbf216460_0 .net "xor1", 0 0, L_0x559fbf2aa620;  1 drivers
+S_0x559fbf218a40 .scope generate, "genblk1[4]" "genblk1[4]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2916a0 .param/l "i" 0 4 29, +C4<0100>;
+S_0x559fbf28ef10 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf218a40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2aae60 .functor XOR 1, L_0x559fbf2ab210, L_0x559fbf2ab2b0, C4<0>, C4<0>;
+L_0x559fbf2aaed0 .functor XOR 1, L_0x559fbf2aae60, L_0x559fbf2ab3d0, C4<0>, C4<0>;
+L_0x559fbf2aaf70 .functor AND 1, L_0x559fbf2ab210, L_0x559fbf2ab2b0, C4<1>, C4<1>;
+L_0x559fbf2ab010 .functor AND 1, L_0x559fbf2ab3d0, L_0x559fbf2aae60, C4<1>, C4<1>;
+L_0x559fbf2ab100 .functor OR 1, L_0x559fbf2aaf70, L_0x559fbf2ab010, C4<0>, C4<0>;
+v0x559fbf28c890_0 .net "Cin", 0 0, L_0x559fbf2ab3d0;  1 drivers
+v0x559fbf28c950_0 .net "Cout", 0 0, L_0x559fbf2ab100;  1 drivers
+v0x559fbf28a170_0 .net "S", 0 0, L_0x559fbf2aaed0;  1 drivers
+v0x559fbf28a230_0 .net "X", 0 0, L_0x559fbf2ab210;  1 drivers
+v0x559fbf287aa0_0 .net "Y", 0 0, L_0x559fbf2ab2b0;  1 drivers
+v0x559fbf287bb0_0 .net *"_ivl_4", 0 0, L_0x559fbf2aaf70;  1 drivers
+v0x559fbf2853d0_0 .net *"_ivl_6", 0 0, L_0x559fbf2ab010;  1 drivers
+v0x559fbf2854b0_0 .net "xor1", 0 0, L_0x559fbf2aae60;  1 drivers
+S_0x559fbf280630 .scope generate, "genblk1[5]" "genblk1[5]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf282df0 .param/l "i" 0 4 29, +C4<0101>;
+S_0x559fbf27df60 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf280630;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2aadf0 .functor XOR 1, L_0x559fbf2ab870, L_0x559fbf2ab9a0, C4<0>, C4<0>;
+L_0x559fbf2ab470 .functor XOR 1, L_0x559fbf2aadf0, L_0x559fbf2aba40, C4<0>, C4<0>;
+L_0x559fbf2ab530 .functor AND 1, L_0x559fbf2ab870, L_0x559fbf2ab9a0, C4<1>, C4<1>;
+L_0x559fbf2ab670 .functor AND 1, L_0x559fbf2aba40, L_0x559fbf2aadf0, C4<1>, C4<1>;
+L_0x559fbf2ab760 .functor OR 1, L_0x559fbf2ab530, L_0x559fbf2ab670, C4<0>, C4<0>;
+v0x559fbf27b900_0 .net "Cin", 0 0, L_0x559fbf2aba40;  1 drivers
+v0x559fbf2791c0_0 .net "Cout", 0 0, L_0x559fbf2ab760;  1 drivers
+v0x559fbf279280_0 .net "S", 0 0, L_0x559fbf2ab470;  1 drivers
+v0x559fbf276af0_0 .net "X", 0 0, L_0x559fbf2ab870;  1 drivers
+v0x559fbf276bb0_0 .net "Y", 0 0, L_0x559fbf2ab9a0;  1 drivers
+v0x559fbf274420_0 .net *"_ivl_4", 0 0, L_0x559fbf2ab530;  1 drivers
+v0x559fbf274500_0 .net *"_ivl_6", 0 0, L_0x559fbf2ab670;  1 drivers
+v0x559fbf271d50_0 .net "xor1", 0 0, L_0x559fbf2aadf0;  1 drivers
+S_0x559fbf26f680 .scope generate, "genblk1[6]" "genblk1[6]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf271eb0 .param/l "i" 0 4 29, +C4<0110>;
+S_0x559fbf26cfd0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf26f680;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2abb80 .functor XOR 1, L_0x559fbf2ac020, L_0x559fbf2ac0c0, C4<0>, C4<0>;
+L_0x559fbf2abbf0 .functor XOR 1, L_0x559fbf2abb80, L_0x559fbf2abae0, C4<0>, C4<0>;
+L_0x559fbf2abce0 .functor AND 1, L_0x559fbf2ac020, L_0x559fbf2ac0c0, C4<1>, C4<1>;
+L_0x559fbf2abe20 .functor AND 1, L_0x559fbf2abae0, L_0x559fbf2abb80, C4<1>, C4<1>;
+L_0x559fbf2abf10 .functor OR 1, L_0x559fbf2abce0, L_0x559fbf2abe20, C4<0>, C4<0>;
+v0x559fbf26a930_0 .net "Cin", 0 0, L_0x559fbf2abae0;  1 drivers
+v0x559fbf268210_0 .net "Cout", 0 0, L_0x559fbf2abf10;  1 drivers
+v0x559fbf2682d0_0 .net "S", 0 0, L_0x559fbf2abbf0;  1 drivers
+v0x559fbf265b40_0 .net "X", 0 0, L_0x559fbf2ac020;  1 drivers
+v0x559fbf265c00_0 .net "Y", 0 0, L_0x559fbf2ac0c0;  1 drivers
+v0x559fbf263470_0 .net *"_ivl_4", 0 0, L_0x559fbf2abce0;  1 drivers
+v0x559fbf263550_0 .net *"_ivl_6", 0 0, L_0x559fbf2abe20;  1 drivers
+v0x559fbf260da0_0 .net "xor1", 0 0, L_0x559fbf2abb80;  1 drivers
+S_0x559fbf25e6d0 .scope generate, "genblk1[7]" "genblk1[7]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf26aa10 .param/l "i" 0 4 29, +C4<0111>;
+S_0x559fbf259930 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf25e6d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2ac210 .functor XOR 1, L_0x559fbf2ac680, L_0x559fbf2ac7e0, C4<0>, C4<0>;
+L_0x559fbf2ac280 .functor XOR 1, L_0x559fbf2ac210, L_0x559fbf2ac880, C4<0>, C4<0>;
+L_0x559fbf2ac340 .functor AND 1, L_0x559fbf2ac680, L_0x559fbf2ac7e0, C4<1>, C4<1>;
+L_0x559fbf2ac480 .functor AND 1, L_0x559fbf2ac880, L_0x559fbf2ac210, C4<1>, C4<1>;
+L_0x559fbf2ac570 .functor OR 1, L_0x559fbf2ac340, L_0x559fbf2ac480, C4<0>, C4<0>;
+v0x559fbf257260_0 .net "Cin", 0 0, L_0x559fbf2ac880;  1 drivers
+v0x559fbf257340_0 .net "Cout", 0 0, L_0x559fbf2ac570;  1 drivers
+v0x559fbf254b90_0 .net "S", 0 0, L_0x559fbf2ac280;  1 drivers
+v0x559fbf254c80_0 .net "X", 0 0, L_0x559fbf2ac680;  1 drivers
+v0x559fbf2524c0_0 .net "Y", 0 0, L_0x559fbf2ac7e0;  1 drivers
+v0x559fbf2525d0_0 .net *"_ivl_4", 0 0, L_0x559fbf2ac340;  1 drivers
+v0x559fbf24fdf0_0 .net *"_ivl_6", 0 0, L_0x559fbf2ac480;  1 drivers
+v0x559fbf24fed0_0 .net "xor1", 0 0, L_0x559fbf2ac210;  1 drivers
+S_0x559fbf24d720 .scope generate, "genblk1[8]" "genblk1[8]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf291650 .param/l "i" 0 4 29, +C4<01000>;
+S_0x559fbf248980 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf24d720;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2acb00 .functor XOR 1, L_0x559fbf2acfa0, L_0x559fbf2ad040, C4<0>, C4<0>;
+L_0x559fbf2acb70 .functor XOR 1, L_0x559fbf2acb00, L_0x559fbf2ad1c0, C4<0>, C4<0>;
+L_0x559fbf2acc60 .functor AND 1, L_0x559fbf2acfa0, L_0x559fbf2ad040, C4<1>, C4<1>;
+L_0x559fbf2acda0 .functor AND 1, L_0x559fbf2ad1c0, L_0x559fbf2acb00, C4<1>, C4<1>;
+L_0x559fbf2ace90 .functor OR 1, L_0x559fbf2acc60, L_0x559fbf2acda0, C4<0>, C4<0>;
+v0x559fbf2462b0_0 .net "Cin", 0 0, L_0x559fbf2ad1c0;  1 drivers
+v0x559fbf246390_0 .net "Cout", 0 0, L_0x559fbf2ace90;  1 drivers
+v0x559fbf241220_0 .net "S", 0 0, L_0x559fbf2acb70;  1 drivers
+v0x559fbf2412e0_0 .net "X", 0 0, L_0x559fbf2acfa0;  1 drivers
+v0x559fbf23eb80_0 .net "Y", 0 0, L_0x559fbf2ad040;  1 drivers
+v0x559fbf23ec90_0 .net *"_ivl_4", 0 0, L_0x559fbf2acc60;  1 drivers
+v0x559fbf23c4e0_0 .net *"_ivl_6", 0 0, L_0x559fbf2acda0;  1 drivers
+v0x559fbf23c5c0_0 .net "xor1", 0 0, L_0x559fbf2acb00;  1 drivers
+S_0x559fbf239e40 .scope generate, "genblk1[9]" "genblk1[9]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2377f0 .param/l "i" 0 4 29, +C4<01001>;
+S_0x559fbf235100 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf239e40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2ad260 .functor XOR 1, L_0x559fbf2ad6d0, L_0x559fbf2ad860, C4<0>, C4<0>;
+L_0x559fbf2ad2d0 .functor XOR 1, L_0x559fbf2ad260, L_0x559fbf2ad900, C4<0>, C4<0>;
+L_0x559fbf2ad390 .functor AND 1, L_0x559fbf2ad6d0, L_0x559fbf2ad860, C4<1>, C4<1>;
+L_0x559fbf2ad4d0 .functor AND 1, L_0x559fbf2ad900, L_0x559fbf2ad260, C4<1>, C4<1>;
+L_0x559fbf2ad5c0 .functor OR 1, L_0x559fbf2ad390, L_0x559fbf2ad4d0, C4<0>, C4<0>;
+v0x559fbf232ae0_0 .net "Cin", 0 0, L_0x559fbf2ad900;  1 drivers
+v0x559fbf2303c0_0 .net "Cout", 0 0, L_0x559fbf2ad5c0;  1 drivers
+v0x559fbf230480_0 .net "S", 0 0, L_0x559fbf2ad2d0;  1 drivers
+v0x559fbf22dd20_0 .net "X", 0 0, L_0x559fbf2ad6d0;  1 drivers
+v0x559fbf22dde0_0 .net "Y", 0 0, L_0x559fbf2ad860;  1 drivers
+v0x559fbf22b680_0 .net *"_ivl_4", 0 0, L_0x559fbf2ad390;  1 drivers
+v0x559fbf22b760_0 .net *"_ivl_6", 0 0, L_0x559fbf2ad4d0;  1 drivers
+v0x559fbf228fe0_0 .net "xor1", 0 0, L_0x559fbf2ad260;  1 drivers
+S_0x559fbf226940 .scope generate, "genblk1[10]" "genblk1[10]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf22de80 .param/l "i" 0 4 29, +C4<01010>;
+S_0x559fbf2242a0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf226940;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2adaa0 .functor XOR 1, L_0x559fbf2adee0, L_0x559fbf2adf80, C4<0>, C4<0>;
+L_0x559fbf2adb10 .functor XOR 1, L_0x559fbf2adaa0, L_0x559fbf2ae130, C4<0>, C4<0>;
+L_0x559fbf2adbd0 .functor AND 1, L_0x559fbf2adee0, L_0x559fbf2adf80, C4<1>, C4<1>;
+L_0x559fbf2adce0 .functor AND 1, L_0x559fbf2ae130, L_0x559fbf2adaa0, C4<1>, C4<1>;
+L_0x559fbf2addd0 .functor OR 1, L_0x559fbf2adbd0, L_0x559fbf2adce0, C4<0>, C4<0>;
+v0x559fbf221cd0_0 .net "Cin", 0 0, L_0x559fbf2ae130;  1 drivers
+v0x559fbf21f560_0 .net "Cout", 0 0, L_0x559fbf2addd0;  1 drivers
+v0x559fbf21f620_0 .net "S", 0 0, L_0x559fbf2adb10;  1 drivers
+v0x559fbf28eb70_0 .net "X", 0 0, L_0x559fbf2adee0;  1 drivers
+v0x559fbf28ec30_0 .net "Y", 0 0, L_0x559fbf2adf80;  1 drivers
+v0x559fbf28c4a0_0 .net *"_ivl_4", 0 0, L_0x559fbf2adbd0;  1 drivers
+v0x559fbf28c580_0 .net *"_ivl_6", 0 0, L_0x559fbf2adce0;  1 drivers
+v0x559fbf289dd0_0 .net "xor1", 0 0, L_0x559fbf2adaa0;  1 drivers
+S_0x559fbf287700 .scope generate, "genblk1[11]" "genblk1[11]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf287890 .param/l "i" 0 4 29, +C4<01011>;
+S_0x559fbf285030 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf287700;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2ae1d0 .functor XOR 1, L_0x559fbf2ae670, L_0x559fbf2ae830, C4<0>, C4<0>;
+L_0x559fbf2ae240 .functor XOR 1, L_0x559fbf2ae1d0, L_0x559fbf2ae8d0, C4<0>, C4<0>;
+L_0x559fbf2ae330 .functor AND 1, L_0x559fbf2ae670, L_0x559fbf2ae830, C4<1>, C4<1>;
+L_0x559fbf2ae470 .functor AND 1, L_0x559fbf2ae8d0, L_0x559fbf2ae1d0, C4<1>, C4<1>;
+L_0x559fbf2ae560 .functor OR 1, L_0x559fbf2ae330, L_0x559fbf2ae470, C4<0>, C4<0>;
+v0x559fbf2829e0_0 .net "Cin", 0 0, L_0x559fbf2ae8d0;  1 drivers
+v0x559fbf280290_0 .net "Cout", 0 0, L_0x559fbf2ae560;  1 drivers
+v0x559fbf280350_0 .net "S", 0 0, L_0x559fbf2ae240;  1 drivers
+v0x559fbf27dbc0_0 .net "X", 0 0, L_0x559fbf2ae670;  1 drivers
+v0x559fbf27dc80_0 .net "Y", 0 0, L_0x559fbf2ae830;  1 drivers
+v0x559fbf27b4f0_0 .net *"_ivl_4", 0 0, L_0x559fbf2ae330;  1 drivers
+v0x559fbf27b5b0_0 .net *"_ivl_6", 0 0, L_0x559fbf2ae470;  1 drivers
+v0x559fbf278e20_0 .net "xor1", 0 0, L_0x559fbf2ae1d0;  1 drivers
+S_0x559fbf276750 .scope generate, "genblk1[12]" "genblk1[12]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf280420 .param/l "i" 0 4 29, +C4<01100>;
+S_0x559fbf274080 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf276750;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2ae710 .functor XOR 1, L_0x559fbf2aee30, L_0x559fbf2aeed0, C4<0>, C4<0>;
+L_0x559fbf2ae780 .functor XOR 1, L_0x559fbf2ae710, L_0x559fbf2af0b0, C4<0>, C4<0>;
+L_0x559fbf2aeaf0 .functor AND 1, L_0x559fbf2aee30, L_0x559fbf2aeed0, C4<1>, C4<1>;
+L_0x559fbf2aec30 .functor AND 1, L_0x559fbf2af0b0, L_0x559fbf2ae710, C4<1>, C4<1>;
+L_0x559fbf2aed20 .functor OR 1, L_0x559fbf2aeaf0, L_0x559fbf2aec30, C4<0>, C4<0>;
+v0x559fbf2719b0_0 .net "Cin", 0 0, L_0x559fbf2af0b0;  1 drivers
+v0x559fbf271a90_0 .net "Cout", 0 0, L_0x559fbf2aed20;  1 drivers
+v0x559fbf26f2e0_0 .net "S", 0 0, L_0x559fbf2ae780;  1 drivers
+v0x559fbf26f3b0_0 .net "X", 0 0, L_0x559fbf2aee30;  1 drivers
+v0x559fbf26cc10_0 .net "Y", 0 0, L_0x559fbf2aeed0;  1 drivers
+v0x559fbf26ccd0_0 .net *"_ivl_4", 0 0, L_0x559fbf2aeaf0;  1 drivers
+v0x559fbf26a540_0 .net *"_ivl_6", 0 0, L_0x559fbf2aec30;  1 drivers
+v0x559fbf26a620_0 .net "xor1", 0 0, L_0x559fbf2ae710;  1 drivers
+S_0x559fbf267e70 .scope generate, "genblk1[13]" "genblk1[13]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf26f470 .param/l "i" 0 4 29, +C4<01101>;
+S_0x559fbf2657e0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf267e70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2af150 .functor XOR 1, L_0x559fbf2af5f0, L_0x559fbf2af9f0, C4<0>, C4<0>;
+L_0x559fbf2af1c0 .functor XOR 1, L_0x559fbf2af150, L_0x559fbf2afa90, C4<0>, C4<0>;
+L_0x559fbf2af2b0 .functor AND 1, L_0x559fbf2af5f0, L_0x559fbf2af9f0, C4<1>, C4<1>;
+L_0x559fbf2af3f0 .functor AND 1, L_0x559fbf2afa90, L_0x559fbf2af150, C4<1>, C4<1>;
+L_0x559fbf2af4e0 .functor OR 1, L_0x559fbf2af2b0, L_0x559fbf2af3f0, C4<0>, C4<0>;
+v0x559fbf2631a0_0 .net "Cin", 0 0, L_0x559fbf2afa90;  1 drivers
+v0x559fbf260a00_0 .net "Cout", 0 0, L_0x559fbf2af4e0;  1 drivers
+v0x559fbf260ac0_0 .net "S", 0 0, L_0x559fbf2af1c0;  1 drivers
+v0x559fbf25e330_0 .net "X", 0 0, L_0x559fbf2af5f0;  1 drivers
+v0x559fbf25e3f0_0 .net "Y", 0 0, L_0x559fbf2af9f0;  1 drivers
+v0x559fbf25bc60_0 .net *"_ivl_4", 0 0, L_0x559fbf2af2b0;  1 drivers
+v0x559fbf25bd20_0 .net *"_ivl_6", 0 0, L_0x559fbf2af3f0;  1 drivers
+v0x559fbf259590_0 .net "xor1", 0 0, L_0x559fbf2af150;  1 drivers
+S_0x559fbf256ec0 .scope generate, "genblk1[14]" "genblk1[14]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf263260 .param/l "i" 0 4 29, +C4<01110>;
+S_0x559fbf2547f0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf256ec0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2afc90 .functor XOR 1, L_0x559fbf2b0130, L_0x559fbf2b01d0, C4<0>, C4<0>;
+L_0x559fbf2afd00 .functor XOR 1, L_0x559fbf2afc90, L_0x559fbf2b03e0, C4<0>, C4<0>;
+L_0x559fbf2afdf0 .functor AND 1, L_0x559fbf2b0130, L_0x559fbf2b01d0, C4<1>, C4<1>;
+L_0x559fbf2aff30 .functor AND 1, L_0x559fbf2b03e0, L_0x559fbf2afc90, C4<1>, C4<1>;
+L_0x559fbf2b0020 .functor OR 1, L_0x559fbf2afdf0, L_0x559fbf2aff30, C4<0>, C4<0>;
+v0x559fbf252120_0 .net "Cin", 0 0, L_0x559fbf2b03e0;  1 drivers
+v0x559fbf252200_0 .net "Cout", 0 0, L_0x559fbf2b0020;  1 drivers
+v0x559fbf24fa50_0 .net "S", 0 0, L_0x559fbf2afd00;  1 drivers
+v0x559fbf24fb20_0 .net "X", 0 0, L_0x559fbf2b0130;  1 drivers
+v0x559fbf24d380_0 .net "Y", 0 0, L_0x559fbf2b01d0;  1 drivers
+v0x559fbf24d440_0 .net *"_ivl_4", 0 0, L_0x559fbf2afdf0;  1 drivers
+v0x559fbf24acb0_0 .net *"_ivl_6", 0 0, L_0x559fbf2aff30;  1 drivers
+v0x559fbf24ad90_0 .net "xor1", 0 0, L_0x559fbf2afc90;  1 drivers
+S_0x559fbf2485e0 .scope generate, "genblk1[15]" "genblk1[15]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf245f10 .param/l "i" 0 4 29, +C4<01111>;
+S_0x559fbf2917c0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2485e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b0480 .functor XOR 1, L_0x559fbf2b0920, L_0x559fbf2b0b40, C4<0>, C4<0>;
+L_0x559fbf2b04f0 .functor XOR 1, L_0x559fbf2b0480, L_0x559fbf2b0df0, C4<0>, C4<0>;
+L_0x559fbf2b05e0 .functor AND 1, L_0x559fbf2b0920, L_0x559fbf2b0b40, C4<1>, C4<1>;
+L_0x559fbf2b0720 .functor AND 1, L_0x559fbf2b0df0, L_0x559fbf2b0480, C4<1>, C4<1>;
+L_0x559fbf2b0810 .functor OR 1, L_0x559fbf2b05e0, L_0x559fbf2b0720, C4<0>, C4<0>;
+v0x559fbf246050_0 .net "Cin", 0 0, L_0x559fbf2b0df0;  1 drivers
+v0x559fbf28f4b0_0 .net "Cout", 0 0, L_0x559fbf2b0810;  1 drivers
+v0x559fbf28f570_0 .net "S", 0 0, L_0x559fbf2b04f0;  1 drivers
+v0x559fbf28f0f0_0 .net "X", 0 0, L_0x559fbf2b0920;  1 drivers
+v0x559fbf28f1b0_0 .net "Y", 0 0, L_0x559fbf2b0b40;  1 drivers
+v0x559fbf28cdc0_0 .net *"_ivl_4", 0 0, L_0x559fbf2b05e0;  1 drivers
+v0x559fbf28cea0_0 .net *"_ivl_6", 0 0, L_0x559fbf2b0720;  1 drivers
+v0x559fbf28ca20_0 .net "xor1", 0 0, L_0x559fbf2b0480;  1 drivers
+S_0x559fbf28a6f0 .scope generate, "genblk1[16]" "genblk1[16]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf28f270 .param/l "i" 0 4 29, +C4<010000>;
+S_0x559fbf28a350 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf28a6f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b1230 .functor XOR 1, L_0x559fbf2b16d0, L_0x559fbf2b1770, C4<0>, C4<0>;
+L_0x559fbf2b12a0 .functor XOR 1, L_0x559fbf2b1230, L_0x559fbf2b19b0, C4<0>, C4<0>;
+L_0x559fbf2b1390 .functor AND 1, L_0x559fbf2b16d0, L_0x559fbf2b1770, C4<1>, C4<1>;
+L_0x559fbf2b14d0 .functor AND 1, L_0x559fbf2b19b0, L_0x559fbf2b1230, C4<1>, C4<1>;
+L_0x559fbf2b15c0 .functor OR 1, L_0x559fbf2b1390, L_0x559fbf2b14d0, C4<0>, C4<0>;
+v0x559fbf2880a0_0 .net "Cin", 0 0, L_0x559fbf2b19b0;  1 drivers
+v0x559fbf288160_0 .net "Cout", 0 0, L_0x559fbf2b15c0;  1 drivers
+v0x559fbf287c80_0 .net "S", 0 0, L_0x559fbf2b12a0;  1 drivers
+v0x559fbf287d20_0 .net "X", 0 0, L_0x559fbf2b16d0;  1 drivers
+v0x559fbf287de0_0 .net "Y", 0 0, L_0x559fbf2b1770;  1 drivers
+v0x559fbf2859c0_0 .net *"_ivl_4", 0 0, L_0x559fbf2b1390;  1 drivers
+v0x559fbf285aa0_0 .net *"_ivl_6", 0 0, L_0x559fbf2b14d0;  1 drivers
+v0x559fbf2855b0_0 .net "xor1", 0 0, L_0x559fbf2b1230;  1 drivers
+S_0x559fbf283280 .scope generate, "genblk1[17]" "genblk1[17]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf285710 .param/l "i" 0 4 29, +C4<010001>;
+S_0x559fbf282f20 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf283280;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b1a50 .functor XOR 1, L_0x559fbf2b1ef0, L_0x559fbf2b2140, C4<0>, C4<0>;
+L_0x559fbf2b1ac0 .functor XOR 1, L_0x559fbf2b1a50, L_0x559fbf2b21e0, C4<0>, C4<0>;
+L_0x559fbf2b1bb0 .functor AND 1, L_0x559fbf2b1ef0, L_0x559fbf2b2140, C4<1>, C4<1>;
+L_0x559fbf2b1cf0 .functor AND 1, L_0x559fbf2b21e0, L_0x559fbf2b1a50, C4<1>, C4<1>;
+L_0x559fbf2b1de0 .functor OR 1, L_0x559fbf2b1bb0, L_0x559fbf2b1cf0, C4<0>, C4<0>;
+v0x559fbf280c80_0 .net "Cin", 0 0, L_0x559fbf2b21e0;  1 drivers
+v0x559fbf280810_0 .net "Cout", 0 0, L_0x559fbf2b1de0;  1 drivers
+v0x559fbf2808d0_0 .net "S", 0 0, L_0x559fbf2b1ac0;  1 drivers
+v0x559fbf280970_0 .net "X", 0 0, L_0x559fbf2b1ef0;  1 drivers
+v0x559fbf27e4e0_0 .net "Y", 0 0, L_0x559fbf2b2140;  1 drivers
+v0x559fbf27e5f0_0 .net *"_ivl_4", 0 0, L_0x559fbf2b1bb0;  1 drivers
+v0x559fbf27e140_0 .net *"_ivl_6", 0 0, L_0x559fbf2b1cf0;  1 drivers
+v0x559fbf27e220_0 .net "xor1", 0 0, L_0x559fbf2b1a50;  1 drivers
+S_0x559fbf27be30 .scope generate, "genblk1[18]" "genblk1[18]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf27ba90 .param/l "i" 0 4 29, +C4<010010>;
+S_0x559fbf279740 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf27be30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b2440 .functor XOR 1, L_0x559fbf2b28b0, L_0x559fbf2b2950, C4<0>, C4<0>;
+L_0x559fbf2b24b0 .functor XOR 1, L_0x559fbf2b2440, L_0x559fbf2b2bc0, C4<0>, C4<0>;
+L_0x559fbf2b2570 .functor AND 1, L_0x559fbf2b28b0, L_0x559fbf2b2950, C4<1>, C4<1>;
+L_0x559fbf2b26b0 .functor AND 1, L_0x559fbf2b2bc0, L_0x559fbf2b2440, C4<1>, C4<1>;
+L_0x559fbf2b27a0 .functor OR 1, L_0x559fbf2b2570, L_0x559fbf2b26b0, C4<0>, C4<0>;
+v0x559fbf2793a0_0 .net "Cin", 0 0, L_0x559fbf2b2bc0;  1 drivers
+v0x559fbf279460_0 .net "Cout", 0 0, L_0x559fbf2b27a0;  1 drivers
+v0x559fbf277070_0 .net "S", 0 0, L_0x559fbf2b24b0;  1 drivers
+v0x559fbf277140_0 .net "X", 0 0, L_0x559fbf2b28b0;  1 drivers
+v0x559fbf276cd0_0 .net "Y", 0 0, L_0x559fbf2b2950;  1 drivers
+v0x559fbf276de0_0 .net *"_ivl_4", 0 0, L_0x559fbf2b2570;  1 drivers
+v0x559fbf2749a0_0 .net *"_ivl_6", 0 0, L_0x559fbf2b26b0;  1 drivers
+v0x559fbf274a80_0 .net "xor1", 0 0, L_0x559fbf2b2440;  1 drivers
+S_0x559fbf274600 .scope generate, "genblk1[19]" "genblk1[19]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf27bbf0 .param/l "i" 0 4 29, +C4<010011>;
+S_0x559fbf2722d0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf274600;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b2c60 .functor XOR 1, L_0x559fbf2b30d0, L_0x559fbf2b3350, C4<0>, C4<0>;
+L_0x559fbf2b2cd0 .functor XOR 1, L_0x559fbf2b2c60, L_0x559fbf2b33f0, C4<0>, C4<0>;
+L_0x559fbf2b2d90 .functor AND 1, L_0x559fbf2b30d0, L_0x559fbf2b3350, C4<1>, C4<1>;
+L_0x559fbf2b2ed0 .functor AND 1, L_0x559fbf2b33f0, L_0x559fbf2b2c60, C4<1>, C4<1>;
+L_0x559fbf2b2fc0 .functor OR 1, L_0x559fbf2b2d90, L_0x559fbf2b2ed0, C4<0>, C4<0>;
+v0x559fbf271fb0_0 .net "Cin", 0 0, L_0x559fbf2b33f0;  1 drivers
+v0x559fbf272090_0 .net "Cout", 0 0, L_0x559fbf2b2fc0;  1 drivers
+v0x559fbf26fc00_0 .net "S", 0 0, L_0x559fbf2b2cd0;  1 drivers
+v0x559fbf26fcc0_0 .net "X", 0 0, L_0x559fbf2b30d0;  1 drivers
+v0x559fbf26f860_0 .net "Y", 0 0, L_0x559fbf2b3350;  1 drivers
+v0x559fbf26f970_0 .net *"_ivl_4", 0 0, L_0x559fbf2b2d90;  1 drivers
+v0x559fbf26d530_0 .net *"_ivl_6", 0 0, L_0x559fbf2b2ed0;  1 drivers
+v0x559fbf26d610_0 .net "xor1", 0 0, L_0x559fbf2b2c60;  1 drivers
+S_0x559fbf26d190 .scope generate, "genblk1[20]" "genblk1[20]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf26ae60 .param/l "i" 0 4 29, +C4<010100>;
+S_0x559fbf26aac0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf26d190;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b3680 .functor XOR 1, L_0x559fbf2b3af0, L_0x559fbf2b3b90, C4<0>, C4<0>;
+L_0x559fbf2b36f0 .functor XOR 1, L_0x559fbf2b3680, L_0x559fbf2b3e30, C4<0>, C4<0>;
+L_0x559fbf2b37b0 .functor AND 1, L_0x559fbf2b3af0, L_0x559fbf2b3b90, C4<1>, C4<1>;
+L_0x559fbf2b38f0 .functor AND 1, L_0x559fbf2b3e30, L_0x559fbf2b3680, C4<1>, C4<1>;
+L_0x559fbf2b39e0 .functor OR 1, L_0x559fbf2b37b0, L_0x559fbf2b38f0, C4<0>, C4<0>;
+v0x559fbf26afc0_0 .net "Cin", 0 0, L_0x559fbf2b3e30;  1 drivers
+v0x559fbf268790_0 .net "Cout", 0 0, L_0x559fbf2b39e0;  1 drivers
+v0x559fbf268830_0 .net "S", 0 0, L_0x559fbf2b36f0;  1 drivers
+v0x559fbf2688d0_0 .net "X", 0 0, L_0x559fbf2b3af0;  1 drivers
+v0x559fbf2683f0_0 .net "Y", 0 0, L_0x559fbf2b3b90;  1 drivers
+v0x559fbf268500_0 .net *"_ivl_4", 0 0, L_0x559fbf2b37b0;  1 drivers
+v0x559fbf2660c0_0 .net *"_ivl_6", 0 0, L_0x559fbf2b38f0;  1 drivers
+v0x559fbf2661a0_0 .net "xor1", 0 0, L_0x559fbf2b3680;  1 drivers
+S_0x559fbf265d60 .scope generate, "genblk1[21]" "genblk1[21]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf263a60 .param/l "i" 0 4 29, +C4<010101>;
+S_0x559fbf263650 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf265d60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b3ed0 .functor XOR 1, L_0x559fbf2b4310, L_0x559fbf2b45c0, C4<0>, C4<0>;
+L_0x559fbf2b3f40 .functor XOR 1, L_0x559fbf2b3ed0, L_0x559fbf2b4660, C4<0>, C4<0>;
+L_0x559fbf2b4000 .functor AND 1, L_0x559fbf2b4310, L_0x559fbf2b45c0, C4<1>, C4<1>;
+L_0x559fbf2b4110 .functor AND 1, L_0x559fbf2b4660, L_0x559fbf2b3ed0, C4<1>, C4<1>;
+L_0x559fbf2b4200 .functor OR 1, L_0x559fbf2b4000, L_0x559fbf2b4110, C4<0>, C4<0>;
+v0x559fbf261320_0 .net "Cin", 0 0, L_0x559fbf2b4660;  1 drivers
+v0x559fbf2613e0_0 .net "Cout", 0 0, L_0x559fbf2b4200;  1 drivers
+v0x559fbf260f80_0 .net "S", 0 0, L_0x559fbf2b3f40;  1 drivers
+v0x559fbf261020_0 .net "X", 0 0, L_0x559fbf2b4310;  1 drivers
+v0x559fbf2610e0_0 .net "Y", 0 0, L_0x559fbf2b45c0;  1 drivers
+v0x559fbf25ec50_0 .net *"_ivl_4", 0 0, L_0x559fbf2b4000;  1 drivers
+v0x559fbf25ed30_0 .net *"_ivl_6", 0 0, L_0x559fbf2b4110;  1 drivers
+v0x559fbf25e8b0_0 .net "xor1", 0 0, L_0x559fbf2b3ed0;  1 drivers
+S_0x559fbf25c580 .scope generate, "genblk1[22]" "genblk1[22]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf25ea10 .param/l "i" 0 4 29, +C4<010110>;
+S_0x559fbf25c1e0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf25c580;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b4920 .functor XOR 1, L_0x559fbf2b4dc0, L_0x559fbf2b4e60, C4<0>, C4<0>;
+L_0x559fbf2b4990 .functor XOR 1, L_0x559fbf2b4920, L_0x559fbf2b5130, C4<0>, C4<0>;
+L_0x559fbf2b4a80 .functor AND 1, L_0x559fbf2b4dc0, L_0x559fbf2b4e60, C4<1>, C4<1>;
+L_0x559fbf2b4bc0 .functor AND 1, L_0x559fbf2b5130, L_0x559fbf2b4920, C4<1>, C4<1>;
+L_0x559fbf2b4cb0 .functor OR 1, L_0x559fbf2b4a80, L_0x559fbf2b4bc0, C4<0>, C4<0>;
+v0x559fbf259f30_0 .net "Cin", 0 0, L_0x559fbf2b5130;  1 drivers
+v0x559fbf259ff0_0 .net "Cout", 0 0, L_0x559fbf2b4cb0;  1 drivers
+v0x559fbf259b10_0 .net "S", 0 0, L_0x559fbf2b4990;  1 drivers
+v0x559fbf259bb0_0 .net "X", 0 0, L_0x559fbf2b4dc0;  1 drivers
+v0x559fbf259c70_0 .net "Y", 0 0, L_0x559fbf2b4e60;  1 drivers
+v0x559fbf257850_0 .net *"_ivl_4", 0 0, L_0x559fbf2b4a80;  1 drivers
+v0x559fbf257930_0 .net *"_ivl_6", 0 0, L_0x559fbf2b4bc0;  1 drivers
+v0x559fbf257480_0 .net "xor1", 0 0, L_0x559fbf2b4920;  1 drivers
+S_0x559fbf255110 .scope generate, "genblk1[23]" "genblk1[23]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2552c0 .param/l "i" 0 4 29, +C4<010111>;
+S_0x559fbf252a40 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf255110;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b51d0 .functor XOR 1, L_0x559fbf2b5640, L_0x559fbf2b5920, C4<0>, C4<0>;
+L_0x559fbf2b5240 .functor XOR 1, L_0x559fbf2b51d0, L_0x559fbf2b59c0, C4<0>, C4<0>;
+L_0x559fbf2b5300 .functor AND 1, L_0x559fbf2b5640, L_0x559fbf2b5920, C4<1>, C4<1>;
+L_0x559fbf2b5440 .functor AND 1, L_0x559fbf2b59c0, L_0x559fbf2b51d0, C4<1>, C4<1>;
+L_0x559fbf2b5530 .functor OR 1, L_0x559fbf2b5300, L_0x559fbf2b5440, C4<0>, C4<0>;
+v0x559fbf254e80_0 .net "Cin", 0 0, L_0x559fbf2b59c0;  1 drivers
+v0x559fbf2526a0_0 .net "Cout", 0 0, L_0x559fbf2b5530;  1 drivers
+v0x559fbf252760_0 .net "S", 0 0, L_0x559fbf2b5240;  1 drivers
+v0x559fbf252800_0 .net "X", 0 0, L_0x559fbf2b5640;  1 drivers
+v0x559fbf250390_0 .net "Y", 0 0, L_0x559fbf2b5920;  1 drivers
+v0x559fbf2504a0_0 .net *"_ivl_4", 0 0, L_0x559fbf2b5300;  1 drivers
+v0x559fbf24fff0_0 .net *"_ivl_6", 0 0, L_0x559fbf2b5440;  1 drivers
+v0x559fbf2500d0_0 .net "xor1", 0 0, L_0x559fbf2b51d0;  1 drivers
+S_0x559fbf24dd00 .scope generate, "genblk1[24]" "genblk1[24]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf24d970 .param/l "i" 0 4 29, +C4<011000>;
+S_0x559fbf24b5d0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf24dd00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b5cb0 .functor XOR 1, L_0x559fbf2b6120, L_0x559fbf2b61c0, C4<0>, C4<0>;
+L_0x559fbf2b5d20 .functor XOR 1, L_0x559fbf2b5cb0, L_0x559fbf2b64c0, C4<0>, C4<0>;
+L_0x559fbf2b5de0 .functor AND 1, L_0x559fbf2b6120, L_0x559fbf2b61c0, C4<1>, C4<1>;
+L_0x559fbf2b5f20 .functor AND 1, L_0x559fbf2b64c0, L_0x559fbf2b5cb0, C4<1>, C4<1>;
+L_0x559fbf2b6010 .functor OR 1, L_0x559fbf2b5de0, L_0x559fbf2b5f20, C4<0>, C4<0>;
+v0x559fbf24b230_0 .net "Cin", 0 0, L_0x559fbf2b64c0;  1 drivers
+v0x559fbf24b2f0_0 .net "Cout", 0 0, L_0x559fbf2b6010;  1 drivers
+v0x559fbf248f00_0 .net "S", 0 0, L_0x559fbf2b5d20;  1 drivers
+v0x559fbf248fa0_0 .net "X", 0 0, L_0x559fbf2b6120;  1 drivers
+v0x559fbf249060_0 .net "Y", 0 0, L_0x559fbf2b61c0;  1 drivers
+v0x559fbf248b60_0 .net *"_ivl_4", 0 0, L_0x559fbf2b5de0;  1 drivers
+v0x559fbf248c40_0 .net *"_ivl_6", 0 0, L_0x559fbf2b5f20;  1 drivers
+v0x559fbf246830_0 .net "xor1", 0 0, L_0x559fbf2b5cb0;  1 drivers
+S_0x559fbf246490 .scope generate, "genblk1[25]" "genblk1[25]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf246990 .param/l "i" 0 4 29, +C4<011001>;
+S_0x559fbf244160 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf246490;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b6560 .functor XOR 1, L_0x559fbf2b6a00, L_0x559fbf2b6d10, C4<0>, C4<0>;
+L_0x559fbf2b65d0 .functor XOR 1, L_0x559fbf2b6560, L_0x559fbf2b6db0, C4<0>, C4<0>;
+L_0x559fbf2b66c0 .functor AND 1, L_0x559fbf2b6a00, L_0x559fbf2b6d10, C4<1>, C4<1>;
+L_0x559fbf2b6800 .functor AND 1, L_0x559fbf2b6db0, L_0x559fbf2b6560, C4<1>, C4<1>;
+L_0x559fbf2b68f0 .functor OR 1, L_0x559fbf2b66c0, L_0x559fbf2b6800, C4<0>, C4<0>;
+v0x559fbf241b40_0 .net "Cin", 0 0, L_0x559fbf2b6db0;  1 drivers
+v0x559fbf241c00_0 .net "Cout", 0 0, L_0x559fbf2b68f0;  1 drivers
+v0x559fbf23f420_0 .net "S", 0 0, L_0x559fbf2b65d0;  1 drivers
+v0x559fbf23f4f0_0 .net "X", 0 0, L_0x559fbf2b6a00;  1 drivers
+v0x559fbf23cd80_0 .net "Y", 0 0, L_0x559fbf2b6d10;  1 drivers
+v0x559fbf23ce90_0 .net *"_ivl_4", 0 0, L_0x559fbf2b66c0;  1 drivers
+v0x559fbf23a6e0_0 .net *"_ivl_6", 0 0, L_0x559fbf2b6800;  1 drivers
+v0x559fbf23a7c0_0 .net "xor1", 0 0, L_0x559fbf2b6560;  1 drivers
+S_0x559fbf238040 .scope generate, "genblk1[26]" "genblk1[26]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2359a0 .param/l "i" 0 4 29, +C4<011010>;
+S_0x559fbf233300 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf238040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b70d0 .functor XOR 1, L_0x559fbf2b7510, L_0x559fbf2b75b0, C4<0>, C4<0>;
+L_0x559fbf2b7140 .functor XOR 1, L_0x559fbf2b70d0, L_0x559fbf2b78e0, C4<0>, C4<0>;
+L_0x559fbf2b7200 .functor AND 1, L_0x559fbf2b7510, L_0x559fbf2b75b0, C4<1>, C4<1>;
+L_0x559fbf2b7310 .functor AND 1, L_0x559fbf2b78e0, L_0x559fbf2b70d0, C4<1>, C4<1>;
+L_0x559fbf2b7400 .functor OR 1, L_0x559fbf2b7200, L_0x559fbf2b7310, C4<0>, C4<0>;
+v0x559fbf235b00_0 .net "Cin", 0 0, L_0x559fbf2b78e0;  1 drivers
+v0x559fbf230c60_0 .net "Cout", 0 0, L_0x559fbf2b7400;  1 drivers
+v0x559fbf230d20_0 .net "S", 0 0, L_0x559fbf2b7140;  1 drivers
+v0x559fbf22e5c0_0 .net "X", 0 0, L_0x559fbf2b7510;  1 drivers
+v0x559fbf22e680_0 .net "Y", 0 0, L_0x559fbf2b75b0;  1 drivers
+v0x559fbf22bf20_0 .net *"_ivl_4", 0 0, L_0x559fbf2b7200;  1 drivers
+v0x559fbf22c000_0 .net *"_ivl_6", 0 0, L_0x559fbf2b7310;  1 drivers
+v0x559fbf229880_0 .net "xor1", 0 0, L_0x559fbf2b70d0;  1 drivers
+S_0x559fbf2271e0 .scope generate, "genblk1[27]" "genblk1[27]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf227370 .param/l "i" 0 4 29, +C4<011011>;
+S_0x559fbf224b40 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2271e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b7980 .functor XOR 1, L_0x559fbf2b7e20, L_0x559fbf2b8160, C4<0>, C4<0>;
+L_0x559fbf2b79f0 .functor XOR 1, L_0x559fbf2b7980, L_0x559fbf2b8200, C4<0>, C4<0>;
+L_0x559fbf2b7ae0 .functor AND 1, L_0x559fbf2b7e20, L_0x559fbf2b8160, C4<1>, C4<1>;
+L_0x559fbf2b7c20 .functor AND 1, L_0x559fbf2b8200, L_0x559fbf2b7980, C4<1>, C4<1>;
+L_0x559fbf2b7d10 .functor OR 1, L_0x559fbf2b7ae0, L_0x559fbf2b7c20, C4<0>, C4<0>;
+v0x559fbf222520_0 .net "Cin", 0 0, L_0x559fbf2b8200;  1 drivers
+v0x559fbf2225e0_0 .net "Cout", 0 0, L_0x559fbf2b7d10;  1 drivers
+v0x559fbf21fe00_0 .net "S", 0 0, L_0x559fbf2b79f0;  1 drivers
+v0x559fbf21fea0_0 .net "X", 0 0, L_0x559fbf2b7e20;  1 drivers
+v0x559fbf21ff60_0 .net "Y", 0 0, L_0x559fbf2b8160;  1 drivers
+v0x559fbf2435b0_0 .net *"_ivl_4", 0 0, L_0x559fbf2b7ae0;  1 drivers
+v0x559fbf243690_0 .net *"_ivl_6", 0 0, L_0x559fbf2b7c20;  1 drivers
+v0x559fbf240ea0_0 .net "xor1", 0 0, L_0x559fbf2b7980;  1 drivers
+S_0x559fbf23e800 .scope generate, "genblk1[28]" "genblk1[28]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf241000 .param/l "i" 0 4 29, +C4<011100>;
+S_0x559fbf23c1a0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf23e800;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b8550 .functor XOR 1, L_0x559fbf2b89c0, L_0x559fbf2b8a60, C4<0>, C4<0>;
+L_0x559fbf2b85c0 .functor XOR 1, L_0x559fbf2b8550, L_0x559fbf2b8dc0, C4<0>, C4<0>;
+L_0x559fbf2b8680 .functor AND 1, L_0x559fbf2b89c0, L_0x559fbf2b8a60, C4<1>, C4<1>;
+L_0x559fbf2b87c0 .functor AND 1, L_0x559fbf2b8dc0, L_0x559fbf2b8550, C4<1>, C4<1>;
+L_0x559fbf2b88b0 .functor OR 1, L_0x559fbf2b8680, L_0x559fbf2b87c0, C4<0>, C4<0>;
+v0x559fbf239b90_0 .net "Cin", 0 0, L_0x559fbf2b8dc0;  1 drivers
+v0x559fbf237420_0 .net "Cout", 0 0, L_0x559fbf2b88b0;  1 drivers
+v0x559fbf2374e0_0 .net "S", 0 0, L_0x559fbf2b85c0;  1 drivers
+v0x559fbf237580_0 .net "X", 0 0, L_0x559fbf2b89c0;  1 drivers
+v0x559fbf234d80_0 .net "Y", 0 0, L_0x559fbf2b8a60;  1 drivers
+v0x559fbf234e40_0 .net *"_ivl_4", 0 0, L_0x559fbf2b8680;  1 drivers
+v0x559fbf2326e0_0 .net *"_ivl_6", 0 0, L_0x559fbf2b87c0;  1 drivers
+v0x559fbf2327c0_0 .net "xor1", 0 0, L_0x559fbf2b8550;  1 drivers
+S_0x559fbf230040 .scope generate, "genblk1[29]" "genblk1[29]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf22d9a0 .param/l "i" 0 4 29, +C4<011101>;
+S_0x559fbf22b300 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf230040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b8e60 .functor XOR 1, L_0x559fbf2b9300, L_0x559fbf2b9a80, C4<0>, C4<0>;
+L_0x559fbf2b8ed0 .functor XOR 1, L_0x559fbf2b8e60, L_0x559fbf2b9b20, C4<0>, C4<0>;
+L_0x559fbf2b8fc0 .functor AND 1, L_0x559fbf2b9300, L_0x559fbf2b9a80, C4<1>, C4<1>;
+L_0x559fbf2b9100 .functor AND 1, L_0x559fbf2b9b20, L_0x559fbf2b8e60, C4<1>, C4<1>;
+L_0x559fbf2b91f0 .functor OR 1, L_0x559fbf2b8fc0, L_0x559fbf2b9100, C4<0>, C4<0>;
+v0x559fbf22dae0_0 .net "Cin", 0 0, L_0x559fbf2b9b20;  1 drivers
+v0x559fbf228c60_0 .net "Cout", 0 0, L_0x559fbf2b91f0;  1 drivers
+v0x559fbf228d20_0 .net "S", 0 0, L_0x559fbf2b8ed0;  1 drivers
+v0x559fbf2265c0_0 .net "X", 0 0, L_0x559fbf2b9300;  1 drivers
+v0x559fbf226680_0 .net "Y", 0 0, L_0x559fbf2b9a80;  1 drivers
+v0x559fbf223f20_0 .net *"_ivl_4", 0 0, L_0x559fbf2b8fc0;  1 drivers
+v0x559fbf224000_0 .net *"_ivl_6", 0 0, L_0x559fbf2b9100;  1 drivers
+v0x559fbf221880_0 .net "xor1", 0 0, L_0x559fbf2b8e60;  1 drivers
+S_0x559fbf21f1e0 .scope generate, "genblk1[30]" "genblk1[30]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf21f370 .param/l "i" 0 4 29, +C4<011110>;
+S_0x559fbf2921f0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf21f1e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2b9ea0 .functor XOR 1, L_0x559fbf2ba340, L_0x559fbf2ba3e0, C4<0>, C4<0>;
+L_0x559fbf2b9f10 .functor XOR 1, L_0x559fbf2b9ea0, L_0x559fbf2ba770, C4<0>, C4<0>;
+L_0x559fbf2ba000 .functor AND 1, L_0x559fbf2ba340, L_0x559fbf2ba3e0, C4<1>, C4<1>;
+L_0x559fbf2ba140 .functor AND 1, L_0x559fbf2ba770, L_0x559fbf2b9ea0, C4<1>, C4<1>;
+L_0x559fbf2ba230 .functor OR 1, L_0x559fbf2ba000, L_0x559fbf2ba140, C4<0>, C4<0>;
+v0x559fbf218590_0 .net "Cin", 0 0, L_0x559fbf2ba770;  1 drivers
+v0x559fbf218670_0 .net "Cout", 0 0, L_0x559fbf2ba230;  1 drivers
+v0x559fbf218730_0 .net "S", 0 0, L_0x559fbf2b9f10;  1 drivers
+v0x559fbf215e70_0 .net "X", 0 0, L_0x559fbf2ba340;  1 drivers
+v0x559fbf215f30_0 .net "Y", 0 0, L_0x559fbf2ba3e0;  1 drivers
+v0x559fbf216040_0 .net *"_ivl_4", 0 0, L_0x559fbf2ba000;  1 drivers
+v0x559fbf2137d0_0 .net *"_ivl_6", 0 0, L_0x559fbf2ba140;  1 drivers
+v0x559fbf213890_0 .net "xor1", 0 0, L_0x559fbf2b9ea0;  1 drivers
+S_0x559fbf211130 .scope generate, "genblk1[31]" "genblk1[31]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf211330 .param/l "i" 0 4 29, +C4<011111>;
+S_0x559fbf20ea90 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf211130;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2ba810 .functor XOR 1, L_0x559fbf2bacb0, L_0x559fbf2bb050, C4<0>, C4<0>;
+L_0x559fbf2ba880 .functor XOR 1, L_0x559fbf2ba810, L_0x559fbf2bb500, C4<0>, C4<0>;
+L_0x559fbf2ba970 .functor AND 1, L_0x559fbf2bacb0, L_0x559fbf2bb050, C4<1>, C4<1>;
+L_0x559fbf2baab0 .functor AND 1, L_0x559fbf2bb500, L_0x559fbf2ba810, C4<1>, C4<1>;
+L_0x559fbf2baba0 .functor OR 1, L_0x559fbf2ba970, L_0x559fbf2baab0, C4<0>, C4<0>;
+v0x559fbf2139f0_0 .net "Cin", 0 0, L_0x559fbf2bb500;  1 drivers
+v0x559fbf20c3f0_0 .net "Cout", 0 0, L_0x559fbf2baba0;  1 drivers
+v0x559fbf20c490_0 .net "S", 0 0, L_0x559fbf2ba880;  1 drivers
+v0x559fbf20c530_0 .net "X", 0 0, L_0x559fbf2bacb0;  1 drivers
+v0x559fbf20c5f0_0 .net "Y", 0 0, L_0x559fbf2bb050;  1 drivers
+v0x559fbf209d50_0 .net *"_ivl_4", 0 0, L_0x559fbf2ba970;  1 drivers
+v0x559fbf209e30_0 .net *"_ivl_6", 0 0, L_0x559fbf2baab0;  1 drivers
+v0x559fbf209f10_0 .net "xor1", 0 0, L_0x559fbf2ba810;  1 drivers
+S_0x559fbf205050 .scope generate, "genblk1[32]" "genblk1[32]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf205250 .param/l "i" 0 4 29, +C4<0100000>;
+S_0x559fbf2029e0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf205050;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2bbcc0 .functor XOR 1, L_0x559fbf2bc160, L_0x559fbf2bc200, C4<0>, C4<0>;
+L_0x559fbf2bbd30 .functor XOR 1, L_0x559fbf2bbcc0, L_0x559fbf2bc5c0, C4<0>, C4<0>;
+L_0x559fbf2bbe20 .functor AND 1, L_0x559fbf2bc160, L_0x559fbf2bc200, C4<1>, C4<1>;
+L_0x559fbf2bbf60 .functor AND 1, L_0x559fbf2bc5c0, L_0x559fbf2bbcc0, C4<1>, C4<1>;
+L_0x559fbf2bc050 .functor OR 1, L_0x559fbf2bbe20, L_0x559fbf2bbf60, C4<0>, C4<0>;
+v0x559fbf200350_0 .net "Cin", 0 0, L_0x559fbf2bc5c0;  1 drivers
+v0x559fbf200430_0 .net "Cout", 0 0, L_0x559fbf2bc050;  1 drivers
+v0x559fbf2004f0_0 .net "S", 0 0, L_0x559fbf2bbd30;  1 drivers
+v0x559fbf235490_0 .net "X", 0 0, L_0x559fbf2bc160;  1 drivers
+v0x559fbf235550_0 .net "Y", 0 0, L_0x559fbf2bc200;  1 drivers
+v0x559fbf235660_0 .net *"_ivl_4", 0 0, L_0x559fbf2bbe20;  1 drivers
+v0x559fbf1fdc30_0 .net *"_ivl_6", 0 0, L_0x559fbf2bbf60;  1 drivers
+v0x559fbf1fdcf0_0 .net "xor1", 0 0, L_0x559fbf2bbcc0;  1 drivers
+S_0x559fbf22e0b0 .scope generate, "genblk1[33]" "genblk1[33]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf22e2b0 .param/l "i" 0 4 29, +C4<0100001>;
+S_0x559fbf22ba10 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf22e0b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2bc660 .functor XOR 1, L_0x559fbf2bcb00, L_0x559fbf2bced0, C4<0>, C4<0>;
+L_0x559fbf2bc6d0 .functor XOR 1, L_0x559fbf2bc660, L_0x559fbf2bcf70, C4<0>, C4<0>;
+L_0x559fbf2bc7c0 .functor AND 1, L_0x559fbf2bcb00, L_0x559fbf2bced0, C4<1>, C4<1>;
+L_0x559fbf2bc900 .functor AND 1, L_0x559fbf2bcf70, L_0x559fbf2bc660, C4<1>, C4<1>;
+L_0x559fbf2bc9f0 .functor OR 1, L_0x559fbf2bc7c0, L_0x559fbf2bc900, C4<0>, C4<0>;
+v0x559fbf1fde50_0 .net "Cin", 0 0, L_0x559fbf2bcf70;  1 drivers
+v0x559fbf229370_0 .net "Cout", 0 0, L_0x559fbf2bc9f0;  1 drivers
+v0x559fbf229430_0 .net "S", 0 0, L_0x559fbf2bc6d0;  1 drivers
+v0x559fbf229500_0 .net "X", 0 0, L_0x559fbf2bcb00;  1 drivers
+v0x559fbf221f90_0 .net "Y", 0 0, L_0x559fbf2bced0;  1 drivers
+v0x559fbf222050_0 .net *"_ivl_4", 0 0, L_0x559fbf2bc7c0;  1 drivers
+v0x559fbf222130_0 .net *"_ivl_6", 0 0, L_0x559fbf2bc900;  1 drivers
+v0x559fbf21f8f0_0 .net "xor1", 0 0, L_0x559fbf2bc660;  1 drivers
+S_0x559fbf21d250 .scope generate, "genblk1[34]" "genblk1[34]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf21d400 .param/l "i" 0 4 29, +C4<0100010>;
+S_0x559fbf21abb0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf21d250;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2bd350 .functor XOR 1, L_0x559fbf2bd7f0, L_0x559fbf2bd890, C4<0>, C4<0>;
+L_0x559fbf2bd3c0 .functor XOR 1, L_0x559fbf2bd350, L_0x559fbf2bdc80, C4<0>, C4<0>;
+L_0x559fbf2bd4b0 .functor AND 1, L_0x559fbf2bd7f0, L_0x559fbf2bd890, C4<1>, C4<1>;
+L_0x559fbf2bd5f0 .functor AND 1, L_0x559fbf2bdc80, L_0x559fbf2bd350, C4<1>, C4<1>;
+L_0x559fbf2bd6e0 .functor OR 1, L_0x559fbf2bd4b0, L_0x559fbf2bd5f0, C4<0>, C4<0>;
+v0x559fbf21adb0_0 .net "Cin", 0 0, L_0x559fbf2bdc80;  1 drivers
+v0x559fbf21fa50_0 .net "Cout", 0 0, L_0x559fbf2bd6e0;  1 drivers
+v0x559fbf1fb590_0 .net "S", 0 0, L_0x559fbf2bd3c0;  1 drivers
+v0x559fbf1fb630_0 .net "X", 0 0, L_0x559fbf2bd7f0;  1 drivers
+v0x559fbf1fb6f0_0 .net "Y", 0 0, L_0x559fbf2bd890;  1 drivers
+v0x559fbf2415b0_0 .net *"_ivl_4", 0 0, L_0x559fbf2bd4b0;  1 drivers
+v0x559fbf241690_0 .net *"_ivl_6", 0 0, L_0x559fbf2bd5f0;  1 drivers
+v0x559fbf241770_0 .net "xor1", 0 0, L_0x559fbf2bd350;  1 drivers
+S_0x559fbf23ef10 .scope generate, "genblk1[35]" "genblk1[35]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf23f0c0 .param/l "i" 0 4 29, +C4<0100011>;
+S_0x559fbf23c870 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf23ef10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2bdd20 .functor XOR 1, L_0x559fbf2be190, L_0x559fbf2be590, C4<0>, C4<0>;
+L_0x559fbf2bdd90 .functor XOR 1, L_0x559fbf2bdd20, L_0x559fbf2be630, C4<0>, C4<0>;
+L_0x559fbf2bde80 .functor AND 1, L_0x559fbf2be190, L_0x559fbf2be590, C4<1>, C4<1>;
+L_0x559fbf2bdf90 .functor AND 1, L_0x559fbf2be630, L_0x559fbf2bdd20, C4<1>, C4<1>;
+L_0x559fbf2be080 .functor OR 1, L_0x559fbf2bde80, L_0x559fbf2bdf90, C4<0>, C4<0>;
+v0x559fbf23caf0_0 .net "Cin", 0 0, L_0x559fbf2be630;  1 drivers
+v0x559fbf23f180_0 .net "Cout", 0 0, L_0x559fbf2be080;  1 drivers
+v0x559fbf23a1d0_0 .net "S", 0 0, L_0x559fbf2bdd90;  1 drivers
+v0x559fbf23a2a0_0 .net "X", 0 0, L_0x559fbf2be190;  1 drivers
+v0x559fbf23a360_0 .net "Y", 0 0, L_0x559fbf2be590;  1 drivers
+v0x559fbf23a470_0 .net *"_ivl_4", 0 0, L_0x559fbf2bde80;  1 drivers
+v0x559fbf237b30_0 .net *"_ivl_6", 0 0, L_0x559fbf2bdf90;  1 drivers
+v0x559fbf237bf0_0 .net "xor1", 0 0, L_0x559fbf2bdd20;  1 drivers
+S_0x559fbf232df0 .scope generate, "genblk1[36]" "genblk1[36]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf232ff0 .param/l "i" 0 4 29, +C4<0100100>;
+S_0x559fbf230750 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf232df0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2bea40 .functor XOR 1, L_0x559fbf2beeb0, L_0x559fbf2bef50, C4<0>, C4<0>;
+L_0x559fbf2beab0 .functor XOR 1, L_0x559fbf2bea40, L_0x559fbf2bf370, C4<0>, C4<0>;
+L_0x559fbf2beba0 .functor AND 1, L_0x559fbf2beeb0, L_0x559fbf2bef50, C4<1>, C4<1>;
+L_0x559fbf2becb0 .functor AND 1, L_0x559fbf2bf370, L_0x559fbf2bea40, C4<1>, C4<1>;
+L_0x559fbf2beda0 .functor OR 1, L_0x559fbf2beba0, L_0x559fbf2becb0, C4<0>, C4<0>;
+v0x559fbf2309d0_0 .net "Cin", 0 0, L_0x559fbf2bf370;  1 drivers
+v0x559fbf2330b0_0 .net "Cout", 0 0, L_0x559fbf2beda0;  1 drivers
+v0x559fbf237d50_0 .net "S", 0 0, L_0x559fbf2beab0;  1 drivers
+v0x559fbf226cd0_0 .net "X", 0 0, L_0x559fbf2beeb0;  1 drivers
+v0x559fbf226d70_0 .net "Y", 0 0, L_0x559fbf2bef50;  1 drivers
+v0x559fbf226e80_0 .net *"_ivl_4", 0 0, L_0x559fbf2beba0;  1 drivers
+v0x559fbf226f60_0 .net *"_ivl_6", 0 0, L_0x559fbf2becb0;  1 drivers
+v0x559fbf224630_0 .net "xor1", 0 0, L_0x559fbf2bea40;  1 drivers
+S_0x559fbf224790 .scope generate, "genblk1[37]" "genblk1[37]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf21d4c0 .param/l "i" 0 4 29, +C4<0100101>;
+S_0x559fbf243c50 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf224790;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2bf410 .functor XOR 1, L_0x559fbf2bf8b0, L_0x559fbf2bfce0, C4<0>, C4<0>;
+L_0x559fbf2bf480 .functor XOR 1, L_0x559fbf2bf410, L_0x559fbf2bfd80, C4<0>, C4<0>;
+L_0x559fbf2bf570 .functor AND 1, L_0x559fbf2bf8b0, L_0x559fbf2bfce0, C4<1>, C4<1>;
+L_0x559fbf2bf6b0 .functor AND 1, L_0x559fbf2bfd80, L_0x559fbf2bf410, C4<1>, C4<1>;
+L_0x559fbf2bf7a0 .functor OR 1, L_0x559fbf2bf570, L_0x559fbf2bf6b0, C4<0>, C4<0>;
+v0x559fbf243ed0_0 .net "Cin", 0 0, L_0x559fbf2bfd80;  1 drivers
+v0x559fbf2076b0_0 .net "Cout", 0 0, L_0x559fbf2bf7a0;  1 drivers
+v0x559fbf207770_0 .net "S", 0 0, L_0x559fbf2bf480;  1 drivers
+v0x559fbf207840_0 .net "X", 0 0, L_0x559fbf2bf8b0;  1 drivers
+v0x559fbf207900_0 .net "Y", 0 0, L_0x559fbf2bfce0;  1 drivers
+v0x559fbf207a10_0 .net *"_ivl_4", 0 0, L_0x559fbf2bf570;  1 drivers
+v0x559fbf175cf0_0 .net *"_ivl_6", 0 0, L_0x559fbf2bf6b0;  1 drivers
+v0x559fbf175dd0_0 .net "xor1", 0 0, L_0x559fbf2bf410;  1 drivers
+S_0x559fbf175f30 .scope generate, "genblk1[38]" "genblk1[38]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf176130 .param/l "i" 0 4 29, +C4<0100110>;
+S_0x559fbf1b30d0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf175f30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c01c0 .functor XOR 1, L_0x559fbf2c0660, L_0x559fbf2c0700, C4<0>, C4<0>;
+L_0x559fbf2c0230 .functor XOR 1, L_0x559fbf2c01c0, L_0x559fbf2c0b50, C4<0>, C4<0>;
+L_0x559fbf2c0320 .functor AND 1, L_0x559fbf2c0660, L_0x559fbf2c0700, C4<1>, C4<1>;
+L_0x559fbf2c0460 .functor AND 1, L_0x559fbf2c0b50, L_0x559fbf2c01c0, C4<1>, C4<1>;
+L_0x559fbf2c0550 .functor OR 1, L_0x559fbf2c0320, L_0x559fbf2c0460, C4<0>, C4<0>;
+v0x559fbf1b32d0_0 .net "Cin", 0 0, L_0x559fbf2c0b50;  1 drivers
+v0x559fbf1b33b0_0 .net "Cout", 0 0, L_0x559fbf2c0550;  1 drivers
+v0x559fbf1b3470_0 .net "S", 0 0, L_0x559fbf2c0230;  1 drivers
+v0x559fbf1b4f60_0 .net "X", 0 0, L_0x559fbf2c0660;  1 drivers
+v0x559fbf1b5020_0 .net "Y", 0 0, L_0x559fbf2c0700;  1 drivers
+v0x559fbf1b50e0_0 .net *"_ivl_4", 0 0, L_0x559fbf2c0320;  1 drivers
+v0x559fbf1b51c0_0 .net *"_ivl_6", 0 0, L_0x559fbf2c0460;  1 drivers
+v0x559fbf1b52a0_0 .net "xor1", 0 0, L_0x559fbf2c01c0;  1 drivers
+S_0x559fbf1af800 .scope generate, "genblk1[39]" "genblk1[39]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf1af9e0 .param/l "i" 0 4 29, +C4<0100111>;
+S_0x559fbf1afaa0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf1af800;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c0bf0 .functor XOR 1, L_0x559fbf2c1090, L_0x559fbf2c14f0, C4<0>, C4<0>;
+L_0x559fbf2c0c60 .functor XOR 1, L_0x559fbf2c0bf0, L_0x559fbf2c1590, C4<0>, C4<0>;
+L_0x559fbf2c0d50 .functor AND 1, L_0x559fbf2c1090, L_0x559fbf2c14f0, C4<1>, C4<1>;
+L_0x559fbf2c0e90 .functor AND 1, L_0x559fbf2c1590, L_0x559fbf2c0bf0, C4<1>, C4<1>;
+L_0x559fbf2c0f80 .functor OR 1, L_0x559fbf2c0d50, L_0x559fbf2c0e90, C4<0>, C4<0>;
+v0x559fbf294df0_0 .net "Cin", 0 0, L_0x559fbf2c1590;  1 drivers
+v0x559fbf294eb0_0 .net "Cout", 0 0, L_0x559fbf2c0f80;  1 drivers
+v0x559fbf294f70_0 .net "S", 0 0, L_0x559fbf2c0c60;  1 drivers
+v0x559fbf295040_0 .net "X", 0 0, L_0x559fbf2c1090;  1 drivers
+v0x559fbf295100_0 .net "Y", 0 0, L_0x559fbf2c14f0;  1 drivers
+v0x559fbf295210_0 .net *"_ivl_4", 0 0, L_0x559fbf2c0d50;  1 drivers
+v0x559fbf2952f0_0 .net *"_ivl_6", 0 0, L_0x559fbf2c0e90;  1 drivers
+v0x559fbf2953d0_0 .net "xor1", 0 0, L_0x559fbf2c0bf0;  1 drivers
+S_0x559fbf295530 .scope generate, "genblk1[40]" "genblk1[40]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf295730 .param/l "i" 0 4 29, +C4<0101000>;
+S_0x559fbf2957f0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf295530;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c1a00 .functor XOR 1, L_0x559fbf2c1ea0, L_0x559fbf2c1f40, C4<0>, C4<0>;
+L_0x559fbf2c1a70 .functor XOR 1, L_0x559fbf2c1a00, L_0x559fbf2c23c0, C4<0>, C4<0>;
+L_0x559fbf2c1b60 .functor AND 1, L_0x559fbf2c1ea0, L_0x559fbf2c1f40, C4<1>, C4<1>;
+L_0x559fbf2c1ca0 .functor AND 1, L_0x559fbf2c23c0, L_0x559fbf2c1a00, C4<1>, C4<1>;
+L_0x559fbf2c1d90 .functor OR 1, L_0x559fbf2c1b60, L_0x559fbf2c1ca0, C4<0>, C4<0>;
+v0x559fbf295a70_0 .net "Cin", 0 0, L_0x559fbf2c23c0;  1 drivers
+v0x559fbf295b50_0 .net "Cout", 0 0, L_0x559fbf2c1d90;  1 drivers
+v0x559fbf295c10_0 .net "S", 0 0, L_0x559fbf2c1a70;  1 drivers
+v0x559fbf295ce0_0 .net "X", 0 0, L_0x559fbf2c1ea0;  1 drivers
+v0x559fbf295da0_0 .net "Y", 0 0, L_0x559fbf2c1f40;  1 drivers
+v0x559fbf295eb0_0 .net *"_ivl_4", 0 0, L_0x559fbf2c1b60;  1 drivers
+v0x559fbf295f90_0 .net *"_ivl_6", 0 0, L_0x559fbf2c1ca0;  1 drivers
+v0x559fbf296070_0 .net "xor1", 0 0, L_0x559fbf2c1a00;  1 drivers
+S_0x559fbf2961d0 .scope generate, "genblk1[41]" "genblk1[41]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2963d0 .param/l "i" 0 4 29, +C4<0101001>;
+S_0x559fbf296490 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2961d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c2460 .functor XOR 1, L_0x559fbf2c2900, L_0x559fbf2c2d90, C4<0>, C4<0>;
+L_0x559fbf2c24d0 .functor XOR 1, L_0x559fbf2c2460, L_0x559fbf2c2e30, C4<0>, C4<0>;
+L_0x559fbf2c25c0 .functor AND 1, L_0x559fbf2c2900, L_0x559fbf2c2d90, C4<1>, C4<1>;
+L_0x559fbf2c2700 .functor AND 1, L_0x559fbf2c2e30, L_0x559fbf2c2460, C4<1>, C4<1>;
+L_0x559fbf2c27f0 .functor OR 1, L_0x559fbf2c25c0, L_0x559fbf2c2700, C4<0>, C4<0>;
+v0x559fbf296710_0 .net "Cin", 0 0, L_0x559fbf2c2e30;  1 drivers
+v0x559fbf2967f0_0 .net "Cout", 0 0, L_0x559fbf2c27f0;  1 drivers
+v0x559fbf2968b0_0 .net "S", 0 0, L_0x559fbf2c24d0;  1 drivers
+v0x559fbf296980_0 .net "X", 0 0, L_0x559fbf2c2900;  1 drivers
+v0x559fbf296a40_0 .net "Y", 0 0, L_0x559fbf2c2d90;  1 drivers
+v0x559fbf296b50_0 .net *"_ivl_4", 0 0, L_0x559fbf2c25c0;  1 drivers
+v0x559fbf296c30_0 .net *"_ivl_6", 0 0, L_0x559fbf2c2700;  1 drivers
+v0x559fbf296d10_0 .net "xor1", 0 0, L_0x559fbf2c2460;  1 drivers
+S_0x559fbf296e70 .scope generate, "genblk1[42]" "genblk1[42]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf297070 .param/l "i" 0 4 29, +C4<0101010>;
+S_0x559fbf297130 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf296e70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c32d0 .functor XOR 1, L_0x559fbf2c3770, L_0x559fbf2c3810, C4<0>, C4<0>;
+L_0x559fbf2c3340 .functor XOR 1, L_0x559fbf2c32d0, L_0x559fbf2c3cc0, C4<0>, C4<0>;
+L_0x559fbf2c3430 .functor AND 1, L_0x559fbf2c3770, L_0x559fbf2c3810, C4<1>, C4<1>;
+L_0x559fbf2c3570 .functor AND 1, L_0x559fbf2c3cc0, L_0x559fbf2c32d0, C4<1>, C4<1>;
+L_0x559fbf2c3660 .functor OR 1, L_0x559fbf2c3430, L_0x559fbf2c3570, C4<0>, C4<0>;
+v0x559fbf2973b0_0 .net "Cin", 0 0, L_0x559fbf2c3cc0;  1 drivers
+v0x559fbf297490_0 .net "Cout", 0 0, L_0x559fbf2c3660;  1 drivers
+v0x559fbf297550_0 .net "S", 0 0, L_0x559fbf2c3340;  1 drivers
+v0x559fbf297620_0 .net "X", 0 0, L_0x559fbf2c3770;  1 drivers
+v0x559fbf2976e0_0 .net "Y", 0 0, L_0x559fbf2c3810;  1 drivers
+v0x559fbf2977f0_0 .net *"_ivl_4", 0 0, L_0x559fbf2c3430;  1 drivers
+v0x559fbf2978d0_0 .net *"_ivl_6", 0 0, L_0x559fbf2c3570;  1 drivers
+v0x559fbf2979b0_0 .net "xor1", 0 0, L_0x559fbf2c32d0;  1 drivers
+S_0x559fbf297b10 .scope generate, "genblk1[43]" "genblk1[43]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf297d10 .param/l "i" 0 4 29, +C4<0101011>;
+S_0x559fbf297dd0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf297b10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c3d60 .functor XOR 1, L_0x559fbf2c4200, L_0x559fbf2c46c0, C4<0>, C4<0>;
+L_0x559fbf2c3dd0 .functor XOR 1, L_0x559fbf2c3d60, L_0x559fbf2c4760, C4<0>, C4<0>;
+L_0x559fbf2c3ec0 .functor AND 1, L_0x559fbf2c4200, L_0x559fbf2c46c0, C4<1>, C4<1>;
+L_0x559fbf2c4000 .functor AND 1, L_0x559fbf2c4760, L_0x559fbf2c3d60, C4<1>, C4<1>;
+L_0x559fbf2c40f0 .functor OR 1, L_0x559fbf2c3ec0, L_0x559fbf2c4000, C4<0>, C4<0>;
+v0x559fbf298050_0 .net "Cin", 0 0, L_0x559fbf2c4760;  1 drivers
+v0x559fbf298130_0 .net "Cout", 0 0, L_0x559fbf2c40f0;  1 drivers
+v0x559fbf2981f0_0 .net "S", 0 0, L_0x559fbf2c3dd0;  1 drivers
+v0x559fbf2982c0_0 .net "X", 0 0, L_0x559fbf2c4200;  1 drivers
+v0x559fbf298380_0 .net "Y", 0 0, L_0x559fbf2c46c0;  1 drivers
+v0x559fbf298490_0 .net *"_ivl_4", 0 0, L_0x559fbf2c3ec0;  1 drivers
+v0x559fbf298570_0 .net *"_ivl_6", 0 0, L_0x559fbf2c4000;  1 drivers
+v0x559fbf298650_0 .net "xor1", 0 0, L_0x559fbf2c3d60;  1 drivers
+S_0x559fbf2987b0 .scope generate, "genblk1[44]" "genblk1[44]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2989b0 .param/l "i" 0 4 29, +C4<0101100>;
+S_0x559fbf298a70 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2987b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c42a0 .functor XOR 1, L_0x559fbf2c4cd0, L_0x559fbf2c4d70, C4<0>, C4<0>;
+L_0x559fbf2c4310 .functor XOR 1, L_0x559fbf2c42a0, L_0x559fbf2c4800, C4<0>, C4<0>;
+L_0x559fbf2c4400 .functor AND 1, L_0x559fbf2c4cd0, L_0x559fbf2c4d70, C4<1>, C4<1>;
+L_0x559fbf2c4540 .functor AND 1, L_0x559fbf2c4800, L_0x559fbf2c42a0, C4<1>, C4<1>;
+L_0x559fbf2c4630 .functor OR 1, L_0x559fbf2c4400, L_0x559fbf2c4540, C4<0>, C4<0>;
+v0x559fbf298cf0_0 .net "Cin", 0 0, L_0x559fbf2c4800;  1 drivers
+v0x559fbf298dd0_0 .net "Cout", 0 0, L_0x559fbf2c4630;  1 drivers
+v0x559fbf298e90_0 .net "S", 0 0, L_0x559fbf2c4310;  1 drivers
+v0x559fbf298f60_0 .net "X", 0 0, L_0x559fbf2c4cd0;  1 drivers
+v0x559fbf299020_0 .net "Y", 0 0, L_0x559fbf2c4d70;  1 drivers
+v0x559fbf299130_0 .net *"_ivl_4", 0 0, L_0x559fbf2c4400;  1 drivers
+v0x559fbf299210_0 .net *"_ivl_6", 0 0, L_0x559fbf2c4540;  1 drivers
+v0x559fbf2992f0_0 .net "xor1", 0 0, L_0x559fbf2c42a0;  1 drivers
+S_0x559fbf299450 .scope generate, "genblk1[45]" "genblk1[45]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf299650 .param/l "i" 0 4 29, +C4<0101101>;
+S_0x559fbf299710 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf299450;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c48a0 .functor XOR 1, L_0x559fbf2c5360, L_0x559fbf2c4e10, C4<0>, C4<0>;
+L_0x559fbf2c4910 .functor XOR 1, L_0x559fbf2c48a0, L_0x559fbf2c4eb0, C4<0>, C4<0>;
+L_0x559fbf2c4a00 .functor AND 1, L_0x559fbf2c5360, L_0x559fbf2c4e10, C4<1>, C4<1>;
+L_0x559fbf2c4b40 .functor AND 1, L_0x559fbf2c4eb0, L_0x559fbf2c48a0, C4<1>, C4<1>;
+L_0x559fbf2c5250 .functor OR 1, L_0x559fbf2c4a00, L_0x559fbf2c4b40, C4<0>, C4<0>;
+v0x559fbf299990_0 .net "Cin", 0 0, L_0x559fbf2c4eb0;  1 drivers
+v0x559fbf299a70_0 .net "Cout", 0 0, L_0x559fbf2c5250;  1 drivers
+v0x559fbf299b30_0 .net "S", 0 0, L_0x559fbf2c4910;  1 drivers
+v0x559fbf299c00_0 .net "X", 0 0, L_0x559fbf2c5360;  1 drivers
+v0x559fbf299cc0_0 .net "Y", 0 0, L_0x559fbf2c4e10;  1 drivers
+v0x559fbf299dd0_0 .net *"_ivl_4", 0 0, L_0x559fbf2c4a00;  1 drivers
+v0x559fbf299eb0_0 .net *"_ivl_6", 0 0, L_0x559fbf2c4b40;  1 drivers
+v0x559fbf299f90_0 .net "xor1", 0 0, L_0x559fbf2c48a0;  1 drivers
+S_0x559fbf29a0f0 .scope generate, "genblk1[46]" "genblk1[46]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf29a2f0 .param/l "i" 0 4 29, +C4<0101110>;
+S_0x559fbf29a3b0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf29a0f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c4f50 .functor XOR 1, L_0x559fbf2c5a10, L_0x559fbf2c5ab0, C4<0>, C4<0>;
+L_0x559fbf2c4fc0 .functor XOR 1, L_0x559fbf2c4f50, L_0x559fbf2c5400, C4<0>, C4<0>;
+L_0x559fbf2c50b0 .functor AND 1, L_0x559fbf2c5a10, L_0x559fbf2c5ab0, C4<1>, C4<1>;
+L_0x559fbf2c5860 .functor AND 1, L_0x559fbf2c5400, L_0x559fbf2c4f50, C4<1>, C4<1>;
+L_0x559fbf2c5900 .functor OR 1, L_0x559fbf2c50b0, L_0x559fbf2c5860, C4<0>, C4<0>;
+v0x559fbf29a630_0 .net "Cin", 0 0, L_0x559fbf2c5400;  1 drivers
+v0x559fbf29a710_0 .net "Cout", 0 0, L_0x559fbf2c5900;  1 drivers
+v0x559fbf29a7d0_0 .net "S", 0 0, L_0x559fbf2c4fc0;  1 drivers
+v0x559fbf29a8a0_0 .net "X", 0 0, L_0x559fbf2c5a10;  1 drivers
+v0x559fbf29a960_0 .net "Y", 0 0, L_0x559fbf2c5ab0;  1 drivers
+v0x559fbf29aa70_0 .net *"_ivl_4", 0 0, L_0x559fbf2c50b0;  1 drivers
+v0x559fbf29ab50_0 .net *"_ivl_6", 0 0, L_0x559fbf2c5860;  1 drivers
+v0x559fbf29ac30_0 .net "xor1", 0 0, L_0x559fbf2c4f50;  1 drivers
+S_0x559fbf29ad90 .scope generate, "genblk1[47]" "genblk1[47]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf29af90 .param/l "i" 0 4 29, +C4<0101111>;
+S_0x559fbf29b050 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf29ad90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c54a0 .functor XOR 1, L_0x559fbf2c60d0, L_0x559fbf2c5b50, C4<0>, C4<0>;
+L_0x559fbf2c5510 .functor XOR 1, L_0x559fbf2c54a0, L_0x559fbf2c5bf0, C4<0>, C4<0>;
+L_0x559fbf2c5600 .functor AND 1, L_0x559fbf2c60d0, L_0x559fbf2c5b50, C4<1>, C4<1>;
+L_0x559fbf2c5740 .functor AND 1, L_0x559fbf2c5bf0, L_0x559fbf2c54a0, C4<1>, C4<1>;
+L_0x559fbf2c5fc0 .functor OR 1, L_0x559fbf2c5600, L_0x559fbf2c5740, C4<0>, C4<0>;
+v0x559fbf29b2d0_0 .net "Cin", 0 0, L_0x559fbf2c5bf0;  1 drivers
+v0x559fbf29b3b0_0 .net "Cout", 0 0, L_0x559fbf2c5fc0;  1 drivers
+v0x559fbf29b470_0 .net "S", 0 0, L_0x559fbf2c5510;  1 drivers
+v0x559fbf29b540_0 .net "X", 0 0, L_0x559fbf2c60d0;  1 drivers
+v0x559fbf29b600_0 .net "Y", 0 0, L_0x559fbf2c5b50;  1 drivers
+v0x559fbf29b710_0 .net *"_ivl_4", 0 0, L_0x559fbf2c5600;  1 drivers
+v0x559fbf29b7f0_0 .net *"_ivl_6", 0 0, L_0x559fbf2c5740;  1 drivers
+v0x559fbf29b8d0_0 .net "xor1", 0 0, L_0x559fbf2c54a0;  1 drivers
+S_0x559fbf29ba30 .scope generate, "genblk1[48]" "genblk1[48]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf29bc30 .param/l "i" 0 4 29, +C4<0110000>;
+S_0x559fbf29bcf0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf29ba30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c5c90 .functor XOR 1, L_0x559fbf2c6740, L_0x559fbf2c67e0, C4<0>, C4<0>;
+L_0x559fbf2c5d00 .functor XOR 1, L_0x559fbf2c5c90, L_0x559fbf2c6170, C4<0>, C4<0>;
+L_0x559fbf2c5dc0 .functor AND 1, L_0x559fbf2c6740, L_0x559fbf2c67e0, C4<1>, C4<1>;
+L_0x559fbf2c5f00 .functor AND 1, L_0x559fbf2c6170, L_0x559fbf2c5c90, C4<1>, C4<1>;
+L_0x559fbf2c6630 .functor OR 1, L_0x559fbf2c5dc0, L_0x559fbf2c5f00, C4<0>, C4<0>;
+v0x559fbf29bf70_0 .net "Cin", 0 0, L_0x559fbf2c6170;  1 drivers
+v0x559fbf29c050_0 .net "Cout", 0 0, L_0x559fbf2c6630;  1 drivers
+v0x559fbf29c110_0 .net "S", 0 0, L_0x559fbf2c5d00;  1 drivers
+v0x559fbf29c1e0_0 .net "X", 0 0, L_0x559fbf2c6740;  1 drivers
+v0x559fbf29c2a0_0 .net "Y", 0 0, L_0x559fbf2c67e0;  1 drivers
+v0x559fbf29c3b0_0 .net *"_ivl_4", 0 0, L_0x559fbf2c5dc0;  1 drivers
+v0x559fbf29c490_0 .net *"_ivl_6", 0 0, L_0x559fbf2c5f00;  1 drivers
+v0x559fbf29c570_0 .net "xor1", 0 0, L_0x559fbf2c5c90;  1 drivers
+S_0x559fbf29c6d0 .scope generate, "genblk1[49]" "genblk1[49]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf29c8d0 .param/l "i" 0 4 29, +C4<0110001>;
+S_0x559fbf29c990 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf29c6d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c6210 .functor XOR 1, L_0x559fbf2c6de0, L_0x559fbf2c6880, C4<0>, C4<0>;
+L_0x559fbf2c6280 .functor XOR 1, L_0x559fbf2c6210, L_0x559fbf2c6920, C4<0>, C4<0>;
+L_0x559fbf2c6370 .functor AND 1, L_0x559fbf2c6de0, L_0x559fbf2c6880, C4<1>, C4<1>;
+L_0x559fbf2c64b0 .functor AND 1, L_0x559fbf2c6920, L_0x559fbf2c6210, C4<1>, C4<1>;
+L_0x559fbf2c6d20 .functor OR 1, L_0x559fbf2c6370, L_0x559fbf2c64b0, C4<0>, C4<0>;
+v0x559fbf29cc10_0 .net "Cin", 0 0, L_0x559fbf2c6920;  1 drivers
+v0x559fbf29ccf0_0 .net "Cout", 0 0, L_0x559fbf2c6d20;  1 drivers
+v0x559fbf29cdb0_0 .net "S", 0 0, L_0x559fbf2c6280;  1 drivers
+v0x559fbf29ce80_0 .net "X", 0 0, L_0x559fbf2c6de0;  1 drivers
+v0x559fbf29cf40_0 .net "Y", 0 0, L_0x559fbf2c6880;  1 drivers
+v0x559fbf29d050_0 .net *"_ivl_4", 0 0, L_0x559fbf2c6370;  1 drivers
+v0x559fbf29d130_0 .net *"_ivl_6", 0 0, L_0x559fbf2c64b0;  1 drivers
+v0x559fbf29d210_0 .net "xor1", 0 0, L_0x559fbf2c6210;  1 drivers
+S_0x559fbf29d370 .scope generate, "genblk1[50]" "genblk1[50]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf29d570 .param/l "i" 0 4 29, +C4<0110010>;
+S_0x559fbf29d630 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf29d370;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c69c0 .functor XOR 1, L_0x559fbf2c7480, L_0x559fbf2c7520, C4<0>, C4<0>;
+L_0x559fbf2c6a30 .functor XOR 1, L_0x559fbf2c69c0, L_0x559fbf2c6e80, C4<0>, C4<0>;
+L_0x559fbf2c6b20 .functor AND 1, L_0x559fbf2c7480, L_0x559fbf2c7520, C4<1>, C4<1>;
+L_0x559fbf2c6c60 .functor AND 1, L_0x559fbf2c6e80, L_0x559fbf2c69c0, C4<1>, C4<1>;
+L_0x559fbf2c7370 .functor OR 1, L_0x559fbf2c6b20, L_0x559fbf2c6c60, C4<0>, C4<0>;
+v0x559fbf29d8b0_0 .net "Cin", 0 0, L_0x559fbf2c6e80;  1 drivers
+v0x559fbf29d990_0 .net "Cout", 0 0, L_0x559fbf2c7370;  1 drivers
+v0x559fbf29da50_0 .net "S", 0 0, L_0x559fbf2c6a30;  1 drivers
+v0x559fbf29db20_0 .net "X", 0 0, L_0x559fbf2c7480;  1 drivers
+v0x559fbf29dbe0_0 .net "Y", 0 0, L_0x559fbf2c7520;  1 drivers
+v0x559fbf29dcf0_0 .net *"_ivl_4", 0 0, L_0x559fbf2c6b20;  1 drivers
+v0x559fbf29ddd0_0 .net *"_ivl_6", 0 0, L_0x559fbf2c6c60;  1 drivers
+v0x559fbf29deb0_0 .net "xor1", 0 0, L_0x559fbf2c69c0;  1 drivers
+S_0x559fbf29e010 .scope generate, "genblk1[51]" "genblk1[51]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf29e210 .param/l "i" 0 4 29, +C4<0110011>;
+S_0x559fbf29e2d0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf29e010;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c6f20 .functor XOR 1, L_0x559fbf2c7b30, L_0x559fbf2c75c0, C4<0>, C4<0>;
+L_0x559fbf2c6f90 .functor XOR 1, L_0x559fbf2c6f20, L_0x559fbf2c7660, C4<0>, C4<0>;
+L_0x559fbf2c7080 .functor AND 1, L_0x559fbf2c7b30, L_0x559fbf2c75c0, C4<1>, C4<1>;
+L_0x559fbf2c71c0 .functor AND 1, L_0x559fbf2c7660, L_0x559fbf2c6f20, C4<1>, C4<1>;
+L_0x559fbf2c72b0 .functor OR 1, L_0x559fbf2c7080, L_0x559fbf2c71c0, C4<0>, C4<0>;
+v0x559fbf29e550_0 .net "Cin", 0 0, L_0x559fbf2c7660;  1 drivers
+v0x559fbf29e630_0 .net "Cout", 0 0, L_0x559fbf2c72b0;  1 drivers
+v0x559fbf29e6f0_0 .net "S", 0 0, L_0x559fbf2c6f90;  1 drivers
+v0x559fbf29e7c0_0 .net "X", 0 0, L_0x559fbf2c7b30;  1 drivers
+v0x559fbf29e880_0 .net "Y", 0 0, L_0x559fbf2c75c0;  1 drivers
+v0x559fbf29e990_0 .net *"_ivl_4", 0 0, L_0x559fbf2c7080;  1 drivers
+v0x559fbf29ea70_0 .net *"_ivl_6", 0 0, L_0x559fbf2c71c0;  1 drivers
+v0x559fbf29eb50_0 .net "xor1", 0 0, L_0x559fbf2c6f20;  1 drivers
+S_0x559fbf29ecb0 .scope generate, "genblk1[52]" "genblk1[52]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf29eeb0 .param/l "i" 0 4 29, +C4<0110100>;
+S_0x559fbf29ef70 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf29ecb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c7700 .functor XOR 1, L_0x559fbf2c81d0, L_0x559fbf2c8270, C4<0>, C4<0>;
+L_0x559fbf2c7770 .functor XOR 1, L_0x559fbf2c7700, L_0x559fbf2c7bd0, C4<0>, C4<0>;
+L_0x559fbf2c7860 .functor AND 1, L_0x559fbf2c81d0, L_0x559fbf2c8270, C4<1>, C4<1>;
+L_0x559fbf2c79a0 .functor AND 1, L_0x559fbf2c7bd0, L_0x559fbf2c7700, C4<1>, C4<1>;
+L_0x559fbf2c80c0 .functor OR 1, L_0x559fbf2c7860, L_0x559fbf2c79a0, C4<0>, C4<0>;
+v0x559fbf29f1f0_0 .net "Cin", 0 0, L_0x559fbf2c7bd0;  1 drivers
+v0x559fbf29f2d0_0 .net "Cout", 0 0, L_0x559fbf2c80c0;  1 drivers
+v0x559fbf29f390_0 .net "S", 0 0, L_0x559fbf2c7770;  1 drivers
+v0x559fbf29f460_0 .net "X", 0 0, L_0x559fbf2c81d0;  1 drivers
+v0x559fbf29f520_0 .net "Y", 0 0, L_0x559fbf2c8270;  1 drivers
+v0x559fbf29f630_0 .net *"_ivl_4", 0 0, L_0x559fbf2c7860;  1 drivers
+v0x559fbf29f710_0 .net *"_ivl_6", 0 0, L_0x559fbf2c79a0;  1 drivers
+v0x559fbf29f7f0_0 .net "xor1", 0 0, L_0x559fbf2c7700;  1 drivers
+S_0x559fbf29f950 .scope generate, "genblk1[53]" "genblk1[53]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf29fb50 .param/l "i" 0 4 29, +C4<0110101>;
+S_0x559fbf29fc10 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf29f950;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c7c70 .functor XOR 1, L_0x559fbf2c8860, L_0x559fbf2c8310, C4<0>, C4<0>;
+L_0x559fbf2c7ce0 .functor XOR 1, L_0x559fbf2c7c70, L_0x559fbf2c83b0, C4<0>, C4<0>;
+L_0x559fbf2c7dd0 .functor AND 1, L_0x559fbf2c8860, L_0x559fbf2c8310, C4<1>, C4<1>;
+L_0x559fbf2c7f10 .functor AND 1, L_0x559fbf2c83b0, L_0x559fbf2c7c70, C4<1>, C4<1>;
+L_0x559fbf2c8000 .functor OR 1, L_0x559fbf2c7dd0, L_0x559fbf2c7f10, C4<0>, C4<0>;
+v0x559fbf29fe90_0 .net "Cin", 0 0, L_0x559fbf2c83b0;  1 drivers
+v0x559fbf29ff70_0 .net "Cout", 0 0, L_0x559fbf2c8000;  1 drivers
+v0x559fbf2a0030_0 .net "S", 0 0, L_0x559fbf2c7ce0;  1 drivers
+v0x559fbf2a0100_0 .net "X", 0 0, L_0x559fbf2c8860;  1 drivers
+v0x559fbf2a01c0_0 .net "Y", 0 0, L_0x559fbf2c8310;  1 drivers
+v0x559fbf2a02d0_0 .net *"_ivl_4", 0 0, L_0x559fbf2c7dd0;  1 drivers
+v0x559fbf2a03b0_0 .net *"_ivl_6", 0 0, L_0x559fbf2c7f10;  1 drivers
+v0x559fbf2a0490_0 .net "xor1", 0 0, L_0x559fbf2c7c70;  1 drivers
+S_0x559fbf2a05f0 .scope generate, "genblk1[54]" "genblk1[54]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a07f0 .param/l "i" 0 4 29, +C4<0110110>;
+S_0x559fbf2a08b0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a05f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c8450 .functor XOR 1, L_0x559fbf2c8f30, L_0x559fbf2c8fd0, C4<0>, C4<0>;
+L_0x559fbf2c84c0 .functor XOR 1, L_0x559fbf2c8450, L_0x559fbf2c8900, C4<0>, C4<0>;
+L_0x559fbf2c85b0 .functor AND 1, L_0x559fbf2c8f30, L_0x559fbf2c8fd0, C4<1>, C4<1>;
+L_0x559fbf2c86f0 .functor AND 1, L_0x559fbf2c8900, L_0x559fbf2c8450, C4<1>, C4<1>;
+L_0x559fbf2c8e20 .functor OR 1, L_0x559fbf2c85b0, L_0x559fbf2c86f0, C4<0>, C4<0>;
+v0x559fbf2a0b30_0 .net "Cin", 0 0, L_0x559fbf2c8900;  1 drivers
+v0x559fbf2a0c10_0 .net "Cout", 0 0, L_0x559fbf2c8e20;  1 drivers
+v0x559fbf2a0cd0_0 .net "S", 0 0, L_0x559fbf2c84c0;  1 drivers
+v0x559fbf2a0da0_0 .net "X", 0 0, L_0x559fbf2c8f30;  1 drivers
+v0x559fbf2a0e60_0 .net "Y", 0 0, L_0x559fbf2c8fd0;  1 drivers
+v0x559fbf2a0f70_0 .net *"_ivl_4", 0 0, L_0x559fbf2c85b0;  1 drivers
+v0x559fbf2a1050_0 .net *"_ivl_6", 0 0, L_0x559fbf2c86f0;  1 drivers
+v0x559fbf2a1130_0 .net "xor1", 0 0, L_0x559fbf2c8450;  1 drivers
+S_0x559fbf2a1290 .scope generate, "genblk1[55]" "genblk1[55]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a1490 .param/l "i" 0 4 29, +C4<0110111>;
+S_0x559fbf2a1550 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a1290;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c89a0 .functor XOR 1, L_0x559fbf2c95a0, L_0x559fbf2c9070, C4<0>, C4<0>;
+L_0x559fbf2c8a10 .functor XOR 1, L_0x559fbf2c89a0, L_0x559fbf2c9110, C4<0>, C4<0>;
+L_0x559fbf2c8ad0 .functor AND 1, L_0x559fbf2c95a0, L_0x559fbf2c9070, C4<1>, C4<1>;
+L_0x559fbf2c8c10 .functor AND 1, L_0x559fbf2c9110, L_0x559fbf2c89a0, C4<1>, C4<1>;
+L_0x559fbf2c8d00 .functor OR 1, L_0x559fbf2c8ad0, L_0x559fbf2c8c10, C4<0>, C4<0>;
+v0x559fbf2a17d0_0 .net "Cin", 0 0, L_0x559fbf2c9110;  1 drivers
+v0x559fbf2a18b0_0 .net "Cout", 0 0, L_0x559fbf2c8d00;  1 drivers
+v0x559fbf2a1970_0 .net "S", 0 0, L_0x559fbf2c8a10;  1 drivers
+v0x559fbf2a1a40_0 .net "X", 0 0, L_0x559fbf2c95a0;  1 drivers
+v0x559fbf2a1b00_0 .net "Y", 0 0, L_0x559fbf2c9070;  1 drivers
+v0x559fbf2a1c10_0 .net *"_ivl_4", 0 0, L_0x559fbf2c8ad0;  1 drivers
+v0x559fbf2a1cf0_0 .net *"_ivl_6", 0 0, L_0x559fbf2c8c10;  1 drivers
+v0x559fbf2a1dd0_0 .net "xor1", 0 0, L_0x559fbf2c89a0;  1 drivers
+S_0x559fbf2a1f30 .scope generate, "genblk1[56]" "genblk1[56]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a2130 .param/l "i" 0 4 29, +C4<0111000>;
+S_0x559fbf2a21f0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a1f30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c91b0 .functor XOR 1, L_0x559fbf2c9c50, L_0x559fbf2c9cf0, C4<0>, C4<0>;
+L_0x559fbf2c9220 .functor XOR 1, L_0x559fbf2c91b0, L_0x559fbf2c9640, C4<0>, C4<0>;
+L_0x559fbf2c9310 .functor AND 1, L_0x559fbf2c9c50, L_0x559fbf2c9cf0, C4<1>, C4<1>;
+L_0x559fbf2c9450 .functor AND 1, L_0x559fbf2c9640, L_0x559fbf2c91b0, C4<1>, C4<1>;
+L_0x559fbf2c9b90 .functor OR 1, L_0x559fbf2c9310, L_0x559fbf2c9450, C4<0>, C4<0>;
+v0x559fbf2a2470_0 .net "Cin", 0 0, L_0x559fbf2c9640;  1 drivers
+v0x559fbf2a2550_0 .net "Cout", 0 0, L_0x559fbf2c9b90;  1 drivers
+v0x559fbf2a2610_0 .net "S", 0 0, L_0x559fbf2c9220;  1 drivers
+v0x559fbf2a26e0_0 .net "X", 0 0, L_0x559fbf2c9c50;  1 drivers
+v0x559fbf2a27a0_0 .net "Y", 0 0, L_0x559fbf2c9cf0;  1 drivers
+v0x559fbf2a28b0_0 .net *"_ivl_4", 0 0, L_0x559fbf2c9310;  1 drivers
+v0x559fbf2a2990_0 .net *"_ivl_6", 0 0, L_0x559fbf2c9450;  1 drivers
+v0x559fbf2a2a70_0 .net "xor1", 0 0, L_0x559fbf2c91b0;  1 drivers
+S_0x559fbf2a2bd0 .scope generate, "genblk1[57]" "genblk1[57]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a2dd0 .param/l "i" 0 4 29, +C4<0111001>;
+S_0x559fbf2a2e90 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a2bd0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c96e0 .functor XOR 1, L_0x559fbf2ca2f0, L_0x559fbf2c9d90, C4<0>, C4<0>;
+L_0x559fbf2c9750 .functor XOR 1, L_0x559fbf2c96e0, L_0x559fbf2c9e30, C4<0>, C4<0>;
+L_0x559fbf2c9840 .functor AND 1, L_0x559fbf2ca2f0, L_0x559fbf2c9d90, C4<1>, C4<1>;
+L_0x559fbf2c9980 .functor AND 1, L_0x559fbf2c9e30, L_0x559fbf2c96e0, C4<1>, C4<1>;
+L_0x559fbf2c9a70 .functor OR 1, L_0x559fbf2c9840, L_0x559fbf2c9980, C4<0>, C4<0>;
+v0x559fbf2a3110_0 .net "Cin", 0 0, L_0x559fbf2c9e30;  1 drivers
+v0x559fbf2a31f0_0 .net "Cout", 0 0, L_0x559fbf2c9a70;  1 drivers
+v0x559fbf2a32b0_0 .net "S", 0 0, L_0x559fbf2c9750;  1 drivers
+v0x559fbf2a3380_0 .net "X", 0 0, L_0x559fbf2ca2f0;  1 drivers
+v0x559fbf2a3440_0 .net "Y", 0 0, L_0x559fbf2c9d90;  1 drivers
+v0x559fbf2a3550_0 .net *"_ivl_4", 0 0, L_0x559fbf2c9840;  1 drivers
+v0x559fbf2a3630_0 .net *"_ivl_6", 0 0, L_0x559fbf2c9980;  1 drivers
+v0x559fbf2a3710_0 .net "xor1", 0 0, L_0x559fbf2c96e0;  1 drivers
+S_0x559fbf2a3870 .scope generate, "genblk1[58]" "genblk1[58]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a3a70 .param/l "i" 0 4 29, +C4<0111010>;
+S_0x559fbf2a3b30 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a3870;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2c9ed0 .functor XOR 1, L_0x559fbf2ca9b0, L_0x559fbf2caa50, C4<0>, C4<0>;
+L_0x559fbf2c9f40 .functor XOR 1, L_0x559fbf2c9ed0, L_0x559fbf2ca390, C4<0>, C4<0>;
+L_0x559fbf2ca030 .functor AND 1, L_0x559fbf2ca9b0, L_0x559fbf2caa50, C4<1>, C4<1>;
+L_0x559fbf2ca170 .functor AND 1, L_0x559fbf2ca390, L_0x559fbf2c9ed0, C4<1>, C4<1>;
+L_0x559fbf2ca260 .functor OR 1, L_0x559fbf2ca030, L_0x559fbf2ca170, C4<0>, C4<0>;
+v0x559fbf2a3db0_0 .net "Cin", 0 0, L_0x559fbf2ca390;  1 drivers
+v0x559fbf2a3e90_0 .net "Cout", 0 0, L_0x559fbf2ca260;  1 drivers
+v0x559fbf2a3f50_0 .net "S", 0 0, L_0x559fbf2c9f40;  1 drivers
+v0x559fbf2a4020_0 .net "X", 0 0, L_0x559fbf2ca9b0;  1 drivers
+v0x559fbf2a40e0_0 .net "Y", 0 0, L_0x559fbf2caa50;  1 drivers
+v0x559fbf2a41f0_0 .net *"_ivl_4", 0 0, L_0x559fbf2ca030;  1 drivers
+v0x559fbf2a42d0_0 .net *"_ivl_6", 0 0, L_0x559fbf2ca170;  1 drivers
+v0x559fbf2a43b0_0 .net "xor1", 0 0, L_0x559fbf2c9ed0;  1 drivers
+S_0x559fbf2a4510 .scope generate, "genblk1[59]" "genblk1[59]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a4710 .param/l "i" 0 4 29, +C4<0111011>;
+S_0x559fbf2a47d0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a4510;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2ca430 .functor XOR 1, L_0x559fbf2cb080, L_0x559fbf2caaf0, C4<0>, C4<0>;
+L_0x559fbf2ca4a0 .functor XOR 1, L_0x559fbf2ca430, L_0x559fbf2cab90, C4<0>, C4<0>;
+L_0x559fbf2ca590 .functor AND 1, L_0x559fbf2cb080, L_0x559fbf2caaf0, C4<1>, C4<1>;
+L_0x559fbf2ca6d0 .functor AND 1, L_0x559fbf2cab90, L_0x559fbf2ca430, C4<1>, C4<1>;
+L_0x559fbf2ca7c0 .functor OR 1, L_0x559fbf2ca590, L_0x559fbf2ca6d0, C4<0>, C4<0>;
+v0x559fbf2a4a50_0 .net "Cin", 0 0, L_0x559fbf2cab90;  1 drivers
+v0x559fbf2a4b30_0 .net "Cout", 0 0, L_0x559fbf2ca7c0;  1 drivers
+v0x559fbf2a4bf0_0 .net "S", 0 0, L_0x559fbf2ca4a0;  1 drivers
+v0x559fbf2a4cc0_0 .net "X", 0 0, L_0x559fbf2cb080;  1 drivers
+v0x559fbf2a4d80_0 .net "Y", 0 0, L_0x559fbf2caaf0;  1 drivers
+v0x559fbf2a4e90_0 .net *"_ivl_4", 0 0, L_0x559fbf2ca590;  1 drivers
+v0x559fbf2a4f70_0 .net *"_ivl_6", 0 0, L_0x559fbf2ca6d0;  1 drivers
+v0x559fbf2a5050_0 .net "xor1", 0 0, L_0x559fbf2ca430;  1 drivers
+S_0x559fbf2a51b0 .scope generate, "genblk1[60]" "genblk1[60]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a53b0 .param/l "i" 0 4 29, +C4<0111100>;
+S_0x559fbf2a5470 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a51b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2cac30 .functor XOR 1, L_0x559fbf2cb720, L_0x559fbf2cb7c0, C4<0>, C4<0>;
+L_0x559fbf2caca0 .functor XOR 1, L_0x559fbf2cac30, L_0x559fbf2cb120, C4<0>, C4<0>;
+L_0x559fbf2cad90 .functor AND 1, L_0x559fbf2cb720, L_0x559fbf2cb7c0, C4<1>, C4<1>;
+L_0x559fbf2caed0 .functor AND 1, L_0x559fbf2cb120, L_0x559fbf2cac30, C4<1>, C4<1>;
+L_0x559fbf2cafc0 .functor OR 1, L_0x559fbf2cad90, L_0x559fbf2caed0, C4<0>, C4<0>;
+v0x559fbf2a56f0_0 .net "Cin", 0 0, L_0x559fbf2cb120;  1 drivers
+v0x559fbf2a57d0_0 .net "Cout", 0 0, L_0x559fbf2cafc0;  1 drivers
+v0x559fbf2a5890_0 .net "S", 0 0, L_0x559fbf2caca0;  1 drivers
+v0x559fbf2a5960_0 .net "X", 0 0, L_0x559fbf2cb720;  1 drivers
+v0x559fbf2a5a20_0 .net "Y", 0 0, L_0x559fbf2cb7c0;  1 drivers
+v0x559fbf2a5b30_0 .net *"_ivl_4", 0 0, L_0x559fbf2cad90;  1 drivers
+v0x559fbf2a5c10_0 .net *"_ivl_6", 0 0, L_0x559fbf2caed0;  1 drivers
+v0x559fbf2a5cf0_0 .net "xor1", 0 0, L_0x559fbf2cac30;  1 drivers
+S_0x559fbf2a5e50 .scope generate, "genblk1[61]" "genblk1[61]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a6050 .param/l "i" 0 4 29, +C4<0111101>;
+S_0x559fbf2a6110 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a5e50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2cb1c0 .functor XOR 1, L_0x559fbf2cbe20, L_0x559fbf2cb860, C4<0>, C4<0>;
+L_0x559fbf2cb230 .functor XOR 1, L_0x559fbf2cb1c0, L_0x559fbf2cb900, C4<0>, C4<0>;
+L_0x559fbf2cb320 .functor AND 1, L_0x559fbf2cbe20, L_0x559fbf2cb860, C4<1>, C4<1>;
+L_0x559fbf2cb460 .functor AND 1, L_0x559fbf2cb900, L_0x559fbf2cb1c0, C4<1>, C4<1>;
+L_0x559fbf2cb550 .functor OR 1, L_0x559fbf2cb320, L_0x559fbf2cb460, C4<0>, C4<0>;
+v0x559fbf2a6390_0 .net "Cin", 0 0, L_0x559fbf2cb900;  1 drivers
+v0x559fbf2a6470_0 .net "Cout", 0 0, L_0x559fbf2cb550;  1 drivers
+v0x559fbf2a6530_0 .net "S", 0 0, L_0x559fbf2cb230;  1 drivers
+v0x559fbf2a6600_0 .net "X", 0 0, L_0x559fbf2cbe20;  1 drivers
+v0x559fbf2a66c0_0 .net "Y", 0 0, L_0x559fbf2cb860;  1 drivers
+v0x559fbf2a67d0_0 .net *"_ivl_4", 0 0, L_0x559fbf2cb320;  1 drivers
+v0x559fbf2a68b0_0 .net *"_ivl_6", 0 0, L_0x559fbf2cb460;  1 drivers
+v0x559fbf2a6990_0 .net "xor1", 0 0, L_0x559fbf2cb1c0;  1 drivers
+S_0x559fbf2a6af0 .scope generate, "genblk1[62]" "genblk1[62]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a6cf0 .param/l "i" 0 4 29, +C4<0111110>;
+S_0x559fbf2a6db0 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a6af0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2cb660 .functor XOR 1, L_0x559fbf2cccb0, L_0x559fbf2ccd50, C4<0>, C4<0>;
+L_0x559fbf2cb9a0 .functor XOR 1, L_0x559fbf2cb660, L_0x559fbf2cc6d0, C4<0>, C4<0>;
+L_0x559fbf2cba90 .functor AND 1, L_0x559fbf2cccb0, L_0x559fbf2ccd50, C4<1>, C4<1>;
+L_0x559fbf2cbbd0 .functor AND 1, L_0x559fbf2cc6d0, L_0x559fbf2cb660, C4<1>, C4<1>;
+L_0x559fbf2cbcc0 .functor OR 1, L_0x559fbf2cba90, L_0x559fbf2cbbd0, C4<0>, C4<0>;
+v0x559fbf2a7030_0 .net "Cin", 0 0, L_0x559fbf2cc6d0;  1 drivers
+v0x559fbf2a7110_0 .net "Cout", 0 0, L_0x559fbf2cbcc0;  1 drivers
+v0x559fbf2a71d0_0 .net "S", 0 0, L_0x559fbf2cb9a0;  1 drivers
+v0x559fbf2a72a0_0 .net "X", 0 0, L_0x559fbf2cccb0;  1 drivers
+v0x559fbf2a7360_0 .net "Y", 0 0, L_0x559fbf2ccd50;  1 drivers
+v0x559fbf2a7470_0 .net *"_ivl_4", 0 0, L_0x559fbf2cba90;  1 drivers
+v0x559fbf2a7550_0 .net *"_ivl_6", 0 0, L_0x559fbf2cbbd0;  1 drivers
+v0x559fbf2a7630_0 .net "xor1", 0 0, L_0x559fbf2cb660;  1 drivers
+S_0x559fbf2a7790 .scope generate, "genblk1[63]" "genblk1[63]" 4 29, 4 29 0, S_0x559fbf2825d0;
+ .timescale 0 0;
+P_0x559fbf2a7990 .param/l "i" 0 4 29, +C4<0111111>;
+S_0x559fbf2a7a50 .scope module, "SOMA" "SOMADOR_1bit" 4 30, 4 1 0, S_0x559fbf2a7790;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x559fbf2cc770 .functor XOR 1, L_0x559fbf2ccbc0, L_0x559fbf2cd3f0, C4<0>, C4<0>;
+L_0x559fbf2cc7e0 .functor XOR 1, L_0x559fbf2cc770, L_0x559fbf2cdca0, C4<0>, C4<0>;
+L_0x559fbf2cc880 .functor AND 1, L_0x559fbf2ccbc0, L_0x559fbf2cd3f0, C4<1>, C4<1>;
+L_0x559fbf2cc9c0 .functor AND 1, L_0x559fbf2cdca0, L_0x559fbf2cc770, C4<1>, C4<1>;
+L_0x559fbf2ccab0 .functor OR 1, L_0x559fbf2cc880, L_0x559fbf2cc9c0, C4<0>, C4<0>;
+v0x559fbf2a7cd0_0 .net "Cin", 0 0, L_0x559fbf2cdca0;  1 drivers
+v0x559fbf2a7db0_0 .net "Cout", 0 0, L_0x559fbf2ccab0;  1 drivers
+v0x559fbf2a7e70_0 .net "S", 0 0, L_0x559fbf2cc7e0;  1 drivers
+v0x559fbf2a7f40_0 .net "X", 0 0, L_0x559fbf2ccbc0;  1 drivers
+v0x559fbf2a8000_0 .net "Y", 0 0, L_0x559fbf2cd3f0;  1 drivers
+v0x559fbf2a8110_0 .net *"_ivl_4", 0 0, L_0x559fbf2cc880;  1 drivers
+v0x559fbf2a81f0_0 .net *"_ivl_6", 0 0, L_0x559fbf2cc9c0;  1 drivers
+v0x559fbf2a82d0_0 .net "xor1", 0 0, L_0x559fbf2cc770;  1 drivers
+    .scope S_0x559fbf293c50;
+T_0 ;
+    %pushi/vec4 450, 0, 64;
+    %store/vec4 v0x559fbf2a91d0_0, 0, 64;
+    %pushi/vec4 47, 0, 64;
+    %store/vec4 v0x559fbf2a92e0_0, 0, 64;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559fbf2a9380_0, 0, 1;
+    %delay 50, 0;
+    %vpi_call 2 21 "$write", "%d + %d = %d", v0x559fbf2a91d0_0, v0x559fbf2a92e0_0, v0x559fbf2a90a0_0 {0 0 0};
+    %load/vec4 v0x559fbf2a90a0_0;
+    %load/vec4 v0x559fbf2a91d0_0;
+    %load/vec4 v0x559fbf2a92e0_0;
+    %add;
+    %cmp/e;
+    %jmp/0xz  T_0.0, 4;
+    %vpi_call 2 23 "$write", "[PASSED]\012" {0 0 0};
+    %jmp T_0.1;
+T_0.0 ;
+    %vpi_call 2 25 "$write", "[WRONG!]\012" {0 0 0};
+T_0.1 ;
+    %pushi/vec4 450, 0, 64;
+    %store/vec4 v0x559fbf2a91d0_0, 0, 64;
+    %pushi/vec4 47, 0, 64;
+    %store/vec4 v0x559fbf2a92e0_0, 0, 64;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559fbf2a9380_0, 0, 1;
+    %delay 50, 0;
+    %vpi_call 2 30 "$write", "%d - %d = %d", v0x559fbf2a91d0_0, v0x559fbf2a92e0_0, v0x559fbf2a90a0_0 {0 0 0};
+    %load/vec4 v0x559fbf2a90a0_0;
+    %load/vec4 v0x559fbf2a91d0_0;
+    %load/vec4 v0x559fbf2a92e0_0;
+    %sub;
+    %cmp/e;
+    %jmp/0xz  T_0.2, 4;
+    %vpi_call 2 32 "$write", "[PASSED]\012" {0 0 0};
+    %jmp T_0.3;
+T_0.2 ;
+    %vpi_call 2 34 "$write", "[WRONG!]\012" {0 0 0};
+T_0.3 ;
+    %delay 50, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "datapath/testbenches/ula_testbench.v";
+    "./datapath/ula.v";
+    "./datapath/somador.v";
