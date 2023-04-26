@@ -15,7 +15,19 @@ module decoder5to32_testbench;
   initial begin
     $monitor("%b %b", IN, OUT);
     EN = 1;
-    IN = 5'd9;
+    IN = 5'd0;
+    #50
+    IN = 5'd1;
+    #50
+    IN = 5'd2;
+    #50
+    IN = 5'd3;
+    #50
+    IN = 5'd4;
+    #50
+    IN = 5'd5;
+    #50
+    IN = 5'd6;
   end
 
 endmodule
