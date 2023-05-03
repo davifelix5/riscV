@@ -20,8 +20,8 @@ module DATAPATH (
     input wire sub, // entra nas functs
     input WE_RF,
     input WE_MEM,
-    input wire R_type, // indica se a instrução é do tipo R
-    input wire I_type, // indica se a instrução é do tipo I
+    input wire RF_din_sel, // indica se a instrução é do tipo R
+    input wire ULA_din2_sel, // indica se a instrução é do tipo I
     input wire CLK
 );
     // Fios do datapath
@@ -30,8 +30,8 @@ module DATAPATH (
     wire[63:0] ula, RF_Din, ULA_Din2;
     
     // Mutiplexadores para add-sub
-    assign RF_Din = R_type ? ula : DM_out;
-    assign ULA_Din2 = I_type ? {{52{immediate[11]}}, immediate} : Dout_rs2;
+    assign RF_Din = RF_din_sel ? ula : DM_out;
+    assign ULA_Din2 = ULA_din2_sel ? {{52{immediate[11]}}, immediate} : Dout_rs2;
 
     // Memória de dados
     DATAMEMORY MEM (
