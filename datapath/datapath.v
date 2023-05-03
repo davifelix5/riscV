@@ -12,7 +12,7 @@ Grupo 1
 `include "datapath/regfile.v"
 `include "datapath/ula.v"
 
-module ADD_SUB (
+module DATAPATH (
     input wire[4:0] rs1,
     input wire[4:0] rs2,
     input wire[4:0] rd,
@@ -27,11 +27,11 @@ module ADD_SUB (
     // Fios do datapath
     wire[63:0] DM_in, DM_out, Dout_rs1, Dout_rs2;
     wire[4:0] DM_ADDR;
-    wire[63:0] ula, RF_Din, ULA_Din1;
+    wire[63:0] ula, RF_Din, ULA_Din2;
     
     // Mutiplexadores para add-sub
     assign RF_Din = R_type ? ula : DM_out;
-    assign ULA_Din1 = I_type ? {52'b0, immediate} : Dout_rs1;
+    assign ULA_Din2 = I_type ? {{52{immediate[11]}}, immediate} : Dout_rs2;
 
     // Memória de dados
     DATAMEMORY MEM (
@@ -40,7 +40,7 @@ module ADD_SUB (
         // Write-Enable da memória
         .WE(WE_MEM), 
         // O valor do registrador Ra é salvo na memória na borda de subida do clock se WE é 1
-        .D_in(Dout_rs1),
+        .D_in(Dout_rs2),
         // Saída de dados da memória
         .D_out(DM_out), 
         .CLK(CLK)
@@ -65,8 +65,8 @@ module ADD_SUB (
 
     // Somador para somar o endereço de origem da memória com o offset fornecido
     ula ULA ( 
-        .s1(ULA_Din1),
-        .s2(Dout_rs2),
+        .s1(Dout_rs1),
+        .s2(ULA_Din2),
         .sub(sub),
         .res(ula)
     );

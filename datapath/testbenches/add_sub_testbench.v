@@ -20,7 +20,7 @@ Ele pode ser aberto pelo comando:
 
 **************************************************************************/
 
-`include "datapath/testbenches/add_sub.v"
+`include "datapath/datapath.v"
 
 module LOAD_STORE_testbench;
 
@@ -29,7 +29,7 @@ module LOAD_STORE_testbench;
     reg CLK, WE_RF, WE_MEM;
     reg sub, I_type, R_type;
 
-    ADD_SUB UUT (
+    DATAPATH UUT (
         .rs1(rs1),
         .rs2(rs2),
         .rd(rd),
@@ -97,8 +97,8 @@ module LOAD_STORE_testbench;
 
         // st x10, 10(x0)
         rd = 0;
-        rs1 = 10;
-        rs2 = 0;
+        rs1 = 0;
+        rs2 = 10;
         I_type = 1;
         R_type = 0;
         sub = 0;
@@ -109,14 +109,50 @@ module LOAD_STORE_testbench;
 
         // st x20, 11(x0)
         rd = 0;
-        rs1 = 20;
-        rs2 = 0;
+        rs1 = 0;
+        rs2 = 20;
         I_type = 1;
         R_type = 0;
         sub = 0;
         immediate = 12'd11;
         WE_RF = 0;
         WE_MEM = 1;
+        #10
+
+        // addi x20, x20, 45
+        rd = 20;
+        rs1 = 20;
+        rs2 = 5'bx;
+        I_type = 1;
+        R_type = 1;
+        sub = 0;
+        immediate = 12'd45;
+        WE_RF = 1;
+        WE_MEM = 0;
+        #10
+
+        // ld x21, 30(x0)
+        rd = 21; // Escrita no registrador x1
+        rs2 = 0; // Registrador x0
+        rs1 = 0;
+        I_type = 1;
+        R_type = 0;
+        sub = 0;
+        immediate = 12'd30;  // Palavra 16 na memória
+        WE_RF = 1; // Habilita escrita nos registradores
+        WE_MEM = 0; // Desabilita escrita na memória
+        #10;
+
+        // addi x30, x21, -401
+        rd = 30;
+        rs1 = 21;
+        rs2 = 5'bx;
+        I_type = 1;
+        R_type = 1;
+        sub = 0;
+        immediate = 12'b111111001110;
+        WE_RF = 1;
+        WE_MEM = 0;
         #10
         
         $finish;
