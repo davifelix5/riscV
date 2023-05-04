@@ -12,7 +12,7 @@ Grupo 1
 `include "datapath/regfile.v"
 `include "datapath/ula.v"
 
-module DATAPATH (
+module datapath (
     input wire[4:0] rs1,
     input wire[4:0] rs2,
     input wire[4:0] rd,

@@ -14,13 +14,14 @@ module datapath_with_instructions(
 );
 
     wire[31:0] instruction;
-    wire[31:0] im_addr;
+    wire[63:0] im_addr;
     wire[11:0] imm;
     wire[2:0] opcode;
+    wire[4:0] rs1, rs2, rd;
 
-    assign imm = instruction[6:0] == 7'b0100011 ? {instruction[11:5], instruction[4:0]} ? instruction[11:0];
-    assign rs1 = instruction[19:15];
+    assign imm = instruction[6:0] == 7'b0100011 ? {instruction[31:25], instruction[11:7]} : instruction[31:20];
     assign rs2 = instruction[24:20];
+    assign rs1 = instruction[19:15];
     assign rd = instruction[11:7];
 
     program_counter PC (

@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu May 04 02:05:27 2023
+[*]
+[dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\waveforms3.vcd"
+[dumpfile_mtime] "Thu May 04 02:03:59 2023"
+[dumpfile_size] 57172
+[savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\dp_with_im.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-4.589243 74 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] datapath_with_instructions_tb.
+[treeopen] datapath_with_instructions_tb.UUT.
+[treeopen] datapath_with_instructions_tb.UUT.DP.
+[treeopen] datapath_with_instructions_tb.UUT.DP.regfile.
+[treeopen] datapath_with_instructions_tb.UUT.DP.regfile.genblk1[1].
+[treeopen] datapath_with_instructions_tb.UUT.DP.regfile.genblk1[2].
+[treeopen] datapath_with_instructions_tb.UUT.DP.regfile.genblk1[3].
+[treeopen] datapath_with_instructions_tb.UUT.DP.regfile.genblk1[4].
+[treeopen] datapath_with_instructions_tb.UUT.DP.regfile.genblk1[5].
+[treeopen] datapath_with_instructions_tb.UUT.DP.regfile.genblk1[6].
+[sst_width] 197
+[signals_width] 102
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+datapath_with_instructions_tb.UUT.CLK
+@24
+datapath_with_instructions_tb.UUT.DP.regfile.genblk1[1].xN.OUT[63:0]
+datapath_with_instructions_tb.UUT.DP.regfile.genblk1[2].xN.OUT[63:0]
+datapath_with_instructions_tb.UUT.DP.regfile.genblk1[3].xN.OUT[63:0]
+@420
+datapath_with_instructions_tb.UUT.DP.regfile.genblk1[4].xN.OUT[63:0]
+datapath_with_instructions_tb.UUT.DP.regfile.genblk1[5].xN.OUT[63:0]
+@421
+datapath_with_instructions_tb.UUT.DP.regfile.genblk1[6].xN.OUT[63:0]
+[pattern_trace] 1
+[pattern_trace] 0

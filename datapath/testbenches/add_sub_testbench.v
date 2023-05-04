@@ -29,7 +29,7 @@ module LOAD_STORE_testbench;
     reg CLK, WE_RF, WE_MEM;
     reg sub, ULA_din2_sel, RF_din_sel;
 
-    DATAPATH UUT (
+    datapath UUT (
         .rs1(rs1),
         .rs2(rs2),
         .rd(rd),

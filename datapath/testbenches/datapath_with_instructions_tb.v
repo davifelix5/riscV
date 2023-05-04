@@ -34,7 +34,6 @@ module datapath_with_instructions_tb;
         .sub(sub),
         .ULA_din2_sel(ULA_din2_sel),
         .RF_din_sel(RF_din_sel),
-        .immediate(immediate), 
         .WE_RF(WE_RF),
         .WE_MEM(WE_MEM),
         .CLK(CLK),
@@ -44,15 +43,14 @@ module datapath_with_instructions_tb;
 
     initial begin
         $dumpfile("datapath/testbenches/vvp/waveforms3.vcd");
-        $dumpvars(0,LOAD_STORE_testbench);
+        $dumpvars(0, datapath_with_instructions_tb);
         CLK = 0;
 
         reset_pc = 1;
         #10
         reset_pc = 0;
-        #10
 
-        // ld x1, 16(x0)
+        // ld
         ULA_din2_sel = 1;
         RF_din_sel = 0;
         sub = 0;
@@ -60,7 +58,7 @@ module datapath_with_instructions_tb;
         WE_MEM = 0; // Desabilita escrita na memória
         #10;
 
-        // ld x5, 21(x0)
+        // ld
         ULA_din2_sel = 1;
         RF_din_sel = 0;
         sub = 0;
@@ -68,7 +66,7 @@ module datapath_with_instructions_tb;
         WE_MEM = 0;
         #10
 
-        // add x10, x1, x5
+        // add
         ULA_din2_sel = 0;
         RF_din_sel = 1;
         sub = 0;
@@ -76,51 +74,37 @@ module datapath_with_instructions_tb;
         WE_MEM = 0;
         #10
 
-        // sub x20, x5, x1
+        // sub
         ULA_din2_sel = 0;
         RF_din_sel = 1;
-        immediate = 12'dx; 
+        sub = 1;
         WE_RF = 1;
         WE_MEM = 0;
         #10
 
-        // st x10, 10(x0)
+        // st
         ULA_din2_sel = 1;
         RF_din_sel = 0;
-        immediate = 12'd10;
+        sub = 0;
         WE_RF = 0;
         WE_MEM = 1;
         #10
 
-        // st x20, 11(x0)
-        ULA_din2_sel = 1;
-        RF_din_sel = 0;
-        immediate = 12'd11;
-        WE_RF = 0;
-        WE_MEM = 1;
-        #10
-
-        // addi x20, x20, 45
+        // addi
         ULA_din2_sel = 1;
         RF_din_sel = 1;
-        immediate = 12'd45;
+        sub = 0;
         WE_RF = 1;
         WE_MEM = 0;
         #10
 
-        // ld x21, 30(x0)
+        // ld
         ULA_din2_sel = 1;
         RF_din_sel = 0;
+        sub = 0;
         WE_RF = 1; // Habilita escrita nos registradores
         WE_MEM = 0; // Desabilita escrita na memória
         #10;
-
-        // addi x30, x21, -401
-        ULA_din2_sel = 1;
-        RF_din_sel = 1;
-        WE_RF = 1;
-        WE_MEM = 0;
-        #10
         
         $finish;
     end
