@@ -59,7 +59,7 @@ module datapath(
         .CLK(CLK)
     );
 
-    regfile regfile (
+    regfile RF (
         // Seletor do registrador cujo valor estará na saída Da
         .Ra(rs1),
         // Seletor do registrador cujo valor estará na saída Db
