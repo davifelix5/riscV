@@ -1,6 +1,6 @@
 `include "datapath/ula.v"
 
-module ula_testbench;
+module ula_tb;
 
   reg[63:0] s1, s2;
   reg sub;

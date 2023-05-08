@@ -1,13 +1,13 @@
 `include "datapath/regfile.v"
 
-module regfile_testbench ();
+module regfile_tb;
 
 reg [4:0] Ra, Rb, Rw;
 reg WE, CLK;
 reg [63:0] Din;
 wire [63:0] Da, Db;
  
-REGFILE RF (
+regfile RF (
     .Ra(Ra),
     .Rb(Rb),
     .WE(WE),

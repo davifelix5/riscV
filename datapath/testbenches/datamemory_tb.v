@@ -1,13 +1,13 @@
 `include "datapath/datamemory.v"
 
-module DATAMEMORY_testbench;
+module datamemory_tb;
 
     reg[4:0] ADDR;
     reg WE, CLK;
     reg[63:0] D_in;
     wire[63:0] D_out;
 
-    DATAMEMORY UUT (
+    datamemory UUT (
         .ADDR(ADDR),
         .WE(WE),
         .D_in(D_in),

@@ -1,4 +1,4 @@
-`include "datapath/somador.v"
+`include "datapath/adder.v"
 
 module ula #(parameter SIZE = 64) (
   input wire[63:0] s1,
@@ -8,7 +8,7 @@ module ula #(parameter SIZE = 64) (
 );
 
   // Somador para calcular o resultado final
-  SOMADOR #(.SIZE(SIZE)) SOMADOR_FINAL (
+  adder #(.SIZE(SIZE)) adder (
     .X(s1),
     .Y(s2 ^ {SIZE{sub}}),
     .S(res),

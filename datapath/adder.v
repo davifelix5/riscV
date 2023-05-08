@@ -1,4 +1,4 @@
-module SOMADOR_1bit (
+module adder1bit (
     input wire X,
     input wire Y,
     input wire Cin,
@@ -13,7 +13,7 @@ module SOMADOR_1bit (
 endmodule
 
 
-module SOMADOR #(parameter SIZE=32) (
+module adder #(parameter SIZE=32) (
     input wire[SIZE-1:0] X,
     input wire[SIZE-1:0] Y,
     input wire Cin,
@@ -27,7 +27,7 @@ module SOMADOR #(parameter SIZE=32) (
 
     generate
       for (i=0; i < SIZE; i = i + 1)
-        SOMADOR_1bit SOMA (.X(X[i]), .Y(Y[i]), .S(S[i]), .Cin(cins[i]), .Cout(cins[i+1]));
+        adder1bit SOMA (.X(X[i]), .Y(Y[i]), .S(S[i]), .Cin(cins[i]), .Cout(cins[i+1]));
     endgenerate
 
     assign cout = cins[SIZE];

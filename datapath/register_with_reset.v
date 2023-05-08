@@ -1,4 +1,4 @@
-module REG_rst #(parameter SIZE=64) (
+module register_with_reset #(parameter SIZE=64) (
   input wire[SIZE-1:0] IN,
   output reg[SIZE-1:0] OUT,
   input RST,

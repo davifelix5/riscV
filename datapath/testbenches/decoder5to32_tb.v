@@ -1,6 +1,6 @@
 `include "datapath/decoder5to32.v"
 
-module decoder5to32_testbench;
+module decoder5to32_tb;
 
   reg[4:0] IN;
   wire[31:0] OUT;

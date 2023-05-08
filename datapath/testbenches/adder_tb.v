@@ -1,13 +1,13 @@
-`include "datapath/somador.v"
+`include "datapath/adder.v"
 
-module somador_testbench;
+module adder_tb;
 
     reg[31:0] A, B;
     wire[31:0] Res;
     reg Cin;
     wire Cout;
-    
-    SOMADOR #(.SIZE(32)) UUT(
+
+    adder #(.SIZE(32)) UUT(
         .X(A),
         .Y(B),
         .S(Res),
@@ -16,7 +16,7 @@ module somador_testbench;
     );
 
     initial begin
-        $monitor("A: %b; B: %b; S = %b", A, B, Res);
+        $monitor("A: %d; B: %d; S = %d", A, B, Res);
         Cin = 0;
         A = 32'b111110100; // 500
         B = 32'b11111111111111111111111000111110; // -450

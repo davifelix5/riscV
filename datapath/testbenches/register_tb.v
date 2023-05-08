@@ -1,12 +1,12 @@
-`include "datapath/reg.v"
+`include "datapath/register.v"
 
-module REG_testbench;
+module register_tb;
 
   reg[31:0] IN_tb;
   wire[31:0] OUT_tb;
   reg CLK_tb, LOAD_tb;
 
-  REG #(.SIZE(32)) UUT (
+  register #(.SIZE(32)) UUT (
     .IN(IN_tb),
     .OUT(OUT_tb),
     .LOAD(LOAD_tb),

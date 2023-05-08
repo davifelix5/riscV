@@ -1,6 +1,6 @@
 `include "datapath/instruction_memory.v"
 
-module instruction_memory_testbench;
+module instruction_memory_tb;
 
     reg[63:0] addr_tb;
     wire[31:0] output_tb;

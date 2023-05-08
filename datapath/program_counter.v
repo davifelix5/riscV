@@ -1,4 +1,4 @@
-`include "datapath/reg_rst.v"
+`include "datapath/register_with_reset.v"
 
 module program_counter (
     input CLK,
@@ -7,10 +7,10 @@ module program_counter (
     output wire [63:0] addr
 );
 
-wire [63:0] fio;
+    wire [63:0] fio;
 
-REG_rst PC (.IN(fio + 1), .OUT(fio), .RST(RST), .LOAD(LOAD), .CLK(CLK));
+    register_with_reset PC (.IN(fio + 1), .OUT(fio), .RST(RST), .LOAD(LOAD), .CLK(CLK));
 
-assign addr = fio;
+    assign addr = fio;
 
 endmodule

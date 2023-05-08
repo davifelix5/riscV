@@ -34,7 +34,7 @@ module datapath (
     assign ULA_Din2 = ULA_din2_sel ? {{52{immediate[11]}}, immediate} : Dout_rs2;
 
     // Memória de dados
-    DATAMEMORY MEM (
+    datamemory mem (
         // Endereço da memória para ler
         .ADDR(ula[4:0]), 
         // Write-Enable da memória
@@ -46,7 +46,7 @@ module datapath (
         .CLK(CLK)
     );
 
-    REGFILE regfile (
+    regfile regfile (
         // Seletor do registrador cujo valor estará na saída Da
         .Ra(rs1),
         // Seletor do registrador cujo valor estará na saída Db
