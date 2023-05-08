@@ -5,10 +5,15 @@ module program_counter (
     output wire [63:0] addr
 );
 
-    wire [63:0] fio;
+    wire [63:0] next;
 
-    register_with_reset PC (.IN(fio + 1), .OUT(fio), .RST(RST), .LOAD(LOAD), .CLK(CLK));
+    adder #(.SIZE(64)) adder (
+        .X(addr),
+        .Y(64'b1),
+        .Cin(1'b0),
+        .S(next)
+    );
 
-    assign addr = fio;
+    register_with_reset PC (.IN(next), .OUT(addr), .RST(RST), .LOAD(LOAD), .CLK(CLK));
 
 endmodule

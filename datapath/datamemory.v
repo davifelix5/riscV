@@ -13,7 +13,7 @@ module datamemory #(parameter SIZE = 64, parameter N = 32) (
     
     // Inicializando a palavra 16 com um valor arbitrário para teste
     initial begin
-        MEM[16] = 64'd730; 
+        MEM[16] = 64'd731; 
         MEM[21] = 64'd312; 
         MEM[30] = 64'd1000;
     end
