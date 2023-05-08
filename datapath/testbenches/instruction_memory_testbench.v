@@ -1,4 +1,4 @@
-`include "datapath/datapath_with_instructions.v"
+`include "datapath/instruction_memory.v"
 
 module instruction_memory_testbench;
 
