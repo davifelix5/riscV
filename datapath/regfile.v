@@ -1,5 +1,3 @@
-`include "datapath/register.v"
-`include "datapath/decoder5to32.v"
 /* 
     Arquivo de registradores: parametrizado pelo tamanho das palavras e quantidade de registradores
     OBS: Para um banco de registradores com n registradores, haverá log2(n) bits nos seletores

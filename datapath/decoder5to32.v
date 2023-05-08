@@ -1,6 +1,3 @@
-`include "datapath/decoder2to4.v"
-`include "datapath/decoder3to8.v"
-
 module decoder5to32 (
     input wire EN,
     input wire[4:0] IN,

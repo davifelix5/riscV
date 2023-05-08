@@ -1,5 +1,3 @@
-`include "datapath/adder.v"
-
 module ula #(parameter SIZE = 64) (
   input wire[63:0] s1,
   input wire[63:0] s2,

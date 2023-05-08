@@ -7,11 +7,6 @@ Grupo 1
     Natham Pez
 
 **************************************************************************/
-
-`include "datapath/datamemory.v"
-`include "datapath/regfile.v"
-`include "datapath/ula.v"
-
 module datapath (
     input wire[4:0] rs1,
     input wire[4:0] rs2,

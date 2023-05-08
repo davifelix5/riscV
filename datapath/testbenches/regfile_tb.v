@@ -1,3 +1,7 @@
+`include "datapath/register.v"
+`include "datapath/decoder3to8.v"
+`include "datapath/decoder2to4.v"
+`include "datapath/decoder5to32.v"
 `include "datapath/regfile.v"
 
 module regfile_tb;

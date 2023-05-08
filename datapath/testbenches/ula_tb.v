@@ -1,4 +1,5 @@
 `include "datapath/ula.v"
+`include "datapath/adder.v"
 
 module ula_tb;
 

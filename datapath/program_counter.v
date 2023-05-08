@@ -1,5 +1,3 @@
-`include "datapath/register_with_reset.v"
-
 module program_counter (
     input CLK,
     input LOAD,

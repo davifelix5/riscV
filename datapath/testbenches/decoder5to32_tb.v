@@ -1,4 +1,6 @@
 `include "datapath/decoder5to32.v"
+`include "datapath/decoder2to4.v"
+`include "datapath/decoder3to8.v"
 
 module decoder5to32_tb;
 
