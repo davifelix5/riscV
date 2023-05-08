@@ -19,6 +19,6 @@ module program_counter (
         .S(next)
     );
 
-    register_with_reset PC (.IN(next), .OUT(addr), .RST(RST), .LOAD(LOAD), .CLK(CLK));
+    register_negedge_with_reset PC (.IN(next), .OUT(addr), .RST(RST), .LOAD(LOAD), .CLK(CLK));
 
 endmodule

@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Mon May 08 01:46:45 2023
+[*] Mon May 08 22:55:17 2023
 [*]
 [dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\waveforms3.vcd"
-[dumpfile_mtime] "Mon May 08 01:46:31 2023"
-[dumpfile_size] 77303
+[dumpfile_mtime] "Mon May 08 22:53:40 2023"
+[dumpfile_size] 79232
 [savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\dp_with_im.gtkw"
 [timestart] 0
 [size] 1000 600
 [pos] -1 -1
-*-4.589243 74 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-4.597844 54 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] datapath_with_instructions_tb.
 [treeopen] datapath_with_instructions_tb.UUT.
 [treeopen] datapath_with_instructions_tb.UUT.DP.
@@ -20,20 +20,24 @@
 [treeopen] datapath_with_instructions_tb.UUT.DP.regfile.genblk1[4].
 [treeopen] datapath_with_instructions_tb.UUT.DP.regfile.genblk1[5].
 [treeopen] datapath_with_instructions_tb.UUT.DP.regfile.genblk1[6].
+[treeopen] datapath_with_instructions_tb.UUT.PC.
 [sst_width] 197
-[signals_width] 102
+[signals_width] 226
 [sst_expanded] 1
 [sst_vpaned_height] 153
 @28
 datapath_with_instructions_tb.UUT.CLK
 @24
-datapath_with_instructions_tb.UUT.DP.regfile.genblk1[1].xN.OUT[63:0]
-datapath_with_instructions_tb.UUT.DP.regfile.genblk1[2].xN.OUT[63:0]
-datapath_with_instructions_tb.UUT.DP.regfile.genblk1[3].xN.OUT[63:0]
++{datapath_with_instructions_tb.UUT.DP.regfile.genblk1[1].xN.x1[63:0]} datapath_with_instructions_tb.UUT.DP.regfile.genblk1[1].xN.OUT[63:0]
++{datapath_with_instructions_tb.UUT.DP.regfile.genblk1[2].xN.x2[63:0]} datapath_with_instructions_tb.UUT.DP.regfile.genblk1[2].xN.OUT[63:0]
++{datapath_with_instructions_tb.UUT.DP.regfile.genblk1[3].xN.x3[63:0]} datapath_with_instructions_tb.UUT.DP.regfile.genblk1[3].xN.OUT[63:0]
 @420
-datapath_with_instructions_tb.UUT.DP.regfile.genblk1[4].xN.OUT[63:0]
-datapath_with_instructions_tb.UUT.DP.regfile.genblk1[5].xN.OUT[63:0]
-@421
-datapath_with_instructions_tb.UUT.DP.regfile.genblk1[6].xN.OUT[63:0]
++{datapath_with_instructions_tb.UUT.DP.regfile.genblk1[4].xN.x4[63:0]} datapath_with_instructions_tb.UUT.DP.regfile.genblk1[4].xN.OUT[63:0]
++{datapath_with_instructions_tb.UUT.DP.regfile.genblk1[5].xN.x5[63:0]} datapath_with_instructions_tb.UUT.DP.regfile.genblk1[5].xN.OUT[63:0]
++{datapath_with_instructions_tb.UUT.DP.regfile.genblk1[6].xN.x6[63:0]} datapath_with_instructions_tb.UUT.DP.regfile.genblk1[6].xN.OUT[63:0]
+@22
++{datapath_with_instructions_tb.UUT.IR.IR[31:0]} datapath_with_instructions_tb.UUT.IR.OUT[31:0]
+@24
++{datapath_with_instructions_tb.UUT.PC.PC.PC[63:0]} datapath_with_instructions_tb.UUT.PC.PC.OUT[63:0]
 [pattern_trace] 1
 [pattern_trace] 0

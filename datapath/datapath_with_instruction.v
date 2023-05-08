@@ -9,8 +9,7 @@
 `include "datapath/register.v"
 `include "datapath/decoder5to32.v"
 `include "datapath/adder.v"
-`include "datapath/register_with_reset.v"
-`include "datapath/instruction_register.v"
+`include "datapath/register_negedge_with_reset.v"
 
 module datapath_with_instructions(
     input wire sub, // entra nas functs
@@ -62,10 +61,11 @@ module datapath_with_instructions(
         .OUTPUT(instruction_mem)
     );
 
-    instruction_register IR (
-        .in(instruction_mem),
-        .out(instruction),
-        .clk(CLK)
+    register #(.SIZE(32)) IR (
+        .CLK(CLK),
+        .IN(instruction_mem),
+        .OUT(instruction),
+        .LOAD(1'b1)
     );
 
 endmodule
