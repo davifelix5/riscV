@@ -26,7 +26,7 @@ module datapath (
     
     // Mutiplexadores para add-sub
     assign RF_Din = RF_din_sel ? ula : DM_out;
-    assign ULA_Din2 = ULA_din2_sel ? {{52{immediate[11]}}, immediate} : Dout_rs2;
+    assign ULA_Din2 = ULA_din2_sel ? immediate : Dout_rs2;
 
     // Memória de dados
     datamemory mem (
