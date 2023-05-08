@@ -1,35 +1,53 @@
-/**************************************************************************
+`include "datapath/instruction_memory.v"
+`include "datapath/program_counter.v"
+`include "datapath/datamemory.v"
+`include "datapath/regfile.v"
+`include "datapath/ula.v"
+`include "datapath/decoder2to4.v"
+`include "datapath/decoder3to8.v"
+`include "datapath/register.v"
+`include "datapath/decoder5to32.v"
+`include "datapath/adder.v"
+`include "datapath/register_negedge_with_reset.v"
 
-Fluxo de dados ADD-SUB
-Grupo 1
-    Davi Félix
-    Rodrigo Sinato
-    Natham Pez
-
-**************************************************************************/
-module datapath (
-    input wire[4:0] rs1,
-    input wire[4:0] rs2,
-    input wire[4:0] rd,
-    input wire[11:0] immediate,
+module datapath(
     input wire sub, // entra nas functs
     input WE_RF,
     input WE_MEM,
-    input wire RF_din_sel, // indica se a instrução é do tipo R
-    input wire ULA_din2_sel, // indica se a instrução é do tipo I
+    input wire RF_din_sel,
+    input wire ULA_din2_sel,
+    input wire load_pc,
+    input wire reset_pc,
     input wire CLK
 );
-    // Fios do datapath
-    wire[63:0] DM_in, DM_out, Dout_rs1, Dout_rs2;
-    wire[4:0] DM_ADDR;
-    wire[63:0] ula, RF_Din, ULA_Din2;
-    
-    // Mutiplexadores para add-sub
-    assign RF_Din = RF_din_sel ? ula : DM_out;
-    assign ULA_Din2 = ULA_din2_sel ? immediate : Dout_rs2;
 
-    // Memória de dados
-    datamemory mem (
+    wire[31:0] instruction_mem, instruction;
+    wire[63:0] im_addr, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2;
+    wire[11:0] imm, extended_imm;
+    wire[2:0] opcode;
+    wire[4:0] rs1, rs2, rd, DM_ADDR;
+
+    // Dados retirados da instrução
+    assign imm = instruction[6:0] == 7'b0100011 ? {instruction[31:25], instruction[11:7]} : instruction[31:20];
+    assign extended_imm = {{52{imm[11]}}, imm};
+    assign rs2 = instruction[24:20];
+    assign rs1 = instruction[19:15];
+    assign rd = instruction[11:7];
+
+    // Mutiplexadores do datapath
+    assign RF_Din = RF_din_sel ? ula : DM_out;
+    assign ULA_Din2 = ULA_din2_sel ? extended_imm : Dout_rs2;
+
+    program_counter PC (
+        .CLK(CLK),
+        .LOAD(load_pc),
+        .addr(im_addr),
+        .RST(reset_pc),
+        .immediate(extended_imm),
+        .pc_next_sel(1'b0)
+    );
+
+    datamemory DM (
         // Endereço da memória para ler
         .ADDR(ula[4:0]), 
         // Write-Enable da memória
@@ -64,6 +82,18 @@ module datapath (
         .s2(ULA_Din2),
         .sub(sub),
         .res(ula)
+    );
+
+    instruction_memory IM (
+        .ADDR(im_addr),
+        .OUTPUT(instruction_mem)
+    );
+
+    register #(.SIZE(32)) IR (
+        .CLK(CLK),
+        .IN(instruction_mem),
+        .OUT(instruction),
+        .LOAD(1'b1)
     );
 
 endmodule

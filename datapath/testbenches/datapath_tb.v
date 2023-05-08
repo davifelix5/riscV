@@ -20,9 +20,9 @@ Ele pode ser aberto pelo comando:
 
 **************************************************************************/
 
-`include "datapath/datapath_with_instruction.v"
+`include "datapath/datapath.v"
 
-module datapath_with_instructions_tb;
+module datapath_tb;
 
     reg[4:0] rs1, rs2, rd;
     reg[11:0] immediate;
@@ -30,7 +30,7 @@ module datapath_with_instructions_tb;
     reg sub, ULA_din2_sel, RF_din_sel;
     reg reset_pc;
 
-    datapath_with_instructions UUT (
+    datapath UUT (
         .sub(sub),
         .ULA_din2_sel(ULA_din2_sel),
         .RF_din_sel(RF_din_sel),
@@ -42,8 +42,8 @@ module datapath_with_instructions_tb;
     );
 
     initial begin
-        $dumpfile("datapath/testbenches/vvp/waveforms3.vcd");
-        $dumpvars(0, datapath_with_instructions_tb);
+        $dumpfile("datapath/testbenches/waves/datapath_with_im/waveforms3.vcd");
+        $dumpvars(0, datapath_tb);
         CLK = 0;
 
         reset_pc = 1;
