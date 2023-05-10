@@ -13,7 +13,7 @@ module ula #(parameter SIZE = 64) (
   assign EQ = ~| res;
   assign GT_SN = ~EQ & ~LT_SN;
   assign LT_SN = (s1[63] ^ s2[63]) ? s1[63]: res[63];
-  assign LT_UN = ~GT_UN;
+  assign LT_UN = ~GT_UN & ~EQ;
 
   // Somador para calcular o resultado final
   adder #(.SIZE(SIZE)) adder (
