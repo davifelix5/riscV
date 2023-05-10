@@ -1,33 +1,33 @@
 [*]
-[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Wed May 10 14:36:46 2023
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed May 10 17:52:46 2023
 [*]
-[dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\flags\waves.vcd"
-[dumpfile_mtime] "Wed May 10 14:34:48 2023"
-[dumpfile_size] 36377
-[savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\flags\flags.gtkw"
-[timestart] 408
-[size] 1000 600
+[dumpfile] "/home/aluno/Documentos/riscV/datapath/testbenches/waves/flags/waves.vcd"
+[dumpfile_mtime] "Wed May 10 17:50:53 2023"
+[dumpfile_size] 36334
+[savefile] "/home/aluno/Documentos/riscV/datapath/testbenches/waves/flags/flags.gtkw"
+[timestart] 428
+[size] 1920 1012
 [pos] -1 -1
-*-4.921819 450 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-4.921819 600 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] flags_tb.
 [treeopen] flags_tb.UUT.
-[sst_width] 197
+[sst_width] 212
 [signals_width] 184
 [sst_expanded] 1
-[sst_vpaned_height] 153
-@420
+[sst_vpaned_height] 301
+@421
 flags_tb.s1[63:0]
+@420
 flags_tb.s2[63:0]
 flags_tb.res[63:0]
 @28
 flags_tb.UUT.EQ
 flags_tb.UUT.GT_SN
 flags_tb.UUT.LT_SN
-@25
+@24
 [color] 3
 flags_tb.s1[63:0]
-@24
 [color] 3
 flags_tb.s2[63:0]
 [color] 3

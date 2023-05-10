@@ -18,18 +18,19 @@ module datapath(
     input wire ULA_din2_sel,
     input wire load_pc,
     input wire reset_pc,
-    input wire CLK
+    input wire CLK,
+    input wire pc_next_sel
 );
 
     wire[31:0] instruction_mem, instruction;
-    wire[63:0] im_addr, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2;
-    wire[11:0] imm, extended_imm;
+    wire[63:0] im_addr, extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2;
+    wire[11:0] imm;
     wire[2:0] opcode;
     wire[4:0] rs1, rs2, rd, DM_ADDR;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
 
     // Dados retirados da instrução
-    assign imm = instruction[6:0] == 7'b0100011 ? {instruction[31:25], instruction[11:7]} : instruction[31:20];
+    assign imm = instruction[6:0] == 7'b0100011 ? {instruction[31:25], instruction[11:7]} : (instruction[6:0] == 7'b1100011 ? {instruction[31], instruction[7], instruction[30:25], instruction[11:8]} : instruction[31:20]);
     assign extended_imm = {{52{imm[11]}}, imm};
     assign rs2 = instruction[24:20];
     assign rs1 = instruction[19:15];
@@ -45,7 +46,13 @@ module datapath(
         .addr(im_addr),
         .RST(reset_pc),
         .immediate(extended_imm),
-        .pc_next_sel(1'b0)
+        .opcode(instruction[6:0]),
+        .func(instruction[14:12]),
+        .EQ(EQ),
+        .LT_SN(LT_SN),
+        .LT_UN(LT_UN),
+        .GT_SN(GT_SN),
+        .GT_UN(GT_UN)
     );
 
     datamemory DM (
@@ -91,7 +98,7 @@ module datapath(
     );
 
     instruction_memory IM (
-        .ADDR(im_addr),
+        .ADDR({2'b0,im_addr[63:2]}),
         .OUTPUT(instruction_mem)
     );
 

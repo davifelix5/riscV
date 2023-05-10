@@ -10,10 +10,13 @@ module ula #(parameter SIZE = 64) (
   output wire LT_UN
 );
 
+  wire cout;
+
   assign EQ = ~| res;
   assign GT_SN = ~EQ & ~LT_SN;
   assign LT_SN = (s1[63] ^ s2[63]) ? s1[63]: res[63];
   assign LT_UN = ~GT_UN & ~EQ;
+  assign GT_UN = cout & ~EQ;
 
   // Somador para calcular o resultado final
   adder #(.SIZE(SIZE)) adder (
@@ -21,7 +24,7 @@ module ula #(parameter SIZE = 64) (
     .Y(s2 ^ {SIZE{sub}}),
     .S(res),
     .Cin(sub),
-    .Cout(GT_UN)
+    .Cout(cout)
   );
 
 endmodule

@@ -13,6 +13,7 @@ module instruction_memory(
         memory[4] = {7'b0, 5'd4, 5'd0, 3'b010, 5'b10010, 7'b0100011}; // st x4, 18(x0)
         memory[5] = {12'd50, 5'd4, 3'b000, 5'd5, 7'b0010011}; // addi x5, x4, 50
         memory[6] = {12'd18, 5'd0, 3'b010, 5'd6, 7'b000011}; // ld x6, 30(x0)
+        memory[7] = {1'b1, 6'b111111, 5'd1, 5'd2, 3'b001, 5'b11001, 7'b1100011}; // bneq x1, x2, -4
     end
 
     assign OUTPUT = memory[ADDR];
