@@ -1,14 +1,14 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Mon May 08 23:29:32 2023
+[*] Wed May 10 14:33:04 2023
 [*]
 [dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\waveforms3.vcd"
-[dumpfile_mtime] "Mon May 08 23:24:57 2023"
-[dumpfile_size] 78762
+[dumpfile_mtime] "Wed May 10 14:32:48 2023"
+[dumpfile_size] 79043
 [savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\dp_with_im.gtkw"
-[timestart] 0
-[size] 1366 705
-[pos] -35 -35
+[timestart] 27
+[size] 1000 600
+[pos] -1 -1
 *-4.589243 54 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] datapath_tb.
 [treeopen] datapath_tb.UUT.

@@ -26,6 +26,7 @@ module datapath(
     wire[11:0] imm, extended_imm;
     wire[2:0] opcode;
     wire[4:0] rs1, rs2, rd, DM_ADDR;
+    wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
 
     // Dados retirados da instrução
     assign imm = instruction[6:0] == 7'b0100011 ? {instruction[31:25], instruction[11:7]} : instruction[31:20];
@@ -81,7 +82,12 @@ module datapath(
         .s1(Dout_rs1),
         .s2(ULA_Din2),
         .sub(sub),
-        .res(ula)
+        .res(ula),
+        .EQ(EQ),
+        .GT_SN(GT_SN),
+        .LT_SN(LT_SN),
+        .GT_UN(GT_UN),
+        .LT_UN(LT_UN)
     );
 
     instruction_memory IM (

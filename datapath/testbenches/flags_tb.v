@@ -1,7 +1,7 @@
 `include "datapath/adder.v"
 `include "datapath/ula.v"
 
-module sub_tb;
+module flags_tb;
 
   reg[63:0] s1, s2;
   wire[63:0] res;
@@ -14,8 +14,8 @@ module sub_tb;
   );
 
   initial begin
-    $dumpfile("datapath/testbenches/waves/sub/waves.vcd");
-    $dumpvars(0, sub_tb);
+    $dumpfile("datapath/testbenches/waves/flags/waves.vcd");
+    $dumpvars(0, flags_tb);
     // Signed
     s1 = 64'd1;
     s2 = -64'd45;
