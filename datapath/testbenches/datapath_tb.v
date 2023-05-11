@@ -28,7 +28,7 @@ module datapath_tb;
     reg[11:0] immediate;
     reg CLK, WE_RF, WE_MEM;
     reg sub, ULA_din2_sel, RF_din_sel;
-    reg reset_pc;
+    reg reset_pc, pc_next_sel;
 
     datapath UUT (
         .sub(sub),
@@ -38,13 +38,15 @@ module datapath_tb;
         .WE_MEM(WE_MEM),
         .CLK(CLK),
         .load_pc(1'b1),
-        .reset_pc(reset_pc)
+        .reset_pc(reset_pc),
+        .pc_next_sel(pc_next_sel)
     );
 
     initial begin
         $dumpfile("datapath/testbenches/waves/datapath_with_im/waveforms3.vcd");
         $dumpvars(0, datapath_tb);
         CLK = 0;
+        pc_next_sel = 1'b0;
 
         reset_pc = 1;
         #10
@@ -104,7 +106,13 @@ module datapath_tb;
         sub = 0;
         WE_RF = 1; // Habilita escrita nos registradores
         WE_MEM = 0; // Desabilita escrita na memória
-        #10;
+        #5;
+
+        // bne
+        pc_next_sel = 1'b1;
+        sub = 1;
+        ULA_din2_sel = 0;
+        #100;
         
         $finish;
     end

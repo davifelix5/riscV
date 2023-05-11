@@ -24,6 +24,10 @@ module instruction_memory_tb;
         #10;
         addr_tb = 5;
         #1000;
+        addr_tb = 6;
+        #1000;
+        addr_tb = 7;
+        #1000;
         $finish;
     end
 

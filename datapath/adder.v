@@ -30,7 +30,7 @@ module adder #(parameter SIZE=32) (
         adder1bit SOMA (.X(X[i]), .Y(Y[i]), .S(S[i]), .Cin(cins[i]), .Cout(cins[i+1]));
     endgenerate
 
-    assign cout = cins[SIZE];
+    assign Cout = cins[SIZE];
 
     
 
