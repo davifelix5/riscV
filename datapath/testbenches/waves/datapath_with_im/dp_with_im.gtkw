@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Wed May 10 17:49:40 2023
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Fri May 12 12:53:56 2023
 [*]
-[dumpfile] "/home/aluno/Documentos/riscV/datapath/testbenches/waves/datapath_with_im/waveforms3.vcd"
-[dumpfile_mtime] "Wed May 10 17:48:38 2023"
-[dumpfile_size] 104113
-[savefile] "/home/aluno/Documentos/riscV/datapath/testbenches/waves/datapath_with_im/dp_with_im.gtkw"
-[timestart] 0
-[size] 1920 1012
+[dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\waveforms3.vcd"
+[dumpfile_mtime] "Fri May 12 12:53:45 2023"
+[dumpfile_size] 125207
+[savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\dp_with_im.gtkw"
+[timestart] 16
+[size] 1000 600
 [pos] -1 -1
-*-4.589243 75 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-5.708825 101 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] datapath_tb.
 [treeopen] datapath_tb.UUT.
 [treeopen] datapath_tb.UUT.PC.
@@ -21,9 +21,9 @@
 [treeopen] datapath_tb.UUT.RF.genblk1[5].
 [treeopen] datapath_tb.UUT.RF.genblk1[6].
 [sst_width] 212
-[signals_width] 508
+[signals_width] 191
 [sst_expanded] 1
-[sst_vpaned_height] 374
+[sst_vpaned_height] 323
 @28
 datapath_tb.CLK
 @420
