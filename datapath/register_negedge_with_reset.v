@@ -7,7 +7,7 @@ module register_negedge_with_reset #(parameter SIZE=64) (
 );
 
   always @(negedge CLK or negedge RST) begin
-    if (RST)
+    if (~RST)
       OUT <= {SIZE{1'b0}};
     else if (LOAD)
       OUT <= IN;

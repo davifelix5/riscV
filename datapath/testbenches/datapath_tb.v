@@ -48,9 +48,9 @@ module datapath_tb;
         CLK = 0;
         pc_next_sel = 1'b0;
 
-        reset_pc = 1;
-        #10
         reset_pc = 0;
+        #10
+        reset_pc = 1;
 
         // ld
         ULA_din2_sel = 1;
