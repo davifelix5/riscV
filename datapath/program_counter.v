@@ -29,8 +29,7 @@ module program_counter (
     end
 
     // Para que sel seja utilizado, opcode tem que ser 1100011
-    // Para isso, é possível verificar só o começo da opcode (1100), pois não se repete em outra
-    assign final_sel = (opcode[6] & opcode[5] & ~opcode[4] & ~opcode[3]) & sel;
+    assign final_sel = opcode == 7'b1100011 & sel;
 
     wire[63:0] next;
     wire[63:0] pc_next;

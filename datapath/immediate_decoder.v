@@ -9,6 +9,8 @@ module immediate_decoder(
       7'b0100011: immediate = {{52{instruction[31]}}, instruction[31:25], instruction[11:7]}; 
       // B-type
       7'b1100011: immediate = {{52{instruction[31]}}, instruction[7], instruction[30:25], instruction[11:8], 1'b0};
+      // J-type
+      7'b1101111: immediate = {{43{instruction[31]}}, instruction[19:12], instruction[12], instruction[20], instruction[30:21], 1'b0};
       // I-type
       default: immediate = instruction[31:20];
     endcase
