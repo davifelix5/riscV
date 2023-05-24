@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Fri May 12 12:53:56 2023
+[*] Wed May 24 00:10:45 2023
 [*]
 [dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\waveforms3.vcd"
-[dumpfile_mtime] "Fri May 12 12:53:45 2023"
-[dumpfile_size] 125207
+[dumpfile_mtime] "Wed May 24 00:07:51 2023"
+[dumpfile_size] 106090
 [savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\dp_with_im.gtkw"
-[timestart] 16
+[timestart] 4
 [size] 1000 600
 [pos] -1 -1
-*-5.708825 101 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-5.708825 115 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] datapath_tb.
 [treeopen] datapath_tb.UUT.
 [treeopen] datapath_tb.UUT.PC.
@@ -21,7 +21,7 @@
 [treeopen] datapath_tb.UUT.RF.genblk1[5].
 [treeopen] datapath_tb.UUT.RF.genblk1[6].
 [sst_width] 212
-[signals_width] 191
+[signals_width] 206
 [sst_expanded] 1
 [sst_vpaned_height] 323
 @28
@@ -33,7 +33,7 @@ datapath_tb.CLK
 +{datapath_tb.UUT.RF.genblk1[4].xN.x4[63:0]} datapath_tb.UUT.RF.genblk1[4].xN.OUT[63:0]
 +{datapath_tb.UUT.RF.genblk1[5].xN.x5[63:0]} datapath_tb.UUT.RF.genblk1[5].xN.OUT[63:0]
 +{datapath_tb.UUT.RF.genblk1[6].xN.x6[63:0]} datapath_tb.UUT.RF.genblk1[6].xN.OUT[63:0]
-@c00028
+@c00029
 +{datapath_tb.UUT.IR.IR[31:0]} datapath_tb.UUT.IR.OUT[31:0]
 @28
 (0)datapath_tb.UUT.IR.OUT[31:0]
@@ -68,27 +68,12 @@ datapath_tb.CLK
 (29)datapath_tb.UUT.IR.OUT[31:0]
 (30)datapath_tb.UUT.IR.OUT[31:0]
 (31)datapath_tb.UUT.IR.OUT[31:0]
-@1401200
+@1401201
 -group_end
 @24
 +{datapath_tb.UUT.PC.PC.PC[63:0]} datapath_tb.UUT.PC.PC.OUT[63:0]
-@c00028
-datapath_tb.UUT.imm[11:0]
-@28
-(0)datapath_tb.UUT.imm[11:0]
-(1)datapath_tb.UUT.imm[11:0]
-(2)datapath_tb.UUT.imm[11:0]
-(3)datapath_tb.UUT.imm[11:0]
-(4)datapath_tb.UUT.imm[11:0]
-(5)datapath_tb.UUT.imm[11:0]
-(6)datapath_tb.UUT.imm[11:0]
-(7)datapath_tb.UUT.imm[11:0]
-(8)datapath_tb.UUT.imm[11:0]
-(9)datapath_tb.UUT.imm[11:0]
-(10)datapath_tb.UUT.imm[11:0]
-(11)datapath_tb.UUT.imm[11:0]
-@1401200
--group_end
+@420
+datapath_tb.UUT.extended_imm[63:0]
 @c00024
 datapath_tb.UUT.IM.ADDR[63:0]
 @28
@@ -158,21 +143,5 @@ datapath_tb.UUT.IM.ADDR[63:0]
 (63)datapath_tb.UUT.IM.ADDR[63:0]
 @1401200
 -group_end
-@28
-datapath_tb.UUT.PC.EQ
-datapath_tb.UUT.ULA.EQ
-@420
-datapath_tb.UUT.ULA.s1[63:0]
-datapath_tb.UUT.ULA.s2[63:0]
-@28
-datapath_tb.UUT.ULA.EQ
-datapath_tb.UUT.PC.func[2:0]
-datapath_tb.UUT.PC.sel
-datapath_tb.UUT.PC.final_sel
-datapath_tb.UUT.ULA.GT_SN
-@22
-datapath_tb.UUT.RF.Ra[4:0]
-@23
-datapath_tb.UUT.RF.Rb[4:0]
 [pattern_trace] 1
 [pattern_trace] 0
