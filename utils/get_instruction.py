@@ -12,8 +12,12 @@ def get_instruction(bin_opcode : str, inst_type: str, imm: int=0, rs1: int=0, rs
   if inst_type == 'I':
     bin_imm = to_binary(imm, 12)
     return f'{bin_imm}{bin_rs1}{funct3}{bin_rd}{bin_opcode}'
+  if inst_type == 'U':
+    bin_imm = to_binary(imm, 32)[0:20]
+    return f'{bin_imm}{bin_rd}{bin_opcode}'
 
 
 if __name__ == '__main__':
   print(get_instruction(imm=233*4, rd=1, bin_opcode='1101111', inst_type='J'))
   print(get_instruction(imm=8, rs1=0, rd=0, bin_opcode='1100111', inst_type='I', funct3='000'))
+  print(get_instruction(imm=4096, rd=5, bin_opcode='0010111', inst_type='U'))
