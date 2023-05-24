@@ -72,19 +72,19 @@ module datapath(
 
     regfile RF (
         // Seletor do registrador cujo valor estará na saída Da
-        .Ra(rs1),
+        .rs1(rs1),
         // Seletor do registrador cujo valor estará na saída Db
-        .Rb(rs2),
+        .rs2(rs2),
         // Caso esteja desativo, os loads não funcionam
         .WE(WE_RF),
         // Entrada de dados a serem salvos no registrador
         .Din(RF_Din),
         // Seletor do registrador em que a palavra Din será escrita
-        .Rw(rd),
+        .rd(rd),
         .CLK(CLK),
         // Saídas de dados
-        .Da(Dout_rs1),
-        .Db(Dout_rs2)
+        .D1(Dout_rs1),
+        .D2(Dout_rs2)
     );
 
     // Somador para somar o endereço de origem da memória com o offset fornecido
