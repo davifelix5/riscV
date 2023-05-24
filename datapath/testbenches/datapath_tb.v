@@ -117,6 +117,15 @@ module datapath_tb;
         ULA_din2_sel = 0;
         */
 
+        // auipc
+        RF_din_sel = 2'd3;
+        pc_adder_sel = 1'b1;
+        pc_next_sel = 1'b0;
+        WE_RF = 1;
+        sub = 0;
+        WE_MEM = 0;
+        #10
+
         // jal
         RF_din_sel = 2'd2;
         pc_adder_sel = 1'b1;

@@ -18,6 +18,6 @@ def get_instruction(bin_opcode : str, inst_type: str, imm: int=0, rs1: int=0, rs
 
 
 if __name__ == '__main__':
-  print(get_instruction(imm=233*4, rd=1, bin_opcode='1101111', inst_type='J'))
+  print(get_instruction(imm=232*4, rd=1, bin_opcode='1101111', inst_type='J'))
   print(get_instruction(imm=8, rs1=0, rd=0, bin_opcode='1100111', inst_type='I', funct3='000'))
-  print(get_instruction(imm=4096, rd=5, bin_opcode='0010111', inst_type='U'))
+  print(get_instruction(imm=4096, rd=20, bin_opcode='0010111', inst_type='U'))

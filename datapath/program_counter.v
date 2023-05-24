@@ -19,7 +19,8 @@ module program_counter (
     input wire GT_UN,
     // Endereço da memória de instruções
     output wire [63:0] addr,
-    output wire[63:0] pc_to_store
+    output wire[63:0] primary_adder_res,
+    output wire[63:0] secondary_adder_res
 );
 
     reg sel;
@@ -36,7 +37,7 @@ module program_counter (
         endcase
     end
 
-    wire[63:0] pc_next, pc_adder, primary_adder_res, secondary_adder_res;
+    wire[63:0] pc_next, pc_adder;
     wire final_pc_adder_sel, final_pc_next_sel;
 
     // Para que sel seja utilizado, opcode tem que ser 1100011
@@ -45,7 +46,6 @@ module program_counter (
 
     assign pc_adder = final_pc_adder_sel ? addr : Dout_rs1;
     assign pc_next = final_pc_next_sel ? secondary_adder_res : primary_adder_res;
-    assign pc_to_store = primary_adder_res;
     
 
     adder #(.SIZE(64)) primary_adder (

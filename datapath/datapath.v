@@ -25,13 +25,13 @@ module datapath(
 );
 
     wire[31:0] instruction_mem, instruction;
-    wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2, im_addr, pc_to_store, last_pc;
+    wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2, im_addr, pc_primary_adder, pc_secondary_adder, last_pc_primary;
     wire[2:0] opcode;
     wire[4:0] rs1, rs2, rd, DM_ADDR;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
 
-    // Registrador para salvar o que seria o próximo PC depois de um jump
-    register last_pc_reg (.IN(pc_to_store), .LOAD(1'b1), .CLK(CLK), .OUT(last_pc));
+    // Registradores para salvar os resultados dos somadores dentro do PC
+    register pc_primary_reg (.IN(pc_primary_adder), .LOAD(1'b1), .CLK(CLK), .OUT(last_pc_primary));
 
     // Dados retirados da instrução
     assign rs2 = instruction[24:20];
@@ -39,7 +39,7 @@ module datapath(
     assign rd = instruction[11:7];
 
     // Mutiplexadores do datapath
-    assign RF_Din = RF_din_sel[1] ? last_pc : (RF_din_sel[0] ? ula : DM_out);
+    assign RF_Din = RF_din_sel[1] ? (RF_din_sel[0] ? pc_secondary_adder : last_pc_primary) : (RF_din_sel[0] ? ula : DM_out);
     assign ULA_Din2 = ULA_din2_sel ? extended_imm : Dout_rs2;
 
     immediate_decoder IMM_DECODER (
@@ -60,7 +60,8 @@ module datapath(
         .immediate(extended_imm),
         // Saidas
         .addr(im_addr),
-        .pc_to_store(pc_to_store),
+        .primary_adder_res(pc_primary_adder),
+        .secondary_adder_res(pc_secondary_adder),
         // Valor do regfile
         .Dout_rs1(Dout_rs1),
         // Flags
