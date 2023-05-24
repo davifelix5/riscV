@@ -1,17 +1,25 @@
 module program_counter (
+    // Sinais de controle
     input CLK,
     input LOAD,
     input RST,
     input wire pc_next_sel,
+    input wire pc_adder_sel,
+    // Valores da instrução
     input wire[63:0] immediate,
-    output wire [31:0] addr,
     input wire[6:0] opcode,
     input wire[2:0] func,
+    // Saída do regfile
+    input wire[63:0] Dout_rs1,
+    // Flags
     input wire EQ,
     input wire LT_SN,
     input wire LT_UN,
     input wire GT_SN,
-    input wire GT_UN
+    input wire GT_UN,
+    // Endereço da memória de instruções
+    output wire [63:0] addr,
+    output wire[63:0] pc_to_store
 );
 
     reg sel;
@@ -28,21 +36,32 @@ module program_counter (
         endcase
     end
 
+    wire[63:0] pc_next, pc_adder, primary_adder_res, secondary_adder_res;
+    wire final_pc_adder_sel, final_pc_next_sel;
+
     // Para que sel seja utilizado, opcode tem que ser 1100011
-    assign final_sel = opcode == 7'b1100011 & sel;
+    assign final_pc_next_sel = opcode == 7'b1100011 ? sel : pc_next_sel;
+    assign final_pc_adder_sel = opcode == 7'b1100011 ? 1'b1 : pc_adder_sel; 
 
-    wire[31:0] next;
-    wire[31:0] pc_next;
+    assign pc_adder = final_pc_adder_sel ? addr : Dout_rs1;
+    assign pc_next = final_pc_next_sel ? secondary_adder_res : primary_adder_res;
+    assign pc_to_store = primary_adder_res;
+    
 
-    assign pc_next = final_sel ? immediate : 64'd4;
-
-    adder #(.SIZE(32)) adder (
+    adder #(.SIZE(64)) primary_adder (
         .X(addr),
-        .Y(pc_next),
+        .Y(64'd4),
         .Cin(1'b0),
-        .S(next)
+        .S(primary_adder_res)
     );
 
-    register_negedge_with_reset #(.SIZE(32)) PC (.IN(next), .OUT(addr), .RST(RST), .LOAD(LOAD), .CLK(CLK));
+    adder #(.SIZE(64)) secondary_adder (
+        .X(immediate),
+        .Y(pc_adder),
+        .Cin(1'b0),
+        .S(secondary_adder_res)
+    );
+
+    register_negedge_with_reset #(.SIZE(64)) PC (.IN(pc_next), .OUT(addr), .RST(RST), .LOAD(LOAD), .CLK(CLK));
 
 endmodule
