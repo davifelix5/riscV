@@ -9,6 +9,7 @@
 `include "datapath/decoder5to32.v"
 `include "datapath/adder.v"
 `include "datapath/register_negedge_with_reset.v"
+`include "datapath/immediate_decoder.v"
 
 module datapath(
     input wire sub, // entra nas functs
@@ -24,14 +25,11 @@ module datapath(
 
     wire[31:0] instruction_mem, instruction;
     wire[63:0] im_addr, extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2;
-    wire[11:0] imm;
     wire[2:0] opcode;
     wire[4:0] rs1, rs2, rd, DM_ADDR;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
 
     // Dados retirados da instrução
-    assign imm = instruction[6:0] == 7'b0100011 ? {instruction[31:25], instruction[11:7]} : (instruction[6:0] == 7'b1100011 ? {instruction[31], instruction[7], instruction[30:25], instruction[11:8]} : instruction[31:20]);
-    assign extended_imm = {{52{imm[11]}}, imm};
     assign rs2 = instruction[24:20];
     assign rs1 = instruction[19:15];
     assign rd = instruction[11:7];
@@ -39,6 +37,11 @@ module datapath(
     // Mutiplexadores do datapath
     assign RF_Din = RF_din_sel ? ula : DM_out;
     assign ULA_Din2 = ULA_din2_sel ? extended_imm : Dout_rs2;
+
+    immediate_decoder IMM_DECODER (
+        .instruction(instruction),
+        .immediate(extended_imm)
+    );
 
     program_counter PC (
         .CLK(CLK),
