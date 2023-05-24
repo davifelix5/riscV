@@ -23,8 +23,8 @@ module datapath(
     input wire pc_next_sel
 );
 
-    wire[31:0] instruction_mem, instruction;
-    wire[63:0] im_addr, extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2;
+    wire[31:0] instruction_mem, instruction, im_addr;
+    wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2;
     wire[2:0] opcode;
     wire[4:0] rs1, rs2, rd, DM_ADDR;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
@@ -101,7 +101,7 @@ module datapath(
     );
 
     instruction_memory IM (
-        .ADDR({2'b0,im_addr[63:2]}),
+        .ADDR({2'b0,im_addr[31:2]}),
         .OUTPUT(instruction_mem)
     );
 

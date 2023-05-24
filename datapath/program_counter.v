@@ -4,7 +4,7 @@ module program_counter (
     input RST,
     input wire pc_next_sel,
     input wire[63:0] immediate,
-    output wire [63:0] addr,
+    output wire [31:0] addr,
     input wire[6:0] opcode,
     input wire[2:0] func,
     input wire EQ,
@@ -31,18 +31,18 @@ module program_counter (
     // Para que sel seja utilizado, opcode tem que ser 1100011
     assign final_sel = opcode == 7'b1100011 & sel;
 
-    wire[63:0] next;
-    wire[63:0] pc_next;
+    wire[31:0] next;
+    wire[31:0] pc_next;
 
     assign pc_next = final_sel ? immediate : 64'd4;
 
-    adder #(.SIZE(64)) adder (
+    adder #(.SIZE(32)) adder (
         .X(addr),
         .Y(pc_next),
         .Cin(1'b0),
         .S(next)
     );
 
-    register_negedge_with_reset PC (.IN(next), .OUT(addr), .RST(RST), .LOAD(LOAD), .CLK(CLK));
+    register_negedge_with_reset #(.SIZE(32)) PC (.IN(next), .OUT(addr), .RST(RST), .LOAD(LOAD), .CLK(CLK));
 
 endmodule

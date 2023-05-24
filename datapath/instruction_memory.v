@@ -1,9 +1,9 @@
 module instruction_memory(
-    input wire[63:0] ADDR,
+    input wire[31:0] ADDR,
     output wire[31:0] OUTPUT
 );
 
-    reg[31:0] memory[31:0]; // 2^64 valores na memória
+    reg[31:0] memory[500:0]; // 2^32 valores na memória
 
     initial begin
         memory[0] = {12'd16, 5'd0, 3'b010, 5'd1, 7'b000011}; // ld x1, 16(x0)
