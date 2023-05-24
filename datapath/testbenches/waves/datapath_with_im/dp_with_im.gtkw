@@ -1,29 +1,31 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Wed May 24 00:10:45 2023
+[*] Wed May 24 04:01:47 2023
 [*]
 [dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\waveforms3.vcd"
-[dumpfile_mtime] "Wed May 24 00:07:51 2023"
-[dumpfile_size] 106090
+[dumpfile_mtime] "Wed May 24 03:56:17 2023"
+[dumpfile_size] 112763
 [savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\datapath\testbenches\waves\datapath_with_im\dp_with_im.gtkw"
-[timestart] 4
-[size] 1000 600
-[pos] -1 -1
-*-5.708825 115 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 0
+[size] 1366 705
+[pos] -139 -98
+*-4.107375 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] datapath_tb.
 [treeopen] datapath_tb.UUT.
-[treeopen] datapath_tb.UUT.PC.
+[treeopen] datapath_tb.UUT.PC.secondary_adder.
+[treeopen] datapath_tb.UUT.PC.secondary_adder.genblk1[20].
 [treeopen] datapath_tb.UUT.RF.
 [treeopen] datapath_tb.UUT.RF.genblk1[1].
+[treeopen] datapath_tb.UUT.RF.genblk1[20].
 [treeopen] datapath_tb.UUT.RF.genblk1[2].
 [treeopen] datapath_tb.UUT.RF.genblk1[3].
 [treeopen] datapath_tb.UUT.RF.genblk1[4].
 [treeopen] datapath_tb.UUT.RF.genblk1[5].
 [treeopen] datapath_tb.UUT.RF.genblk1[6].
-[sst_width] 212
-[signals_width] 206
+[sst_width] 197
+[signals_width] 500
 [sst_expanded] 1
-[sst_vpaned_height] 323
+[sst_vpaned_height] 307
 @28
 datapath_tb.CLK
 @420
@@ -33,7 +35,9 @@ datapath_tb.CLK
 +{datapath_tb.UUT.RF.genblk1[4].xN.x4[63:0]} datapath_tb.UUT.RF.genblk1[4].xN.OUT[63:0]
 +{datapath_tb.UUT.RF.genblk1[5].xN.x5[63:0]} datapath_tb.UUT.RF.genblk1[5].xN.OUT[63:0]
 +{datapath_tb.UUT.RF.genblk1[6].xN.x6[63:0]} datapath_tb.UUT.RF.genblk1[6].xN.OUT[63:0]
-@c00029
+@24
++{datapath_tb.UUT.RF.genblk1[20].xN.x20[63:0]} datapath_tb.UUT.RF.genblk1[20].xN.OUT[63:0]
+@c00028
 +{datapath_tb.UUT.IR.IR[31:0]} datapath_tb.UUT.IR.OUT[31:0]
 @28
 (0)datapath_tb.UUT.IR.OUT[31:0]
@@ -68,80 +72,11 @@ datapath_tb.CLK
 (29)datapath_tb.UUT.IR.OUT[31:0]
 (30)datapath_tb.UUT.IR.OUT[31:0]
 (31)datapath_tb.UUT.IR.OUT[31:0]
-@1401201
--group_end
-@24
-+{datapath_tb.UUT.PC.PC.PC[63:0]} datapath_tb.UUT.PC.PC.OUT[63:0]
-@420
-datapath_tb.UUT.extended_imm[63:0]
-@c00024
-datapath_tb.UUT.IM.ADDR[63:0]
-@28
-(0)datapath_tb.UUT.IM.ADDR[63:0]
-(1)datapath_tb.UUT.IM.ADDR[63:0]
-(2)datapath_tb.UUT.IM.ADDR[63:0]
-(3)datapath_tb.UUT.IM.ADDR[63:0]
-(4)datapath_tb.UUT.IM.ADDR[63:0]
-(5)datapath_tb.UUT.IM.ADDR[63:0]
-(6)datapath_tb.UUT.IM.ADDR[63:0]
-(7)datapath_tb.UUT.IM.ADDR[63:0]
-(8)datapath_tb.UUT.IM.ADDR[63:0]
-(9)datapath_tb.UUT.IM.ADDR[63:0]
-(10)datapath_tb.UUT.IM.ADDR[63:0]
-(11)datapath_tb.UUT.IM.ADDR[63:0]
-(12)datapath_tb.UUT.IM.ADDR[63:0]
-(13)datapath_tb.UUT.IM.ADDR[63:0]
-(14)datapath_tb.UUT.IM.ADDR[63:0]
-(15)datapath_tb.UUT.IM.ADDR[63:0]
-(16)datapath_tb.UUT.IM.ADDR[63:0]
-(17)datapath_tb.UUT.IM.ADDR[63:0]
-(18)datapath_tb.UUT.IM.ADDR[63:0]
-(19)datapath_tb.UUT.IM.ADDR[63:0]
-(20)datapath_tb.UUT.IM.ADDR[63:0]
-(21)datapath_tb.UUT.IM.ADDR[63:0]
-(22)datapath_tb.UUT.IM.ADDR[63:0]
-(23)datapath_tb.UUT.IM.ADDR[63:0]
-(24)datapath_tb.UUT.IM.ADDR[63:0]
-(25)datapath_tb.UUT.IM.ADDR[63:0]
-(26)datapath_tb.UUT.IM.ADDR[63:0]
-(27)datapath_tb.UUT.IM.ADDR[63:0]
-(28)datapath_tb.UUT.IM.ADDR[63:0]
-(29)datapath_tb.UUT.IM.ADDR[63:0]
-(30)datapath_tb.UUT.IM.ADDR[63:0]
-(31)datapath_tb.UUT.IM.ADDR[63:0]
-(32)datapath_tb.UUT.IM.ADDR[63:0]
-(33)datapath_tb.UUT.IM.ADDR[63:0]
-(34)datapath_tb.UUT.IM.ADDR[63:0]
-(35)datapath_tb.UUT.IM.ADDR[63:0]
-(36)datapath_tb.UUT.IM.ADDR[63:0]
-(37)datapath_tb.UUT.IM.ADDR[63:0]
-(38)datapath_tb.UUT.IM.ADDR[63:0]
-(39)datapath_tb.UUT.IM.ADDR[63:0]
-(40)datapath_tb.UUT.IM.ADDR[63:0]
-(41)datapath_tb.UUT.IM.ADDR[63:0]
-(42)datapath_tb.UUT.IM.ADDR[63:0]
-(43)datapath_tb.UUT.IM.ADDR[63:0]
-(44)datapath_tb.UUT.IM.ADDR[63:0]
-(45)datapath_tb.UUT.IM.ADDR[63:0]
-(46)datapath_tb.UUT.IM.ADDR[63:0]
-(47)datapath_tb.UUT.IM.ADDR[63:0]
-(48)datapath_tb.UUT.IM.ADDR[63:0]
-(49)datapath_tb.UUT.IM.ADDR[63:0]
-(50)datapath_tb.UUT.IM.ADDR[63:0]
-(51)datapath_tb.UUT.IM.ADDR[63:0]
-(52)datapath_tb.UUT.IM.ADDR[63:0]
-(53)datapath_tb.UUT.IM.ADDR[63:0]
-(54)datapath_tb.UUT.IM.ADDR[63:0]
-(55)datapath_tb.UUT.IM.ADDR[63:0]
-(56)datapath_tb.UUT.IM.ADDR[63:0]
-(57)datapath_tb.UUT.IM.ADDR[63:0]
-(58)datapath_tb.UUT.IM.ADDR[63:0]
-(59)datapath_tb.UUT.IM.ADDR[63:0]
-(60)datapath_tb.UUT.IM.ADDR[63:0]
-(61)datapath_tb.UUT.IM.ADDR[63:0]
-(62)datapath_tb.UUT.IM.ADDR[63:0]
-(63)datapath_tb.UUT.IM.ADDR[63:0]
 @1401200
 -group_end
+@24
+datapath_tb.UUT.im_addr[63:0]
+datapath_tb.UUT.PC.addr[63:0]
+datapath_tb.UUT.extended_imm[63:0]
 [pattern_trace] 1
 [pattern_trace] 0

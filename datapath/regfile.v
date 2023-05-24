@@ -4,18 +4,18 @@
 */
 module regfile #(parameter SIZE = 64) (
     // Seletores dos registradores cujos valores estarão em Da e Db, respectivamente
-    input [4:0] Ra, 
-    input [4:0] Rb,
+    input [4:0] rs1, 
+    input [4:0] rs2,
     // Os registradores só terão LOAD se este sinal estiver ativo
     input WE,
     // Entrada de dados e seletor do registor em que a palavra Din será salva
     input [SIZE-1:0] Din,
-    input [4:0] Rw,
+    input [4:0] rd,
     // Clock
     input CLK,
     // Saída de dados
-    output [SIZE-1:0] Da,
-    output [SIZE-1:0] Db
+    output [SIZE-1:0] D1,
+    output [SIZE-1:0] D2
 );
     genvar i; // Variável de controle para gerar os registradores
 
@@ -23,7 +23,7 @@ module regfile #(parameter SIZE = 64) (
     wire[31:0] loaders;
 
     decoder5to32 LOAD_DECODER (
-        .IN(Rw),
+        .IN(rd),
         .OUT(loaders),
         .EN(WE)
     );
@@ -35,7 +35,7 @@ module regfile #(parameter SIZE = 64) (
         end
     endgenerate
 
-    assign Da = r[Ra];
-    assign Db = r[Rb];
+    assign D1 = r[rs1];
+    assign D2 = r[rs2];
 
 endmodule

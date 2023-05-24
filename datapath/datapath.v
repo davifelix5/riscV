@@ -15,19 +15,23 @@ module datapath(
     input wire sub, // entra nas functs
     input WE_RF,
     input WE_MEM,
-    input wire RF_din_sel,
+    input wire[1:0] RF_din_sel,
     input wire ULA_din2_sel,
     input wire load_pc,
     input wire reset_pc,
     input wire CLK,
-    input wire pc_next_sel
+    input wire pc_next_sel,
+    input wire pc_adder_sel
 );
 
     wire[31:0] instruction_mem, instruction;
-    wire[63:0] im_addr, extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2;
+    wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2, im_addr, pc_primary_adder, pc_secondary_adder, last_pc_primary;
     wire[2:0] opcode;
     wire[4:0] rs1, rs2, rd, DM_ADDR;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
+
+    // Registradores para salvar os resultados dos somadores dentro do PC
+    register pc_primary_reg (.IN(pc_primary_adder), .LOAD(1'b1), .CLK(CLK), .OUT(last_pc_primary));
 
     // Dados retirados da instrução
     assign rs2 = instruction[24:20];
@@ -35,7 +39,7 @@ module datapath(
     assign rd = instruction[11:7];
 
     // Mutiplexadores do datapath
-    assign RF_Din = RF_din_sel ? ula : DM_out;
+    assign RF_Din = RF_din_sel[1] ? (RF_din_sel[0] ? pc_secondary_adder : last_pc_primary) : (RF_din_sel[0] ? ula : DM_out);
     assign ULA_Din2 = ULA_din2_sel ? extended_imm : Dout_rs2;
 
     immediate_decoder IMM_DECODER (
@@ -44,13 +48,23 @@ module datapath(
     );
 
     program_counter PC (
+        // Sinais de controle
         .CLK(CLK),
         .LOAD(load_pc),
-        .addr(im_addr),
         .RST(reset_pc),
-        .immediate(extended_imm),
+        .pc_adder_sel(pc_adder_sel),
+        .pc_next_sel(pc_next_sel),
+        // Instrução
         .opcode(instruction[6:0]),
         .func(instruction[14:12]),
+        .immediate(extended_imm),
+        // Saidas
+        .addr(im_addr),
+        .primary_adder_res(pc_primary_adder),
+        .secondary_adder_res(pc_secondary_adder),
+        // Valor do regfile
+        .Dout_rs1(Dout_rs1),
+        // Flags
         .EQ(EQ),
         .LT_SN(LT_SN),
         .LT_UN(LT_UN),
@@ -72,27 +86,30 @@ module datapath(
 
     regfile RF (
         // Seletor do registrador cujo valor estará na saída Da
-        .Ra(rs1),
+        .rs1(rs1),
         // Seletor do registrador cujo valor estará na saída Db
-        .Rb(rs2),
+        .rs2(rs2),
         // Caso esteja desativo, os loads não funcionam
         .WE(WE_RF),
         // Entrada de dados a serem salvos no registrador
         .Din(RF_Din),
         // Seletor do registrador em que a palavra Din será escrita
-        .Rw(rd),
+        .rd(rd),
         .CLK(CLK),
         // Saídas de dados
-        .Da(Dout_rs1),
-        .Db(Dout_rs2)
+        .D1(Dout_rs1),
+        .D2(Dout_rs2)
     );
 
-    // Somador para somar o endereço de origem da memória com o offset fornecido
     ula ULA ( 
+        // Operadores
         .s1(Dout_rs1),
         .s2(ULA_Din2),
+        // Realizar ou não subtração
         .sub(sub),
+        // Resultado da operação feita
         .res(ula),
+        // Flags
         .EQ(EQ),
         .GT_SN(GT_SN),
         .LT_SN(LT_SN),
@@ -105,6 +122,7 @@ module datapath(
         .OUTPUT(instruction_mem)
     );
 
+    // Instruction register
     register #(.SIZE(32)) IR (
         .CLK(CLK),
         .IN(instruction_mem),

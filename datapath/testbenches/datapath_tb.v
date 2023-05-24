@@ -27,8 +27,9 @@ module datapath_tb;
     reg[4:0] rs1, rs2, rd;
     reg[11:0] immediate;
     reg CLK, WE_RF, WE_MEM;
-    reg sub, ULA_din2_sel, RF_din_sel;
-    reg reset_pc, pc_next_sel;
+    reg sub, ULA_din2_sel;
+    reg[1:0] RF_din_sel;
+    reg reset_pc, pc_next_sel, pc_adder_sel;
 
     datapath UUT (
         .sub(sub),
@@ -39,7 +40,8 @@ module datapath_tb;
         .CLK(CLK),
         .load_pc(1'b1),
         .reset_pc(reset_pc),
-        .pc_next_sel(pc_next_sel)
+        .pc_next_sel(pc_next_sel),
+        .pc_adder_sel(pc_adder_sel)
     );
 
     initial begin
@@ -47,6 +49,7 @@ module datapath_tb;
         $dumpvars(0, datapath_tb);
         CLK = 0;
         pc_next_sel = 1'b0;
+        pc_adder_sel = 1'b0;
 
         reset_pc = 0;
         #10
@@ -54,7 +57,7 @@ module datapath_tb;
 
         // ld
         ULA_din2_sel = 1;
-        RF_din_sel = 0;
+        RF_din_sel = 2'd0;
         sub = 0;
         WE_RF = 1; // Habilita escrita nos registradores
         WE_MEM = 0; // Desabilita escrita na memória
@@ -62,7 +65,7 @@ module datapath_tb;
 
         // ld
         ULA_din2_sel = 1;
-        RF_din_sel = 0;
+        RF_din_sel = 2'd0;
         sub = 0;
         WE_RF = 1;
         WE_MEM = 0;
@@ -70,7 +73,7 @@ module datapath_tb;
 
         // add
         ULA_din2_sel = 0;
-        RF_din_sel = 1;
+        RF_din_sel = 2'd1;
         sub = 0;
         WE_RF = 1;
         WE_MEM = 0;
@@ -78,7 +81,7 @@ module datapath_tb;
 
         // sub
         ULA_din2_sel = 0;
-        RF_din_sel = 1;
+        RF_din_sel = 2'd1;
         sub = 1;
         WE_RF = 1;
         WE_MEM = 0;
@@ -86,7 +89,7 @@ module datapath_tb;
 
         // st
         ULA_din2_sel = 1;
-        RF_din_sel = 0;
+        RF_din_sel = 2'd0;
         sub = 0;
         WE_RF = 0;
         WE_MEM = 1;
@@ -94,7 +97,7 @@ module datapath_tb;
 
         // addi
         ULA_din2_sel = 1;
-        RF_din_sel = 1;
+        RF_din_sel = 2'd1;
         sub = 0;
         WE_RF = 1;
         WE_MEM = 0;
@@ -102,18 +105,55 @@ module datapath_tb;
 
         // ld
         ULA_din2_sel = 1;
-        RF_din_sel = 0;
+        RF_din_sel = 2'd0;
         sub = 0;
         WE_RF = 1; // Habilita escrita nos registradores
         WE_MEM = 0; // Desabilita escrita na memória
         #5;
 
-        // bne
-        pc_next_sel = 1'b1;
+        /*
+        // branch
         sub = 1;
         ULA_din2_sel = 0;
-        #100;
-        
+        */
+
+        // auipc
+        RF_din_sel = 2'd3;
+        pc_adder_sel = 1'b1;
+        pc_next_sel = 1'b0;
+        WE_RF = 1;
+        sub = 0;
+        WE_MEM = 0;
+        #10
+
+        // jal
+        RF_din_sel = 2'd2;
+        pc_adder_sel = 1'b1;
+        pc_next_sel = 1'b1;
+        WE_RF = 1;
+        sub = 0;
+        WE_MEM = 0;
+        #10
+
+        // jalr
+        RF_din_sel = 2'd2;
+        pc_adder_sel = 1'b0;
+        pc_next_sel = 1'b1;
+        WE_RF = 1;
+        WE_MEM = 0;
+        sub = 0;
+        #10;
+
+        // add
+        ULA_din2_sel = 0;
+        RF_din_sel = 2'd1;
+        pc_next_sel = 1'b0;
+        pc_adder_sel = 1'b0;
+        sub = 0;
+        WE_RF = 1;
+        WE_MEM = 0;
+        #10
+
         $finish;
     end
 
