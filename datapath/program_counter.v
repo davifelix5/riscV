@@ -18,7 +18,7 @@ module program_counter (
     input wire GT_SN,
     input wire GT_UN,
     // Endereço da memória de instruções
-    output wire [63:0] addr,
+    output wire [63:0] pc_next,
     output wire[63:0] primary_adder_res,
     output wire[63:0] secondary_adder_res
 );
@@ -37,19 +37,19 @@ module program_counter (
         endcase
     end
 
-    wire[63:0] pc_next, pc_adder;
+    wire[63:0] pc, pc_adder;
     wire final_pc_adder_sel, final_pc_next_sel;
 
     // Para que sel seja utilizado, opcode tem que ser 1100011
     assign final_pc_next_sel = opcode == 7'b1100011 ? sel : pc_next_sel;
     assign final_pc_adder_sel = opcode == 7'b1100011 ? 1'b1 : pc_adder_sel; 
 
-    assign pc_adder = final_pc_adder_sel ? addr : Dout_rs1;
+    assign pc_adder = final_pc_adder_sel ? pc : Dout_rs1;
     assign pc_next = final_pc_next_sel ? secondary_adder_res : primary_adder_res;
     
 
     adder #(.SIZE(64)) primary_adder (
-        .X(addr),
+        .X(pc),
         .Y(64'd4),
         .Cin(1'b0),
         .S(primary_adder_res)
@@ -62,6 +62,6 @@ module program_counter (
         .S(secondary_adder_res)
     );
 
-    register_negedge_with_reset #(.SIZE(64)) PC (.IN(pc_next), .OUT(addr), .RST(RST), .LOAD(LOAD), .CLK(CLK));
+    pc_register_with_preset PC (.IN(pc_next), .OUT(pc), .PST(RST), .LOAD(LOAD), .CLK(CLK));
 
 endmodule

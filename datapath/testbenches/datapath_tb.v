@@ -29,7 +29,7 @@ module datapath_tb;
     reg CLK, WE_RF, WE_MEM;
     reg sub, ULA_din2_sel;
     reg[1:0] RF_din_sel;
-    reg reset_pc, pc_next_sel, pc_adder_sel;
+    reg reset_pc, pc_next_sel, pc_adder_sel, reset_ir;
 
     datapath UUT (
         .sub(sub),
@@ -41,7 +41,8 @@ module datapath_tb;
         .load_pc(1'b1),
         .reset_pc(reset_pc),
         .pc_next_sel(pc_next_sel),
-        .pc_adder_sel(pc_adder_sel)
+        .pc_adder_sel(pc_adder_sel),
+        .reset_ir(reset_ir)
     );
 
     initial begin
@@ -51,9 +52,12 @@ module datapath_tb;
         pc_next_sel = 1'b0;
         pc_adder_sel = 1'b0;
 
-        reset_pc = 0;
-        #10
         reset_pc = 1;
+        reset_ir = 1;
+        #10
+        reset_pc = 0;
+        reset_ir = 0;
+        #10
 
         // ld
         ULA_din2_sel = 1;
@@ -109,7 +113,7 @@ module datapath_tb;
         sub = 0;
         WE_RF = 1; // Habilita escrita nos registradores
         WE_MEM = 0; // Desabilita escrita na memória
-        #5;
+        #10;
 
         /*
         // branch
@@ -147,12 +151,12 @@ module datapath_tb;
         // add
         ULA_din2_sel = 0;
         RF_din_sel = 2'd1;
+        pc_adder_sel = 1'b1;
         pc_next_sel = 1'b0;
-        pc_adder_sel = 1'b0;
         sub = 0;
         WE_RF = 1;
         WE_MEM = 0;
-        #10
+        #5
 
         $finish;
     end
