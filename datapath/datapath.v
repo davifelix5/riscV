@@ -8,7 +8,8 @@
 `include "datapath/register.v"
 `include "datapath/decoder5to32.v"
 `include "datapath/adder.v"
-`include "datapath/register_negedge_with_reset.v"
+`include "datapath/register_with_reset.v"
+`include "datapath/pc_register_with_preset.v"
 `include "datapath/immediate_decoder.v"
 
 module datapath(
@@ -21,7 +22,8 @@ module datapath(
     input wire reset_pc,
     input wire CLK,
     input wire pc_next_sel,
-    input wire pc_adder_sel
+    input wire pc_adder_sel,
+    input wire reset_ir
 );
 
     wire[31:0] instruction_mem, instruction;
@@ -30,16 +32,13 @@ module datapath(
     wire[4:0] rs1, rs2, rd, DM_ADDR;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
 
-    // Registradores para salvar os resultados dos somadores dentro do PC
-    register pc_primary_reg (.IN(pc_primary_adder), .LOAD(1'b1), .CLK(CLK), .OUT(last_pc_primary));
-
     // Dados retirados da instrução
     assign rs2 = instruction[24:20];
     assign rs1 = instruction[19:15];
     assign rd = instruction[11:7];
 
     // Mutiplexadores do datapath
-    assign RF_Din = RF_din_sel[1] ? (RF_din_sel[0] ? pc_secondary_adder : last_pc_primary) : (RF_din_sel[0] ? ula : DM_out);
+    assign RF_Din = RF_din_sel[1] ? (RF_din_sel[0] ? pc_secondary_adder : pc_primary_adder) : (RF_din_sel[0] ? ula : DM_out);
     assign ULA_Din2 = ULA_din2_sel ? extended_imm : Dout_rs2;
 
     immediate_decoder IMM_DECODER (
@@ -59,7 +58,7 @@ module datapath(
         .func(instruction[14:12]),
         .immediate(extended_imm),
         // Saidas
-        .addr(im_addr),
+        .pc_next(im_addr),
         .primary_adder_res(pc_primary_adder),
         .secondary_adder_res(pc_secondary_adder),
         // Valor do regfile
@@ -123,8 +122,9 @@ module datapath(
     );
 
     // Instruction register
-    register #(.SIZE(32)) IR (
+    register_with_reset #(.SIZE(32)) IR (
         .CLK(CLK),
+        .RST(reset_ir),
         .IN(instruction_mem),
         .OUT(instruction),
         .LOAD(1'b1)
