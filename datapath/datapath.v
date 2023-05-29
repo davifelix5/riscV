@@ -13,7 +13,6 @@
 `include "datapath/immediate_decoder.v"
 
 module datapath(
-    input wire sub, // entra nas functs
     input WE_RF,
     input WE_MEM,
     input wire[1:0] RF_din_sel,
@@ -28,11 +27,12 @@ module datapath(
 
     wire[31:0] instruction_mem, instruction;
     wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2, im_addr, pc_primary_adder, pc_secondary_adder, last_pc_primary;
-    wire[2:0] opcode;
+    wire[6:0] opcode;
     wire[4:0] rs1, rs2, rd, DM_ADDR;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
 
     // Dados retirados da instrução
+    assign opcode = instruction[6:0];
     assign rs2 = instruction[24:20];
     assign rs1 = instruction[19:15];
     assign rd = instruction[11:7];
@@ -54,7 +54,7 @@ module datapath(
         .pc_adder_sel(pc_adder_sel),
         .pc_next_sel(pc_next_sel),
         // Instrução
-        .opcode(instruction[6:0]),
+        .opcode(opcode),
         .func(instruction[14:12]),
         .immediate(extended_imm),
         // Saidas
@@ -104,8 +104,9 @@ module datapath(
         // Operadores
         .s1(Dout_rs1),
         .s2(ULA_Din2),
-        // Realizar ou não subtração
-        .sub(sub),
+        .funct3(instruction[14:12]),
+        .funct7(instruction[31:25]),
+        .opcode(opcode),
         // Resultado da operação feita
         .res(ula),
         // Flags

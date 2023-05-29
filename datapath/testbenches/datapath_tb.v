@@ -27,12 +27,11 @@ module datapath_tb;
     reg[4:0] rs1, rs2, rd;
     reg[11:0] immediate;
     reg CLK, WE_RF, WE_MEM;
-    reg sub, ULA_din2_sel;
+    reg ULA_din2_sel;
     reg[1:0] RF_din_sel;
     reg reset_pc, pc_next_sel, pc_adder_sel, reset_ir;
 
     datapath UUT (
-        .sub(sub),
         .ULA_din2_sel(ULA_din2_sel),
         .RF_din_sel(RF_din_sel),
         .WE_RF(WE_RF),
@@ -62,7 +61,6 @@ module datapath_tb;
         // ld
         ULA_din2_sel = 1;
         RF_din_sel = 2'd0;
-        sub = 0;
         WE_RF = 1; // Habilita escrita nos registradores
         WE_MEM = 0; // Desabilita escrita na memória
         #10;
@@ -70,7 +68,6 @@ module datapath_tb;
         // ld
         ULA_din2_sel = 1;
         RF_din_sel = 2'd0;
-        sub = 0;
         WE_RF = 1;
         WE_MEM = 0;
         #10
@@ -78,7 +75,6 @@ module datapath_tb;
         // add
         ULA_din2_sel = 0;
         RF_din_sel = 2'd1;
-        sub = 0;
         WE_RF = 1;
         WE_MEM = 0;
         #10
@@ -86,7 +82,6 @@ module datapath_tb;
         // sub
         ULA_din2_sel = 0;
         RF_din_sel = 2'd1;
-        sub = 1;
         WE_RF = 1;
         WE_MEM = 0;
         #10
@@ -94,7 +89,6 @@ module datapath_tb;
         // st
         ULA_din2_sel = 1;
         RF_din_sel = 2'd0;
-        sub = 0;
         WE_RF = 0;
         WE_MEM = 1;
         #10
@@ -102,7 +96,6 @@ module datapath_tb;
         // addi
         ULA_din2_sel = 1;
         RF_din_sel = 2'd1;
-        sub = 0;
         WE_RF = 1;
         WE_MEM = 0;
         #10
@@ -110,15 +103,14 @@ module datapath_tb;
         // ld
         ULA_din2_sel = 1;
         RF_din_sel = 2'd0;
-        sub = 0;
         WE_RF = 1; // Habilita escrita nos registradores
         WE_MEM = 0; // Desabilita escrita na memória
         #10;
 
-        /*
+       /*  
         // branch
-        sub = 1;
         ULA_din2_sel = 0;
+        #10
         */
 
         // auipc
@@ -126,7 +118,6 @@ module datapath_tb;
         pc_adder_sel = 1'b1;
         pc_next_sel = 1'b0;
         WE_RF = 1;
-        sub = 0;
         WE_MEM = 0;
         #10
 
@@ -135,7 +126,6 @@ module datapath_tb;
         pc_adder_sel = 1'b1;
         pc_next_sel = 1'b1;
         WE_RF = 1;
-        sub = 0;
         WE_MEM = 0;
         #10
 
@@ -145,7 +135,6 @@ module datapath_tb;
         pc_next_sel = 1'b1;
         WE_RF = 1;
         WE_MEM = 0;
-        sub = 0;
         #10;
 
         // add
@@ -153,7 +142,6 @@ module datapath_tb;
         RF_din_sel = 2'd1;
         pc_adder_sel = 1'b1;
         pc_next_sel = 1'b0;
-        sub = 0;
         WE_RF = 1;
         WE_MEM = 0;
         #5
