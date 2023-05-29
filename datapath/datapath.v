@@ -18,11 +18,10 @@ module datapath(
     input wire[1:0] RF_din_sel,
     input wire ULA_din2_sel,
     input wire load_pc,
-    input wire reset_pc,
+    input wire reset,
     input wire CLK,
     input wire pc_next_sel,
-    input wire pc_adder_sel,
-    input wire reset_ir
+    input wire pc_adder_sel
 );
 
     wire[31:0] instruction_mem, instruction;
@@ -50,7 +49,7 @@ module datapath(
         // Sinais de controle
         .CLK(CLK),
         .LOAD(load_pc),
-        .RST(reset_pc),
+        .RST(reset),
         .pc_adder_sel(pc_adder_sel),
         .pc_next_sel(pc_next_sel),
         // Instrução
@@ -125,7 +124,7 @@ module datapath(
     // Instruction register
     register_with_reset #(.SIZE(32)) IR (
         .CLK(CLK),
-        .RST(reset_ir),
+        .RST(reset),
         .IN(instruction_mem),
         .OUT(instruction),
         .LOAD(1'b1)

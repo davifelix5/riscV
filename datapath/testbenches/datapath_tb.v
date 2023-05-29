@@ -29,7 +29,7 @@ module datapath_tb;
     reg CLK, WE_RF, WE_MEM;
     reg ULA_din2_sel;
     reg[1:0] RF_din_sel;
-    reg reset_pc, pc_next_sel, pc_adder_sel, reset_ir;
+    reg reset, pc_next_sel, pc_adder_sel;
 
     datapath UUT (
         .ULA_din2_sel(ULA_din2_sel),
@@ -38,10 +38,9 @@ module datapath_tb;
         .WE_MEM(WE_MEM),
         .CLK(CLK),
         .load_pc(1'b1),
-        .reset_pc(reset_pc),
+        .reset(reset),
         .pc_next_sel(pc_next_sel),
-        .pc_adder_sel(pc_adder_sel),
-        .reset_ir(reset_ir)
+        .pc_adder_sel(pc_adder_sel)
     );
 
     initial begin
@@ -51,11 +50,9 @@ module datapath_tb;
         pc_next_sel = 1'b0;
         pc_adder_sel = 1'b0;
 
-        reset_pc = 1;
-        reset_ir = 1;
+        reset = 1;
         #10
-        reset_pc = 0;
-        reset_ir = 0;
+        reset = 0;
         #10
 
         // ld
