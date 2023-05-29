@@ -1,25 +1,3 @@
-/**************************************************************************
-
-Fluxo de dados LOAD-STORE
-Grupo 1
-    Davi Félix
-    Rodrigo Sinato
-    Natham Pez
-
-Para rodar: 
-    iverilog -o datapath datapath_testbench.v && vvp datapath
-
-    O módulo datapath_testbench.v já inclui todos os módulos necessários 
-(que estão também inclusos neste envio) e mostrará os resutaldos dos registradores
-Ra e Rb no display. Além disso, égerado um arquivo waveform que pode ser lido 
-a partir do software gtkwave.
-    Enviamos um arquivo .gtkw que contém o funcionamento do nosso fluxo de dados. 
-Ele pode ser aberto pelo comando:
-    gtkwave final.gtkw
-
-
-**************************************************************************/
-
 `include "datapath/datapath.v"
 
 module datapath_tb;
