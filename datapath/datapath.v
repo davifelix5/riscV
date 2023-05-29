@@ -103,6 +103,7 @@ module datapath(
         // Operadores
         .s1(Dout_rs1),
         .s2(ULA_Din2),
+        // Valores vindos da instrução
         .funct3(instruction[14:12]),
         .funct7(instruction[31:25]),
         .opcode(opcode),
