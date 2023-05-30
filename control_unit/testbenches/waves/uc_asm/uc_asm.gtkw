@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Tue May 30 00:41:03 2023
+[*]
+[dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\uc_asm\waveforms3.vcd"
+[dumpfile_mtime] "Tue May 30 00:40:14 2023"
+[dumpfile_size] 1610
+[savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\uc_asm\uc_asm.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-5.043809 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] uc_asm_tb.
+[sst_width] 197
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+uc_asm_tb.UUT.current_state[1:0]
+uc_asm_tb.UUT.load_ir
+uc_asm_tb.UUT.load_pc
+@29
+uc_asm_tb.UUT.pc_next_sel
+@28
+uc_asm_tb.UUT.ULA_din2_sel
+uc_asm_tb.UUT.RF_din_sel[1:0]
+[pattern_trace] 1
+[pattern_trace] 0
