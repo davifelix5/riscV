@@ -12,6 +12,7 @@ module add_sub_with_uc (
   wire[6:0] opcode;
   wire[31:0] im_out;
 
+  // Gerenciamento temporário do espaço de endereçamento
   assign mem_out = mem_addr < 64'h1FFF ? {32'b0, im_out} : mem_out;  
 
   uc_asm UC (
