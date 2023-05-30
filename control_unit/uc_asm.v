@@ -6,6 +6,7 @@ module uc_asm (
   output reg WE_MEM,
   output reg[1:0] RF_din_sel,
   output reg ULA_din2_sel,
+  output reg addr_sel,
   output reg load_pc,
   output reg load_ir,
   output reg pc_next_sel,
@@ -70,10 +71,12 @@ module uc_asm (
           WE_MEM = 1'b1;
           RF_din_sel = 1'b0;
           ULA_din2_sel = 1'b0;
+          addr_sel = 1'b1;
         end 
         DECODE: begin
           load_ir = 1'b0;
           load_pc = 1'b0;
+          addr_sel = 1'b0;
         end
         EXECUTE_ADDSUB: begin
           RF_din_sel = 2'b01;

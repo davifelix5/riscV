@@ -17,6 +17,7 @@ module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
     input WE_MEM,
     input wire[1:0] RF_din_sel,
     input wire ULA_din2_sel,
+    input wire addr_sel,
     input wire load_pc,
     input wire load_ir,
     input wire reset,
@@ -25,13 +26,12 @@ module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
     input wire pc_adder_sel,
     input wire[63:0] data_in,
     output wire[63:0] data_out,
-    output wire[MEM_SIZE-1:0] mem_address,
-    output wire[63:0] pc,
+    output wire[63:0] mem_addr,
     output wire[6:0] opcode  
 );
 
     wire[31:0] instruction;
-    wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2, im_addr, pc_primary_adder, pc_secondary_adder, last_pc_primary;
+    wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2, im_addr, pc_primary_adder, pc_secondary_adder, last_pc_primary, pc;
     wire[4:0] rs1, rs2, rd, DM_ADDR;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
 
@@ -43,7 +43,7 @@ module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
 
     // Saída de dados
     assign data_out = Dout_rs2;
-    assign mem_address = ula[MEM_SIZE-1:0];
+    assign mem_addr = addr_sel ? pc : ula;
 
     // Mutiplexadores do datapath
     assign RF_Din = RF_din_sel[1] ? (RF_din_sel[0] ? pc_secondary_adder : pc_primary_adder) : (RF_din_sel[0] ? ula : DM_out);
