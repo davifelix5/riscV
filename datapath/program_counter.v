@@ -20,7 +20,8 @@ module program_counter (
     // Endereço da memória de instruções
     output wire [63:0] pc_next,
     output wire[63:0] primary_adder_res,
-    output wire[63:0] secondary_adder_res
+    output wire[63:0] secondary_adder_res,
+    output wire[63:0] pc
 );
 
     reg sel;
@@ -37,7 +38,7 @@ module program_counter (
         endcase
     end
 
-    wire[63:0] pc, pc_adder;
+    wire[63:0] pc_adder;
     wire final_pc_adder_sel, final_pc_next_sel;
 
     // Para que sel seja utilizado, opcode tem que ser 1100011
@@ -62,6 +63,6 @@ module program_counter (
         .S(secondary_adder_res)
     );
 
-    pc_register_with_preset PC (.IN(pc_next), .OUT(pc), .PST(RST), .LOAD(LOAD), .CLK(CLK));
+    register_with_reset PC (.IN(pc_next), .OUT(pc), .RST(RST), .LOAD(LOAD), .CLK(CLK));
 
 endmodule
