@@ -16,6 +16,7 @@ module datapath_tb;
         .WE_MEM(WE_MEM),
         .CLK(CLK),
         .load_pc(1'b1),
+        .load_ir(1'b1),
         .reset(reset),
         .pc_next_sel(pc_next_sel),
         .pc_adder_sel(pc_adder_sel)

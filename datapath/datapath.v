@@ -18,6 +18,7 @@ module datapath(
     input wire[1:0] RF_din_sel,
     input wire ULA_din2_sel,
     input wire load_pc,
+    input wire load_ir,
     input wire reset,
     input wire CLK,
     input wire pc_next_sel,
@@ -128,7 +129,7 @@ module datapath(
         .RST(reset),
         .IN(instruction_mem),
         .OUT(instruction),
-        .LOAD(1'b1)
+        .LOAD(load_ir)
     );
 
 endmodule
