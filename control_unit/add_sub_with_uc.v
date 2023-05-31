@@ -32,7 +32,6 @@ module add_sub_with_uc (
 
   datapath_with_uc DP (
     .WE_RF(WE_RF),
-    .WE_MEM(WE_MEM),
     .RF_din_sel(RF_din_sel),
     .ULA_din2_sel(ULA_din2_sel),
     .addr_sel(addr_sel),

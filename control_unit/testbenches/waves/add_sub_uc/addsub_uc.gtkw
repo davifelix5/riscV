@@ -1,23 +1,23 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Tue May 30 11:16:45 2023
+[*] Wed May 31 00:00:14 2023
 [*]
 [dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\add_sub_uc\waveforms3.vcd"
-[dumpfile_mtime] "Tue May 30 11:14:05 2023"
-[dumpfile_size] 126911
+[dumpfile_mtime] "Tue May 30 23:59:54 2023"
+[dumpfile_size] 111730
 [savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\add_sub_uc\addsub_uc.gtkw"
-[timestart] 0
+[timestart] 187
 [size] 1000 600
 [pos] -1 -1
-*-6.000000 15 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-5.000000 55 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] add_sub_with_uc_tb.
 [treeopen] add_sub_with_uc_tb.UUT.
 [treeopen] add_sub_with_uc_tb.UUT.DP.
 [treeopen] add_sub_with_uc_tb.UUT.DP.RF.
-[treeopen] add_sub_with_uc_tb.UUT.DP.RF.genblk1[1].
-[treeopen] add_sub_with_uc_tb.UUT.DP.RF.genblk1[2].
-[treeopen] add_sub_with_uc_tb.UUT.DP.RF.genblk1[3].
-[treeopen] add_sub_with_uc_tb.UUT.DP.RF.genblk1[4].
+[treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[1].
+[treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[2].
+[treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[3].
+[treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[4].
 [sst_width] 197
 [signals_width] 174
 [sst_expanded] 1
@@ -32,15 +32,13 @@ add_sub_with_uc_tb.UUT.DP.WE_RF
 add_sub_with_uc_tb.UUT.DP.PC.pc[63:0]
 @28
 +{add_sub_with_uc_tb.UUT.DP.IR.IR[31:0]} add_sub_with_uc_tb.UUT.DP.IR.OUT[31:0]
-@29
 add_sub_with_uc_tb.UUT.DP.RF_din_sel[1:0]
-@28
 add_sub_with_uc_tb.UUT.DP.ULA_din2_sel
 @24
-add_sub_with_uc_tb.UUT.DP.RF.genblk1[1].xN.OUT[63:0]
-add_sub_with_uc_tb.UUT.DP.RF.genblk1[2].xN.OUT[63:0]
-add_sub_with_uc_tb.UUT.DP.RF.genblk1[3].xN.OUT[63:0]
-@420
-add_sub_with_uc_tb.UUT.DP.RF.genblk1[4].xN.OUT[63:0]
+add_sub_with_uc_tb.UUT.DP.RF.registers[1].xN.OUT[63:0]
+add_sub_with_uc_tb.UUT.DP.RF.registers[2].xN.OUT[63:0]
+add_sub_with_uc_tb.UUT.DP.RF.registers[3].xN.OUT[63:0]
+@421
+add_sub_with_uc_tb.UUT.DP.RF.registers[4].xN.OUT[63:0]
 [pattern_trace] 1
 [pattern_trace] 0

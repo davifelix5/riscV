@@ -7,6 +7,7 @@
 `include "datapath/decoder3to8.v"
 `include "datapath/register.v"
 `include "datapath/decoder5to32.v"
+`include "datapath/adder1bit.v"
 `include "datapath/adder.v"
 `include "datapath/register_with_reset.v"
 `include "datapath/pc_register_with_preset.v"
@@ -14,7 +15,6 @@
 
 module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
     input WE_RF,
-    input WE_MEM,
     input wire[1:0] RF_din_sel,
     input wire ULA_din2_sel,
     input wire addr_sel,
