@@ -5,6 +5,7 @@ module adder1bit (
     output wire S,
     output wire Cout
 );
+    wire xor1;
 
     assign xor1 = X ^ Y;
     assign S = xor1 ^ Cin;
