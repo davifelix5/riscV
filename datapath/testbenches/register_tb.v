@@ -1,5 +1,3 @@
-`include "datapath/register.v"
-
 module register_tb;
 
   reg[31:0] IN_tb;

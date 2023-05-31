@@ -1,7 +1,9 @@
 module ula #(parameter SIZE = 64) (
   input wire[63:0] s1,
   input wire[63:0] s2,
-  input wire sub,
+  input wire[6:0] funct7,
+  input wire[2:0] funct3,
+  input wire[6:0] opcode,
   output wire[63:0] res,
   output wire EQ,
   output wire GT_SN,
@@ -10,7 +12,9 @@ module ula #(parameter SIZE = 64) (
   output wire LT_UN
 );
 
-  wire cout;
+  wire cout, sub;
+
+  assign sub = (funct7[5] & (~| funct3)) | opcode == 7'b1100011;
 
   assign EQ = ~| res;
   assign GT_SN = ~EQ & ~LT_SN;

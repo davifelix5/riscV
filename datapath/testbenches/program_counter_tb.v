@@ -1,7 +1,3 @@
-`include "datapath/adder.v"
-`include "datapath/register_with_reset.v"
-`include "datapath/program_counter.v"
-
 module program_counter_tb;
 
   reg clk, ld, rst;

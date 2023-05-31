@@ -1,19 +1,22 @@
-module datapath(
+module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
     input WE_RF,
-    input WE_MEM,
     input wire[1:0] RF_din_sel,
     input wire ULA_din2_sel,
+    input wire addr_sel,
     input wire load_pc,
     input wire load_ir,
     input wire reset,
     input wire CLK,
     input wire pc_next_sel,
-    input wire pc_adder_sel
+    input wire pc_adder_sel,
+    input wire[63:0] data_in,
+    output wire[63:0] data_out,
+    output wire[63:0] mem_addr,
+    output wire[6:0] opcode  
 );
 
-    wire[31:0] instruction_mem, instruction;
-    wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2, im_addr, pc_primary_adder, pc_secondary_adder, last_pc_primary;
-    wire[6:0] opcode;
+    wire[31:0] instruction;
+    wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2, im_addr, pc_primary_adder, pc_secondary_adder, last_pc_primary, pc;
     wire[4:0] rs1, rs2, rd, DM_ADDR;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
 
@@ -22,6 +25,10 @@ module datapath(
     assign rs2 = instruction[24:20];
     assign rs1 = instruction[19:15];
     assign rd = instruction[11:7];
+
+    // Saída de dados
+    assign data_out = Dout_rs2;
+    assign mem_addr = addr_sel ? pc : ula;
 
     // Mutiplexadores do datapath
     assign RF_Din = RF_din_sel[1] ? (RF_din_sel[0] ? pc_secondary_adder : pc_primary_adder) : (RF_din_sel[0] ? ula : DM_out);
@@ -37,8 +44,10 @@ module datapath(
         .CLK(CLK),
         .LOAD(load_pc),
         .RST(reset),
+        // Saídas
         .pc_adder_sel(pc_adder_sel),
         .pc_next_sel(pc_next_sel),
+        .pc(pc),
         // Instrução
         .opcode(opcode),
         .func(instruction[14:12]),
@@ -55,18 +64,6 @@ module datapath(
         .LT_UN(LT_UN),
         .GT_SN(GT_SN),
         .GT_UN(GT_UN)
-    );
-
-    datamemory DM (
-        // Endereço da memória para ler
-        .ADDR(ula[4:0]), 
-        // Write-Enable da memória
-        .WE(WE_MEM), 
-        // O valor do registrador Ra é salvo na memória na borda de subida do clock se WE é 1
-        .D_in(Dout_rs2),
-        // Saída de dados da memória
-        .D_out(DM_out), 
-        .CLK(CLK)
     );
 
     regfile RF (
@@ -104,16 +101,11 @@ module datapath(
         .LT_UN(LT_UN)
     );
 
-    instruction_memory IM (
-        .ADDR({2'b0,im_addr[63:2]}),
-        .OUTPUT(instruction_mem)
-    );
-
     // Instruction register
     register_with_reset #(.SIZE(32)) IR (
         .CLK(CLK),
         .RST(reset),
-        .IN(instruction_mem),
+        .IN(data_in[31:0]),
         .OUT(instruction),
         .LOAD(load_ir)
     );

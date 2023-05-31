@@ -1,6 +1,3 @@
-`include "datapath/adder.v"
-`include "datapath/ula.v"
-
 module flags_tb;
 
   reg[63:0] s1, s2;

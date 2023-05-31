@@ -1,5 +1,3 @@
-`include "datapath/datamemory.v"
-
 module datamemory_tb;
 
     reg[4:0] ADDR;

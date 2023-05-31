@@ -1,5 +1,3 @@
-`include "datapath/adder.v"
-
 module adder_tb;
 
     reg[31:0] A, B;

@@ -30,7 +30,7 @@ module regfile #(parameter SIZE = 64) (
 
     assign r[0] = 64'b0; // x0
     generate
-        for (i = 1; i < 32; i = i + 1) begin
+        for (i = 1; i < 32; i = i + 1) begin: registers
             register xN (.IN(Din), .LOAD(loaders[i]), .CLK(CLK), .OUT(r[i]));
         end
     endgenerate
