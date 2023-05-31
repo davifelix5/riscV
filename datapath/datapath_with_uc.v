@@ -16,8 +16,9 @@ module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
 );
 
     wire[31:0] instruction;
-    wire[63:0] extended_imm, DM_in, DM_out, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2, im_addr, pc_primary_adder, pc_secondary_adder, last_pc_primary, pc;
-    wire[4:0] rs1, rs2, rd, DM_ADDR;
+    wire[63:0] extended_imm, Dout_rs1, Dout_rs2, ula, RF_Din, ULA_Din2;
+    wire[63:0] pc, pc_primary_adder, pc_secondary_adder;
+    wire[4:0] rs1, rs2, rd;
     wire EQ, GT_SN, LT_SN, GT_UN, LT_UN; // FLAGS
 
     // Dados retirados da instrução
@@ -31,7 +32,7 @@ module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
     assign mem_addr = addr_sel ? pc : ula;
 
     // Mutiplexadores do datapath
-    assign RF_Din = RF_din_sel[1] ? (RF_din_sel[0] ? pc_secondary_adder : pc_primary_adder) : (RF_din_sel[0] ? ula : DM_out);
+    assign RF_Din = RF_din_sel[1] ? (RF_din_sel[0] ? pc_secondary_adder : pc_primary_adder) : (RF_din_sel[0] ? ula : data_in);
     assign ULA_Din2 = ULA_din2_sel ? extended_imm : Dout_rs2;
 
     immediate_decoder IMM_DECODER (
@@ -53,7 +54,6 @@ module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
         .func(instruction[14:12]),
         .immediate(extended_imm),
         // Saidas
-        .pc_next(im_addr),
         .primary_adder_res(pc_primary_adder),
         .secondary_adder_res(pc_secondary_adder),
         // Valor do regfile

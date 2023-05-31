@@ -44,7 +44,7 @@ module datapath(
         .func(instruction[14:12]),
         .immediate(extended_imm),
         // Saidas
-        .pc_next(im_addr),
+        // .pc_next(im_addr),
         .primary_adder_res(pc_primary_adder),
         .secondary_adder_res(pc_secondary_adder),
         // Valor do regfile
