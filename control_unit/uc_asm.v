@@ -65,49 +65,37 @@ module uc_asm (
     endcase
   end
 
-  always @(posedge clk or posedge reset) begin
-		if (reset) begin
-			pc_next_sel <= 1'b0;
-			pc_adder_sel <= 1'b0;
-      load_ir <= 1'b0;
-      load_pc <= 1'b0;
-      WE_RF <= 1'b0;
-      WE_MEM <= 1'b0;
-      RF_din_sel <= 1'b0;
-      ULA_din2_sel <= 1'b0;
-      addr_sel <= 1'b0;
-		end
-		else begin
-      WE_MEM <= 1'b0;
-			pc_next_sel <= 1'b0;
-      pc_adder_sel <= 1'b0;
-			case (next_state)
+  always @(current_state) begin
+			pc_next_sel = 1'b0;
+			pc_adder_sel = 1'b0;
+      WE_MEM = 1'b0;
+			case (current_state)
 			  FETCH: begin
 				 // PC = PC + 4
 				 // IR = INSTRUCTION_MEMORY[PC]
-				 load_ir <= 1'b1;
-				 load_pc <= 1'b1;
-				 addr_sel <= 1'b1;
-			   WE_RF <= 1'b0;
+				 load_ir = 1'b1;
+         load_pc = 1'b0;
+				 addr_sel = 1'b1;
+			   WE_RF = 1'b0;
 			  end 
 			  DECODE: begin
-				 load_ir <= 1'b0;
-				 load_pc <= 1'b0;
-				 addr_sel <= 1'b0;
+				 load_ir = 1'b0;
+				 load_pc = 1'b0;
+				 addr_sel = 1'b0;
 			  end
 			  EXECUTE_ADDSUB: begin
-				 RF_din_sel <= 2'b01;
-				 ULA_din2_sel <= 1'b0;
+				 RF_din_sel = 2'b01;
+				 ULA_din2_sel = 1'b0;
 			  end
 			  EXECUTE_ADDI: begin
-				 RF_din_sel <= 2'b01;
-				 ULA_din2_sel <= 1'b1;
+				 RF_din_sel = 2'b01;
+				 ULA_din2_sel = 1'b1;
 			  end
 			  WRITE_BACK: begin
-				 WE_RF <= 1'b1;
+				 WE_RF = 1'b1;
+         load_pc = 1'b1;
 			  end
 			endcase
 		end
-    end
   
 endmodule
