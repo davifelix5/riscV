@@ -1,5 +1,3 @@
-`include "datapath/immediate_decoder.v"
-
 module immediate_decoder_tb;
 
   reg[31:0] inst_tb;

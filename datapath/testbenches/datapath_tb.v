@@ -1,5 +1,3 @@
-`include "datapath/datapath.v"
-
 module datapath_tb;
 
     reg[4:0] rs1, rs2, rd;
