@@ -18,7 +18,6 @@ module program_counter (
     input wire GT_SN,
     input wire GT_UN,
     // Endereço da memória de instruções
-    output wire [63:0] pc_next,
     output wire[63:0] primary_adder_res,
     output wire[63:0] secondary_adder_res,
     output wire[63:0] pc
@@ -38,7 +37,7 @@ module program_counter (
         endcase
     end
 
-    wire[63:0] pc_adder;
+    wire[63:0] pc_adder, pc_next;
     wire final_pc_adder_sel, final_pc_next_sel;
 
     // Para que sel seja utilizado, opcode tem que ser 1100011
