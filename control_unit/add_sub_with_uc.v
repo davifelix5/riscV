@@ -1,6 +1,3 @@
-`include "datapath/datapath_with_uc.v"
-`include "control_unit/uc_asm.v"
-
 module add_sub_with_uc (
   input wire clk,
   input wire reset

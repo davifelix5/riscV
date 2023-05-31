@@ -1,18 +1,3 @@
-`include "datapath/instruction_memory.v"
-`include "datapath/program_counter.v"
-`include "datapath/datamemory.v"
-`include "datapath/regfile.v"
-`include "datapath/ula.v"
-`include "datapath/decoder2to4.v"
-`include "datapath/decoder3to8.v"
-`include "datapath/register.v"
-`include "datapath/decoder5to32.v"
-`include "datapath/adder1bit.v"
-`include "datapath/adder.v"
-`include "datapath/register_with_reset.v"
-`include "datapath/pc_register_with_preset.v"
-`include "datapath/immediate_decoder.v"
-
 module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
     input WE_RF,
     input wire[1:0] RF_din_sel,

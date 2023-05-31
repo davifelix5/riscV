@@ -1,5 +1,3 @@
-`include "control_unit/add_sub_with_uc.v"
-
 module add_sub_with_uc_tb;
 
   reg reset, clk;
