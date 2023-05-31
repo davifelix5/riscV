@@ -1,11 +1,7 @@
 module immediate_decoder_tb;
 
   reg[31:0] inst_tb;
-  wire[63:0] imm;
-
-  wire[63:0] signed_imm;
-
-  assign signed_imm = $signed(imm);
+  wire signed[63:0] imm;
 
   immediate_decoder UUT (
     .instruction(inst_tb),
@@ -13,7 +9,7 @@ module immediate_decoder_tb;
   );
 
   initial begin
-    $monitor("%d %b", signed_imm, signed_imm);
+    $monitor("%d %b", imm, imm);
     
     #50
     inst_tb = {1'b1, 6'b111111, 5'd0, 5'd0, 3'b000, 4'b0110, 1'b1, 7'b1100011}; // beq x1, x2, -20
