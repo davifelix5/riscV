@@ -30,7 +30,7 @@ module uc_asm (
     end
   end
 
-  always @(current_state) begin
+  always @(current_state, opcode) begin
 	 next_state = 3'bxxx;
     case (current_state)
       FETCH: begin
@@ -60,9 +60,10 @@ module uc_asm (
     endcase
   end
 
-    always @(posedge clk or posedge reset) begin
+  always @(posedge clk or posedge reset) begin
 		if (reset) begin
 			pc_next_sel <= 1'b0;
+			pc_adder_sel <= 1'b0;
       load_ir <= 1'b0;
       load_pc <= 1'b0;
       WE_RF <= 1'b0;
@@ -72,6 +73,9 @@ module uc_asm (
       addr_sel <= 1'b0;
 		end
 		else begin
+      WE_MEM <= 1'b0;
+			pc_next_sel <= 1'b0;
+      pc_adder_sel <= 1'b0;
 			case (next_state)
 			  FETCH: begin
 				 // PC = PC + 4
