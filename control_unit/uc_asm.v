@@ -17,13 +17,14 @@ module uc_asm (
              DECODE = 3'b001,
              EXECUTE_ADDSUB = 3'b010,
              EXECUTE_ADDI = 3'b011,
-             WRITE_BACK = 3'b100;
+             WRITE_BACK = 3'b100,
+             IDLE =3'b101;
 
   reg[2:0] current_state, next_state;
 
   always @(posedge clk or posedge reset) begin
     if (reset) begin
-      current_state <= FETCH;
+      current_state <= IDLE;
     end
     else begin
       current_state <= next_state;
@@ -33,6 +34,10 @@ module uc_asm (
   always @(current_state, opcode) begin
 	 next_state = 3'bxxx;
     case (current_state)
+      IDLE: begin
+        next_state = FETCH;
+      end
+
       FETCH: begin
         next_state = DECODE;
       end
