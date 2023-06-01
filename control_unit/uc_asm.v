@@ -17,14 +17,14 @@ module uc_asm (
              DECODE = 3'b001,
              EXECUTE_ADDSUB = 3'b010,
              EXECUTE_ADDI = 3'b011,
-             WRITE_BACK = 3'b100,
-             IDLE =3'b101;
+             WRITE_BACK_ADDI = 3'b100,
+             WRITE_BACK_ADDSUB = 3'b101;
 
   reg[2:0] current_state, next_state;
 
   always @(posedge clk or posedge reset) begin
     if (reset) begin
-      current_state <= IDLE;
+      current_state <= FETCH;
     end
     else begin
       current_state <= next_state;
@@ -32,12 +32,8 @@ module uc_asm (
   end
 
   always @(current_state, opcode) begin
-	 next_state = 3'bxxx;
+	 next_state = 3'b000;
     case (current_state)
-      IDLE: begin
-        next_state = FETCH;
-      end
-
       FETCH: begin
         next_state = DECODE;
       end
@@ -52,49 +48,67 @@ module uc_asm (
       end
 
       EXECUTE_ADDSUB: begin
-        next_state = WRITE_BACK; 
+        next_state = WRITE_BACK_ADDSUB; 
       end
 
       EXECUTE_ADDI: begin
-        next_state = WRITE_BACK; 
+        next_state = WRITE_BACK_ADDI; 
+      end
+
+      WRITE_BACK_ADDSUB, WRITE_BACK_ADDI: begin
+        next_state = FETCH;
       end
 
       default: begin
-        next_state = FETCH;
+        next_state = 3'b000;
       end
     endcase
   end
 
   always @(current_state) begin
-			pc_next_sel = 1'b0;
-			pc_adder_sel = 1'b0;
+      load_ir = 1'b0;
+      load_pc = 1'b0;
+      WE_RF = 1'b0;
+      RF_din_sel = 2'b00;
+      ULA_din2_sel = 1'b0;
+      pc_next_sel = 1'b0;
+      pc_adder_sel = 1'b0;
       WE_MEM = 1'b0;
+      addr_sel = 1'b0;
 			case (current_state)
 			  FETCH: begin
-				 // PC = PC + 4
-				 // IR = INSTRUCTION_MEMORY[PC]
 				 load_ir = 1'b1;
-         load_pc = 1'b0;
 				 addr_sel = 1'b1;
-			   WE_RF = 1'b0;
 			  end 
-			  DECODE: begin
-				 load_ir = 1'b0;
-				 load_pc = 1'b0;
-				 addr_sel = 1'b0;
-			  end
 			  EXECUTE_ADDSUB: begin
-				 RF_din_sel = 2'b01;
-				 ULA_din2_sel = 1'b0;
+         RF_din_sel = 2'b01;
 			  end
 			  EXECUTE_ADDI: begin
-				 RF_din_sel = 2'b01;
+         RF_din_sel = 2'b01;
 				 ULA_din2_sel = 1'b1;
 			  end
-			  WRITE_BACK: begin
-				 WE_RF = 1'b1;
+			  WRITE_BACK_ADDI: begin
          load_pc = 1'b1;
+			   WE_RF = 1'b1;
+         RF_din_sel = 2'b01;
+				 ULA_din2_sel = 1'b1;
 			  end
+        WRITE_BACK_ADDSUB: begin
+         load_pc = 1'b1;
+			   WE_RF = 1'b1;
+         RF_din_sel = 2'b01;
+			  end
+        default: begin 
+          load_ir = 1'b0;
+          load_pc = 1'b0;
+          WE_RF = 1'b0;
+          RF_din_sel = 2'b00;
+          ULA_din2_sel = 1'b0;
+          pc_next_sel = 1'b0;
+          pc_adder_sel = 1'b0;
+          WE_MEM = 1'b0;
+          addr_sel = 1'b0;
+        end
 			endcase
 		end
   
