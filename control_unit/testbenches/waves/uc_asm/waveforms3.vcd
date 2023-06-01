@@ -1,5 +1,5 @@
 $date
-	Tue May 30 08:10:31 2023
+	Thu Jun 01 01:22:36 2023
 $end
 $version
 	Icarus Verilog
@@ -23,20 +23,25 @@ $scope module UUT $end
 $var wire 1 ) clk $end
 $var wire 7 , opcode [6:0] $end
 $var wire 1 + reset $end
-$var parameter 3 - DECODE $end
-$var parameter 3 . EXECUTE_ADDI $end
-$var parameter 3 / EXECUTE_ADDSUB $end
-$var parameter 3 0 FETCH $end
-$var parameter 3 1 WRITE_BACK $end
-$var reg 2 2 RF_din_sel [1:0] $end
+$var parameter 4 - DECODE $end
+$var parameter 4 . EXECUTE_ADDI $end
+$var parameter 4 / EXECUTE_ADDSUB $end
+$var parameter 4 0 EXECUTE_LOAD $end
+$var parameter 4 1 EXECUTE_STORE $end
+$var parameter 4 2 FETCH $end
+$var parameter 4 3 WRITE_BACK_ADDI $end
+$var parameter 4 4 WRITE_BACK_ADDSUB $end
+$var parameter 4 5 WRITE_BACK_LOAD $end
+$var parameter 4 6 WRITE_BACK_STORE $end
+$var reg 2 7 RF_din_sel [1:0] $end
 $var reg 1 ' ULA_din2_sel $end
 $var reg 1 & WE_MEM $end
 $var reg 1 % WE_RF $end
-$var reg 1 3 addr_sel $end
-$var reg 3 4 current_state [2:0] $end
+$var reg 1 8 addr_sel $end
+$var reg 3 9 current_state [2:0] $end
 $var reg 1 $ load_ir $end
 $var reg 1 # load_pc $end
-$var reg 3 5 next_state [2:0] $end
+$var reg 3 : next_state [2:0] $end
 $var reg 1 " pc_adder_sel $end
 $var reg 1 ! pc_next_sel $end
 $upscope $end
@@ -44,149 +49,102 @@ $upscope $end
 $enddefinitions $end
 $comment Show the parameter values. $end
 $dumpall
-b100 1
-b0 0
-b10 /
-b11 .
-b1 -
+b1010 6
+b1001 5
+b1000 4
+b111 3
+b1 2
+b110 1
+b101 0
+b11 /
+b100 .
+b10 -
 $end
 #0
 $dumpvars
-b1 5
-b0 4
-13
-b0 2
+b10 :
+b1 9
+18
+b0 7
 bx ,
 1+
 bx *
 0)
 b0 (
 0'
-1&
+0&
 0%
 1$
-1#
-x"
+0#
+0"
 0!
 $end
 #5
 1)
 #10
+b10 :
 0)
 b110011 *
 b110011 ,
 0+
 #15
-b10 5
-03
-0#
+08
 0$
-b1 4
+b11 :
+b10 9
 1)
 #20
 0)
 #25
-b100 5
 b1 (
-b1 2
-b10 4
+b1 7
+b0 :
+b11 9
 1)
 #30
 0)
 b10011 *
 b10011 ,
 #35
-b0 5
-1%
-b100 4
+b0 (
+b0 7
+b0 9
 1)
 #40
 0)
 #45
-b1 5
-13
-b0 (
-b0 2
-0%
-1#
-1$
-b0 4
 1)
 #50
 0)
 #55
-b11 5
-03
-0#
-0$
-b1 4
 1)
 #60
 0)
 #65
-b100 5
-1'
-b1 (
-b1 2
-b11 4
 1)
 #70
 0)
 #75
-b0 5
-1%
-b100 4
 1)
 #80
 0)
 #85
-b1 5
-13
-0'
-b0 (
-b0 2
-0%
-1#
-1$
-b0 4
 1)
 #90
 0)
 #95
-b11 5
-03
-0#
-0$
-b1 4
 1)
 #100
 0)
 #105
-b100 5
-1'
-b1 (
-b1 2
-b11 4
 1)
 #110
 0)
 #115
-b0 5
-1%
-b100 4
 1)
 #120
 0)
 #125
-b1 5
-13
-0'
-b0 (
-b0 2
-0%
-1#
-1$
-b0 4
 1)
 #130
 0)

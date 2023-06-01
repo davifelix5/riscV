@@ -1,5 +1,3 @@
-`include "control_unit/uc_asm.v"
-
 module uc_asm_tb;
   
   wire WE_RF, WE_MEM, ULA_din2_sel, load_pc, load_ir, pc_next_sel, pc_adder_sel;

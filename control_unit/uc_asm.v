@@ -13,14 +13,18 @@ module uc_asm (
   output reg pc_adder_sel
 );
 
-  parameter FETCH = 3'b000,
-             DECODE = 3'b001,
-             EXECUTE_ADDSUB = 3'b010,
-             EXECUTE_ADDI = 3'b011,
-             WRITE_BACK_ADDI = 3'b100,
-             WRITE_BACK_ADDSUB = 3'b101;
+  parameter FETCH = 4'd1,
+             DECODE = 4'd2,
+             EXECUTE_ADDSUB = 4'd3,
+             EXECUTE_ADDI = 4'd4,
+             EXECUTE_LOAD = 4'd5,
+             EXECUTE_STORE = 4'd6,
+             WRITE_BACK_ADDI = 4'd7,
+             WRITE_BACK_ADDSUB = 4'd8,
+             WRITE_BACK_LOAD = 4'd9,
+             WRITE_BACK_STORE = 4'd10;
 
-  reg[2:0] current_state, next_state;
+  reg[3:0] current_state, next_state;
 
   always @(posedge clk or posedge reset) begin
     if (reset) begin
@@ -32,19 +36,19 @@ module uc_asm (
   end
 
   always @(current_state, opcode) begin
-	 next_state = 3'b000;
+	 next_state = 4'b0000;
     case (current_state)
       FETCH: begin
         next_state = DECODE;
       end
 
       DECODE: begin
-        if (opcode == 7'b0010011) begin
-          next_state = EXECUTE_ADDI;
-        end
-        else begin
-          next_state = EXECUTE_ADDSUB;
-        end
+        case (opcode)
+          7'b0010011: next_state = EXECUTE_ADDI;
+          7'b0000011: next_state = EXECUTE_LOAD;
+          7'b0100011: next_state = EXECUTE_STORE;
+          default: next_state = EXECUTE_ADDSUB;
+        endcase
       end
 
       EXECUTE_ADDSUB: begin
@@ -55,12 +59,21 @@ module uc_asm (
         next_state = WRITE_BACK_ADDI; 
       end
 
-      WRITE_BACK_ADDSUB, WRITE_BACK_ADDI: begin
+      EXECUTE_LOAD: begin
+        next_state = WRITE_BACK_LOAD; 
+      end
+
+      EXECUTE_STORE: begin
+        next_state = WRITE_BACK_STORE; 
+      end
+
+      WRITE_BACK_ADDSUB, WRITE_BACK_ADDI,
+      WRITE_BACK_LOAD, WRITE_BACK_STORE: begin
         next_state = FETCH;
       end
 
       default: begin
-        next_state = 3'b000;
+        next_state = 4'b0000;
       end
     endcase
   end
@@ -97,6 +110,28 @@ module uc_asm (
          load_pc = 1'b1;
 			   WE_RF = 1'b1;
          RF_din_sel = 2'b01;
+			  end
+        EXECUTE_LOAD: begin
+          ULA_din2_sel = 1'b1;
+          RF_din_sel = 2'b00;
+          addr_sel = 1'b0;
+			  end
+        WRITE_BACK_LOAD: begin
+          load_pc = 1'b1;
+          ULA_din2_sel = 1'b1;
+          RF_din_sel = 2'b00;
+          addr_sel = 1'b0;
+          WE_RF = 1'b1;
+			  end
+			  EXECUTE_STORE: begin
+          ULA_din2_sel = 1'b1;
+          addr_sel = 1'b0;
+			  end
+			  WRITE_BACK_STORE: begin
+          load_pc = 1'b1;
+          ULA_din2_sel = 1'b1;
+          addr_sel = 1'b0;
+          WE_MEM = 1'b1;
 			  end
         default: begin 
           load_ir = 1'b0;
