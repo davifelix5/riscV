@@ -1,8 +1,8 @@
-module add_sub_with_uc_tb;
+module full_tb;
 
   reg reset, clk;
 
-  add_sub_with_uc UUT (
+  full UUT (
     .clk(clk),
     .reset(reset)
   );

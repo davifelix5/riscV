@@ -1,44 +1,55 @@
 [*]
-[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Wed May 31 17:16:36 2023
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu Jun 01 05:04:01 2023
 [*]
-[dumpfile] "/home/aluno/Documentos/riscV/control_unit/testbenches/waves/add_sub_uc/waveforms3.vcd"
-[dumpfile_mtime] "Wed May 31 17:16:28 2023"
-[dumpfile_size] 93663
-[savefile] "/home/aluno/Documentos/riscV/control_unit/testbenches/waves/add_sub_uc/addsub_uc.gtkw"
-[timestart] 50
+[dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\add_sub_uc\waveforms3.vcd"
+[dumpfile_mtime] "Thu Jun 01 05:00:12 2023"
+[dumpfile_size] 172754
+[savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\add_sub_uc\addsub_uc.gtkw"
+[timestart] 122
 [size] 1000 600
 [pos] -1 -1
-*-5.000000 55 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[treeopen] add_sub_with_uc_tb.
-[treeopen] add_sub_with_uc_tb.UUT.
-[treeopen] add_sub_with_uc_tb.UUT.DP.
-[treeopen] add_sub_with_uc_tb.UUT.DP.RF.
-[treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[1].
-[treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[2].
-[treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[3].
-[treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[4].
+*-5.000000 405 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] full_tb.
+[treeopen] full_tb.UUT.
+[treeopen] full_tb.UUT.DP.
+[treeopen] full_tb.UUT.DP.RF.
+[treeopen] full_tb.UUT.DP.RF.registers[1].
+[treeopen] full_tb.UUT.DP.RF.registers[2].
+[treeopen] full_tb.UUT.DP.RF.registers[3].
+[treeopen] full_tb.UUT.DP.RF.registers[4].
+[treeopen] full_tb.UUT.DP.RF.registers[5].
+[treeopen] full_tb.UUT.DP.RF.registers[6].
+[treeopen] full_tb.UUT.DP.RF.registers[7].
 [sst_width] 212
 [signals_width] 174
 [sst_expanded] 1
-[sst_vpaned_height] 153
+[sst_vpaned_height] 190
 @28
-add_sub_with_uc_tb.UUT.DP.CLK
-add_sub_with_uc_tb.UUT.UC.current_state[2:0]
-add_sub_with_uc_tb.UUT.UC.load_ir
-add_sub_with_uc_tb.UUT.UC.load_pc
-add_sub_with_uc_tb.UUT.DP.WE_RF
-@24
-add_sub_with_uc_tb.UUT.DP.PC.pc[63:0]
+full_tb.UUT.clk
+@22
+full_tb.UUT.UC.current_state[3:0]
 @28
-+{add_sub_with_uc_tb.UUT.DP.IR.IR[31:0]} add_sub_with_uc_tb.UUT.DP.IR.OUT[31:0]
-add_sub_with_uc_tb.UUT.DP.RF_din_sel[1:0]
-add_sub_with_uc_tb.UUT.DP.ULA_din2_sel
+full_tb.UUT.UC.pc_adder_sel
+full_tb.UUT.UC.pc_next_sel
+full_tb.UUT.UC.addr_sel
+full_tb.UUT.UC.load_ir
+full_tb.UUT.UC.load_pc
+full_tb.UUT.UC.RF_din_sel[1:0]
+full_tb.UUT.UC.ULA_din2_sel
+full_tb.UUT.UC.WE_MEM
+full_tb.UUT.UC.WE_RF
 @24
-add_sub_with_uc_tb.UUT.DP.RF.registers[1].xN.OUT[63:0]
-add_sub_with_uc_tb.UUT.DP.RF.registers[2].xN.OUT[63:0]
-add_sub_with_uc_tb.UUT.DP.RF.registers[3].xN.OUT[63:0]
+full_tb.UUT.DP.PC.pc[63:0]
+full_tb.UUT.DP.IR.OUT[31:0]
+full_tb.UUT.DP.RF.registers[1].xN.OUT[63:0]
+full_tb.UUT.DP.RF.registers[2].xN.OUT[63:0]
+full_tb.UUT.DP.RF.registers[3].xN.OUT[63:0]
 @421
-add_sub_with_uc_tb.UUT.DP.RF.registers[4].xN.OUT[63:0]
+full_tb.UUT.DP.RF.registers[4].xN.OUT[63:0]
+@24
+full_tb.UUT.DP.RF.registers[5].xN.OUT[63:0]
+full_tb.UUT.DP.RF.registers[6].xN.OUT[63:0]
+full_tb.UUT.DP.RF.registers[7].xN.OUT[63:0]
 [pattern_trace] 1
 [pattern_trace] 0

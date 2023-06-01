@@ -1,4 +1,4 @@
-module add_sub_with_uc (
+module full (
   input wire clk,
   input wire reset
 );
@@ -45,8 +45,8 @@ module add_sub_with_uc (
   );
 
   // Não será usada por enquanto
-  datamemory #(.SIZE(64), .N(4096)) DM (
-    .ADDR(mem_addr[11:0]),
+  datamemory #(.SIZE(64), .N(8192)) DM (
+    .ADDR(mem_addr[12:0]),
     .WE(WE_MEM),
     .D_in(data_out),
     .D_out(dm_out),
