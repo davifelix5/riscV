@@ -1,12 +1,12 @@
 [*]
-[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Wed May 31 04:18:12 2023
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed May 31 17:16:36 2023
 [*]
-[dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\add_sub_uc\waveforms3.vcd"
-[dumpfile_mtime] "Wed May 31 04:18:00 2023"
-[dumpfile_size] 113643
-[savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\add_sub_uc\addsub_uc.gtkw"
-[timestart] 201
+[dumpfile] "/home/aluno/Documentos/riscV/control_unit/testbenches/waves/add_sub_uc/waveforms3.vcd"
+[dumpfile_mtime] "Wed May 31 17:16:28 2023"
+[dumpfile_size] 93663
+[savefile] "/home/aluno/Documentos/riscV/control_unit/testbenches/waves/add_sub_uc/addsub_uc.gtkw"
+[timestart] 50
 [size] 1000 600
 [pos] -1 -1
 *-5.000000 55 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
@@ -18,7 +18,7 @@
 [treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[2].
 [treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[3].
 [treeopen] add_sub_with_uc_tb.UUT.DP.RF.registers[4].
-[sst_width] 197
+[sst_width] 212
 [signals_width] 174
 [sst_expanded] 1
 [sst_vpaned_height] 153
