@@ -9,7 +9,7 @@ module full (
   wire[6:0] opcode;
   wire[31:0] im_out;
 
-  // Gerenciamento temporário do espaço de endereçamento
+  // Gerenciamento do espaço de endereçamento
   assign mem_out = mem_addr < 64'h1FFF ? {32'b0, im_out} : dm_out;  
 
   uc_asm UC (
@@ -44,7 +44,6 @@ module full (
     .opcode(opcode)
   );
 
-  // Não será usada por enquanto
   datamemory #(.SIZE(64), .N(8192)) DM (
     .ADDR(mem_addr[12:0]),
     .WE(WE_MEM),
@@ -53,7 +52,6 @@ module full (
     .CLK(clk)
   );
 
-  // Por enquanto, endereço entra direto, pois a memória de dados não será usada
   instruction_memory IM(
     .ADDR({2'b0, mem_addr[63:2]}),
     .OUTPUT(im_out)
