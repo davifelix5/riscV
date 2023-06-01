@@ -8,7 +8,7 @@ module full_tb;
   );
 
   initial begin
-    $dumpfile("control_unit/testbenches/waves/add_sub_uc/waveforms3.vcd");
+    $dumpfile("control_unit/testbenches/waves/full/waveforms3.vcd");
     $dumpvars(0, UUT);
     clk = 0;
     reset = 1;
