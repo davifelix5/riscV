@@ -1,12 +1,12 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Fri Jun 02 04:03:06 2023
+[*] Fri Jun 02 04:22:46 2023
 [*]
 [dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\full\waveforms3.vcd"
-[dumpfile_mtime] "Fri Jun 02 04:02:24 2023"
-[dumpfile_size] 209902
+[dumpfile_mtime] "Fri Jun 02 04:22:35 2023"
+[dumpfile_size] 215300
 [savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\full\full.gtkw"
-[timestart] 527
+[timestart] 509
 [size] 1366 705
 [pos] -1 -1
 *-5.000000 525 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
