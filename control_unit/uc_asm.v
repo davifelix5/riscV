@@ -21,12 +21,14 @@ module uc_asm (
              EXECUTE_STORE = 4'd6,
              EXECUTE_JAL = 4'd7,
              EXECUTE_JALR = 4'd8,
-             WRITE_BACK_ADDI = 4'd9,
-             WRITE_BACK_ADDSUB = 4'd10,
-             WRITE_BACK_LOAD = 4'd11,
-             WRITE_BACK_STORE = 4'd12,
-             WRITE_BACK_JAL = 4'd13,
-             WRITE_BACK_JALR = 4'd14;
+             EXECUTE_AUIPC = 4'd9,
+             WRITE_BACK_ADDI = 4'd10,
+             WRITE_BACK_ADDSUB = 4'd11,
+             WRITE_BACK_LOAD = 4'd12,
+             WRITE_BACK_STORE = 4'd13,
+             WRITE_BACK_JAL = 4'd14,
+             WRITE_BACK_JALR = 4'd15,
+             WRITE_BACK_AUIPC = 4'd0;
 
   reg[3:0] current_state, next_state;
 
@@ -53,6 +55,7 @@ module uc_asm (
           7'b0100011: next_state = EXECUTE_STORE;
           7'b1101111: next_state = EXECUTE_JAL;
           7'b1100111: next_state = EXECUTE_JALR;
+          7'b0010111: next_state = EXECUTE_AUIPC;
           default: next_state = EXECUTE_ADDSUB;
         endcase
       end
@@ -81,9 +84,14 @@ module uc_asm (
         next_state = WRITE_BACK_JALR;
       end
 
+      EXECUTE_AUIPC: begin
+        next_state = WRITE_BACK_AUIPC;
+      end
+
       WRITE_BACK_ADDSUB, WRITE_BACK_ADDI,
       WRITE_BACK_LOAD, WRITE_BACK_STORE,
-      WRITE_BACK_JAL, WRITE_BACK_JALR: begin
+      WRITE_BACK_JAL, WRITE_BACK_JALR,
+      WRITE_BACK_AUIPC: begin
         next_state = FETCH;
       end
 
@@ -170,6 +178,16 @@ module uc_asm (
           RF_din_sel = 2'b10;
           pc_adder_sel = 1'b0;
           pc_next_sel = 1'b1;
+          WE_RF = 1'b1;
+        end
+        EXECUTE_AUIPC: begin
+          pc_adder_sel = 1'b1;
+          RF_din_sel = 2'b11;
+        end
+        WRITE_BACK_AUIPC: begin
+          load_pc = 1'b1;
+          pc_adder_sel = 1'b1;
+          RF_din_sel = 2'b11;
           WE_RF = 1'b1;
         end
         default: begin 
