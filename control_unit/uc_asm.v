@@ -13,24 +13,26 @@ module uc_asm (
   output reg pc_adder_sel
 );
 
-  parameter FETCH = 4'd1,
-             DECODE = 4'd2,
-             EXECUTE_ADDSUB = 4'd3,
-             EXECUTE_ADDI = 4'd4,
-             EXECUTE_LOAD = 4'd5,
-             EXECUTE_STORE = 4'd6,
-             EXECUTE_JAL = 4'd7,
-             EXECUTE_JALR = 4'd8,
-             EXECUTE_AUIPC = 4'd9,
-             WRITE_BACK_ADDI = 4'd10,
-             WRITE_BACK_ADDSUB = 4'd11,
-             WRITE_BACK_LOAD = 4'd12,
-             WRITE_BACK_STORE = 4'd13,
-             WRITE_BACK_JAL = 4'd14,
-             WRITE_BACK_JALR = 4'd15,
-             WRITE_BACK_AUIPC = 4'd0;
+  parameter FETCH = 5'd1,
+             DECODE = 5'd2,
+             EXECUTE_ADDSUB = 5'd3,
+             EXECUTE_ADDI = 5'd4,
+             EXECUTE_LOAD = 5'd5,
+             EXECUTE_STORE = 5'd6,
+             EXECUTE_JAL = 5'd7,
+             EXECUTE_JALR = 5'd8,
+             EXECUTE_AUIPC = 5'd9,
+             EXECUTE_BRANCH = 5'd10,
+             WRITE_BACK_ADDI = 5'd11,
+             WRITE_BACK_ADDSUB = 5'd12,
+             WRITE_BACK_LOAD = 5'd13,
+             WRITE_BACK_STORE = 5'd14,
+             WRITE_BACK_JAL = 5'd15,
+             WRITE_BACK_JALR = 5'd16,
+             WRITE_BACK_AUIPC = 5'd17,
+             WRITE_BACK_BRANCH = 5'd18;
 
-  reg[3:0] current_state, next_state;
+  reg[4:0] current_state, next_state;
 
   always @(posedge clk or posedge reset) begin
     if (reset) begin
@@ -42,7 +44,7 @@ module uc_asm (
   end
 
   always @(current_state, opcode) begin
-	 next_state = 4'b0000;
+	 next_state = 5'b0000;
     case (current_state)
       FETCH: begin
         next_state = DECODE;
@@ -56,6 +58,7 @@ module uc_asm (
           7'b1101111: next_state = EXECUTE_JAL;
           7'b1100111: next_state = EXECUTE_JALR;
           7'b0010111: next_state = EXECUTE_AUIPC;
+          7'b1100011: next_state = EXECUTE_BRANCH;
           default: next_state = EXECUTE_ADDSUB;
         endcase
       end
@@ -87,16 +90,20 @@ module uc_asm (
       EXECUTE_AUIPC: begin
         next_state = WRITE_BACK_AUIPC;
       end
+      
+      EXECUTE_BRANCH: begin
+        next_state = WRITE_BACK_BRANCH;
+      end
 
       WRITE_BACK_ADDSUB, WRITE_BACK_ADDI,
       WRITE_BACK_LOAD, WRITE_BACK_STORE,
       WRITE_BACK_JAL, WRITE_BACK_JALR,
-      WRITE_BACK_AUIPC: begin
+      WRITE_BACK_AUIPC, WRITE_BACK_BRANCH: begin
         next_state = FETCH;
       end
 
       default: begin
-        next_state = 4'b0000;
+        next_state = 5'b0;
       end
     endcase
   end
@@ -189,6 +196,9 @@ module uc_asm (
           pc_adder_sel = 1'b1;
           RF_din_sel = 2'b11;
           WE_RF = 1'b1;
+        end
+        WRITE_BACK_BRANCH: begin
+          load_pc = 1'b1;
         end
         default: begin 
           load_ir = 1'b0;
