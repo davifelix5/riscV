@@ -19,10 +19,14 @@ module uc_asm (
              EXECUTE_ADDI = 4'd4,
              EXECUTE_LOAD = 4'd5,
              EXECUTE_STORE = 4'd6,
-             WRITE_BACK_ADDI = 4'd7,
-             WRITE_BACK_ADDSUB = 4'd8,
-             WRITE_BACK_LOAD = 4'd9,
-             WRITE_BACK_STORE = 4'd10;
+             EXECUTE_JAL = 4'd7,
+             EXECUTE_JALR = 4'd8,
+             WRITE_BACK_ADDI = 4'd9,
+             WRITE_BACK_ADDSUB = 4'd10,
+             WRITE_BACK_LOAD = 4'd11,
+             WRITE_BACK_STORE = 4'd12,
+             WRITE_BACK_JAL = 4'd13,
+             WRITE_BACK_JALR = 4'd14;
 
   reg[3:0] current_state, next_state;
 
@@ -47,6 +51,8 @@ module uc_asm (
           7'b0010011: next_state = EXECUTE_ADDI;
           7'b0000011: next_state = EXECUTE_LOAD;
           7'b0100011: next_state = EXECUTE_STORE;
+          7'b1101111: next_state = EXECUTE_JAL;
+          7'b1100111: next_state = EXECUTE_JALR;
           default: next_state = EXECUTE_ADDSUB;
         endcase
       end
@@ -67,8 +73,17 @@ module uc_asm (
         next_state = WRITE_BACK_STORE; 
       end
 
+      EXECUTE_JAL: begin
+        next_state = WRITE_BACK_JAL;
+      end
+
+      EXECUTE_JALR: begin
+        next_state = WRITE_BACK_JALR;
+      end
+
       WRITE_BACK_ADDSUB, WRITE_BACK_ADDI,
-      WRITE_BACK_LOAD, WRITE_BACK_STORE: begin
+      WRITE_BACK_LOAD, WRITE_BACK_STORE,
+      WRITE_BACK_JAL, WRITE_BACK_JALR: begin
         next_state = FETCH;
       end
 
@@ -133,6 +148,30 @@ module uc_asm (
           addr_sel = 1'b0;
           WE_MEM = 1'b1;
 			  end
+        EXECUTE_JAL: begin
+          RF_din_sel = 2'b10;
+          pc_adder_sel = 1'b1;
+          pc_next_sel = 1'b1;
+        end
+        WRITE_BACK_JAL: begin
+          load_pc = 1'b1;
+          RF_din_sel = 2'b10;
+          pc_adder_sel = 1'b1;
+          pc_next_sel = 1'b1;
+          WE_RF = 1'b1;
+        end
+        EXECUTE_JALR: begin
+          RF_din_sel = 2'b10;
+          pc_adder_sel = 1'b0;
+          pc_next_sel = 1'b1;
+        end
+        WRITE_BACK_JALR: begin
+          load_pc = 1'b1;
+          RF_din_sel = 2'b10;
+          pc_adder_sel = 1'b0;
+          pc_next_sel = 1'b1;
+          WE_RF = 1'b1;
+        end
         default: begin 
           load_ir = 1'b0;
           load_pc = 1'b0;

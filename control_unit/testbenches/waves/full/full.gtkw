@@ -1,19 +1,20 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Thu Jun 01 05:08:28 2023
+[*] Fri Jun 02 04:03:06 2023
 [*]
-[dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\add_sub_uc\waveforms3.vcd"
-[dumpfile_mtime] "Thu Jun 01 05:07:56 2023"
-[dumpfile_size] 172754
-[savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\add_sub_uc\full.gtkw"
-[timestart] 122
-[size] 1000 600
+[dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\full\waveforms3.vcd"
+[dumpfile_mtime] "Fri Jun 02 04:02:24 2023"
+[dumpfile_size] 209902
+[savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\full\full.gtkw"
+[timestart] 527
+[size] 1366 705
 [pos] -1 -1
-*-5.000000 405 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-5.000000 525 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] full_tb.
 [treeopen] full_tb.UUT.
 [treeopen] full_tb.UUT.DP.
 [treeopen] full_tb.UUT.DP.RF.
+[treeopen] full_tb.UUT.DP.RF.registers[10].
 [treeopen] full_tb.UUT.DP.RF.registers[1].
 [treeopen] full_tb.UUT.DP.RF.registers[2].
 [treeopen] full_tb.UUT.DP.RF.registers[3].
@@ -21,14 +22,23 @@
 [treeopen] full_tb.UUT.DP.RF.registers[5].
 [treeopen] full_tb.UUT.DP.RF.registers[6].
 [treeopen] full_tb.UUT.DP.RF.registers[7].
+[treeopen] full_tb.UUT.DP.RF.registers[8].
+[treeopen] full_tb.UUT.DP.RF.registers[9].
 [sst_width] 212
 [signals_width] 174
 [sst_expanded] 1
-[sst_vpaned_height] 190
+[sst_vpaned_height] 236
 @28
 full_tb.UUT.clk
-@22
+@800024
 full_tb.UUT.UC.current_state[3:0]
+@28
+(0)full_tb.UUT.UC.current_state[3:0]
+(1)full_tb.UUT.UC.current_state[3:0]
+(2)full_tb.UUT.UC.current_state[3:0]
+(3)full_tb.UUT.UC.current_state[3:0]
+@1001200
+-group_end
 @28
 full_tb.UUT.UC.pc_adder_sel
 full_tb.UUT.UC.pc_next_sel
@@ -41,15 +51,56 @@ full_tb.UUT.UC.WE_MEM
 full_tb.UUT.UC.WE_RF
 @24
 full_tb.UUT.DP.PC.pc[63:0]
-full_tb.UUT.DP.IR.OUT[31:0]
+@c00028
++{full_tb.UUT.DP.IR.IR31:0]} full_tb.UUT.DP.IR.OUT[31:0]
+@28
+(0)full_tb.UUT.DP.IR.OUT[31:0]
+(1)full_tb.UUT.DP.IR.OUT[31:0]
+(2)full_tb.UUT.DP.IR.OUT[31:0]
+(3)full_tb.UUT.DP.IR.OUT[31:0]
+(4)full_tb.UUT.DP.IR.OUT[31:0]
+(5)full_tb.UUT.DP.IR.OUT[31:0]
+(6)full_tb.UUT.DP.IR.OUT[31:0]
+(7)full_tb.UUT.DP.IR.OUT[31:0]
+(8)full_tb.UUT.DP.IR.OUT[31:0]
+(9)full_tb.UUT.DP.IR.OUT[31:0]
+(10)full_tb.UUT.DP.IR.OUT[31:0]
+(11)full_tb.UUT.DP.IR.OUT[31:0]
+(12)full_tb.UUT.DP.IR.OUT[31:0]
+(13)full_tb.UUT.DP.IR.OUT[31:0]
+(14)full_tb.UUT.DP.IR.OUT[31:0]
+(15)full_tb.UUT.DP.IR.OUT[31:0]
+(16)full_tb.UUT.DP.IR.OUT[31:0]
+(17)full_tb.UUT.DP.IR.OUT[31:0]
+(18)full_tb.UUT.DP.IR.OUT[31:0]
+(19)full_tb.UUT.DP.IR.OUT[31:0]
+(20)full_tb.UUT.DP.IR.OUT[31:0]
+(21)full_tb.UUT.DP.IR.OUT[31:0]
+(22)full_tb.UUT.DP.IR.OUT[31:0]
+(23)full_tb.UUT.DP.IR.OUT[31:0]
+(24)full_tb.UUT.DP.IR.OUT[31:0]
+(25)full_tb.UUT.DP.IR.OUT[31:0]
+(26)full_tb.UUT.DP.IR.OUT[31:0]
+(27)full_tb.UUT.DP.IR.OUT[31:0]
+(28)full_tb.UUT.DP.IR.OUT[31:0]
+(29)full_tb.UUT.DP.IR.OUT[31:0]
+(30)full_tb.UUT.DP.IR.OUT[31:0]
+(31)full_tb.UUT.DP.IR.OUT[31:0]
+@1401200
+-group_end
+@24
 full_tb.UUT.DP.RF.registers[1].xN.OUT[63:0]
 full_tb.UUT.DP.RF.registers[2].xN.OUT[63:0]
 full_tb.UUT.DP.RF.registers[3].xN.OUT[63:0]
-@421
+@420
 full_tb.UUT.DP.RF.registers[4].xN.OUT[63:0]
 @24
 full_tb.UUT.DP.RF.registers[5].xN.OUT[63:0]
 full_tb.UUT.DP.RF.registers[6].xN.OUT[63:0]
 full_tb.UUT.DP.RF.registers[7].xN.OUT[63:0]
+full_tb.UUT.DP.RF.registers[8].xN.OUT[63:0]
+full_tb.UUT.DP.RF.registers[9].xN.OUT[63:0]
+@25
+full_tb.UUT.DP.RF.registers[10].xN.OUT[63:0]
 [pattern_trace] 1
 [pattern_trace] 0
