@@ -1,6 +1,6 @@
 
 // Memória de dados
-module datamemory #(parameter SIZE = 64, parameter N = 32) (
+module datamemory #(parameter SIZE = 64, parameter N = 2048) (
     input wire[$clog2(N) - 1:0] ADDR, // Endereço de memória
     input wire WE, // Write-Enable: caso esteja ativo, valor em D_in é salvo no endereço ADDR
     input wire[SIZE-1:0] D_in, // Entrada de dados
