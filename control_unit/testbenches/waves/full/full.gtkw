@@ -1,21 +1,22 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Fri Jun 02 15:18:39 2023
+[*] Sun Jun 04 22:42:49 2023
 [*]
 [dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\full\waveforms3.vcd"
-[dumpfile_mtime] "Fri Jun 02 15:18:33 2023"
-[dumpfile_size] 214303
+[dumpfile_mtime] "Sun Jun 04 22:42:40 2023"
+[dumpfile_size] 219126
 [savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\control_unit\testbenches\waves\full\full.gtkw"
-[timestart] 0
+[timestart] 435
 [size] 1366 705
 [pos] -1 -1
-*-8.000000 565 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-6.000000 445 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] full_tb.
 [treeopen] full_tb.UUT.
 [treeopen] full_tb.UUT.DP.
 [treeopen] full_tb.UUT.DP.PC.
 [treeopen] full_tb.UUT.DP.RF.
 [treeopen] full_tb.UUT.DP.RF.registers[10].
+[treeopen] full_tb.UUT.DP.RF.registers[15].
 [treeopen] full_tb.UUT.DP.RF.registers[1].
 [treeopen] full_tb.UUT.DP.RF.registers[2].
 [treeopen] full_tb.UUT.DP.RF.registers[3].
@@ -94,9 +95,9 @@ full_tb.UUT.DP.RF.registers[6].xN.OUT[63:0]
 full_tb.UUT.DP.RF.registers[7].xN.OUT[63:0]
 full_tb.UUT.DP.RF.registers[8].xN.OUT[63:0]
 full_tb.UUT.DP.RF.registers[9].xN.OUT[63:0]
-@c00025
+@c00024
 full_tb.UUT.DP.RF.registers[10].xN.OUT[63:0]
-@29
+@28
 (0)full_tb.UUT.DP.RF.registers[10].xN.OUT[63:0]
 (1)full_tb.UUT.DP.RF.registers[10].xN.OUT[63:0]
 (2)full_tb.UUT.DP.RF.registers[10].xN.OUT[63:0]
@@ -161,7 +162,9 @@ full_tb.UUT.DP.RF.registers[10].xN.OUT[63:0]
 (61)full_tb.UUT.DP.RF.registers[10].xN.OUT[63:0]
 (62)full_tb.UUT.DP.RF.registers[10].xN.OUT[63:0]
 (63)full_tb.UUT.DP.RF.registers[10].xN.OUT[63:0]
-@1401201
+@1401200
 -group_end
+@25
+full_tb.UUT.DP.RF.registers[15].xN.OUT[63:0]
 [pattern_trace] 1
 [pattern_trace] 0
