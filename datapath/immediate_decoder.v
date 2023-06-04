@@ -14,7 +14,7 @@ module immediate_decoder(
       // U-type
       7'b0010111: immediate = {{32{instruction[31]}}, instruction[31:12], 12'b0};
       // I-type
-      default: immediate = instruction[31:20];
+      default: immediate = {{52{instruction[31]}}, instruction[31:20]};
     endcase
   end
 
