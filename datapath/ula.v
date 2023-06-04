@@ -14,7 +14,7 @@ module ula #(parameter SIZE = 64) (
 
   wire cout, sub;
 
-  assign sub = (funct7[5] & (~| funct3)) | opcode == 7'b1100011;
+  assign sub = (opcode == 7'b0110011 & funct7[5] & (~| funct3)) | opcode == 7'b1100011;
 
   assign EQ = ~| res;
   assign GT_SN = ~EQ & ~LT_SN;
