@@ -1,4 +1,4 @@
-module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
+module datapath #( parameter MEM_SIZE = 12 ) (
     input WE_RF,
     input wire[1:0] RF_din_sel,
     input wire ULA_din2_sel,
@@ -9,6 +9,7 @@ module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
     input wire CLK,
     input wire pc_next_sel,
     input wire pc_adder_sel,
+    input wire branch,
     input wire[63:0] data_in,
     output wire[63:0] data_out,
     output wire[63:0] mem_addr,
@@ -45,15 +46,14 @@ module datapath_with_uc #( parameter MEM_SIZE = 12 ) (
         .CLK(CLK),
         .LOAD(load_pc),
         .RST(reset),
-        // Saídas
+        .branch(branch),
         .pc_adder_sel(pc_adder_sel),
         .pc_next_sel(pc_next_sel),
-        .pc(pc),
         // Instrução
-        .opcode(opcode),
         .func(instruction[14:12]),
         .immediate(extended_imm),
         // Saidas
+        .pc(pc),
         .primary_adder_res(pc_primary_adder),
         .secondary_adder_res(pc_secondary_adder),
         // Valor do regfile

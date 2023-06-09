@@ -5,9 +5,9 @@ module program_counter (
     input RST,
     input wire pc_next_sel,
     input wire pc_adder_sel,
+    input wire branch,
     // Valores da instrução
     input wire[63:0] immediate,
-    input wire[6:0] opcode,
     input wire[2:0] func,
     // Saída do regfile
     input wire[63:0] Dout_rs1,
@@ -40,9 +40,8 @@ module program_counter (
     wire[63:0] pc_adder, pc_next;
     wire final_pc_adder_sel, final_pc_next_sel;
 
-    // Para que sel seja utilizado, opcode tem que ser 1100011
-    assign final_pc_next_sel = opcode == 7'b1100011 ? sel : pc_next_sel;
-    assign final_pc_adder_sel = opcode == 7'b1100011 ? 1'b1 : pc_adder_sel; 
+    assign final_pc_next_sel = branch ? sel : pc_next_sel;
+    assign final_pc_adder_sel = branch | pc_adder_sel; 
 
     assign pc_adder = final_pc_adder_sel ? pc : Dout_rs1;
     assign pc_next = final_pc_next_sel ? secondary_adder_res : primary_adder_res;
