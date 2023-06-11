@@ -1,11 +1,11 @@
-module uc_asm (
-  input wire clk, rst_n,
-  input wire[6:0] opcode,
-  output reg rf_we, d_mem_we,
-  input[3:0] alu_flags,
-  output reg[3:0] alu_cmd,
-  output reg alu_src, pc_src, rf_src
-);
+module uc (
+    input clk, rst_n,                       // clock borda subida, reset assíncrono ativo baixo
+    input [6:0] opcode,                     // OpCode direto do IR no FD
+    output reg d_mem_we, rf_we,                 // Habilita escrita na memória de dados e no banco de registradores
+    input  [3:0] alu_flags,                 // Flags da ULA
+    output reg [3:0] alu_cmd,                   // Operação da ULA
+    output reg alu_src, pc_src, rf_src          // Seletor dos MUXes
+);  
 
   parameter FETCH = 4'd1,
             DECODE = 4'd2,

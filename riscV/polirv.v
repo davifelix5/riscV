@@ -1,13 +1,14 @@
-module polirv #(
+module polirv 
+#(
     parameter i_addr_bits = 6,
     parameter d_addr_bits = 6
 ) (
-    input clk, rst_n,
+    input clk, rst_n,                       // clock borda subida, reset assíncrono ativo baixo
     output [i_addr_bits-1:0] i_mem_addr,
-    input[31:0] i_mem_data,
-    output d_mem_we,
+    input  [31:0]            i_mem_data,
+    output                   d_mem_we,
     output [d_addr_bits-1:0] d_mem_addr,
-    inout[63:0] d_mem_data
+    inout  [63:0]            d_mem_data
 );
 
     wire [6:0] opcode;
@@ -15,7 +16,7 @@ module polirv #(
     wire rf_src, alu_src, pc_src;
     wire [3:0] alu_flags, alu_cmd;
 
-    uc_asm UC (
+    uc UC (
         .rst_n(rst_n),
         .clk(clk),
         .opcode(opcode),
@@ -28,7 +29,7 @@ module polirv #(
         .pc_src(pc_src)
     );
 
-    datapath_with_uc fd (
+    fd FD (
         .clk(clk),
         .rst_n(rst_n),
         .rf_we(rf_we),

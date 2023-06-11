@@ -1,21 +1,21 @@
-module datapath_with_uc #( 
+module fd 
+#(  // Tamanho em bits dos barramentos
     parameter i_addr_bits = 6,
     parameter d_addr_bits = 6
- ) (
-    input clk,
-    input rst_n,
-    input rf_we,
-    input d_mem_we,
-    input rf_src,
-    input alu_src,
-    input pc_src,
-    output[3:0] alu_flags,
-    input[3:0] alu_cmd,
-    inout[63:0] d_mem_data,
-    output[d_addr_bits-1:0] d_mem_addr,
-    output[i_addr_bits-1:0] i_mem_addr,
-    input[31:0] i_mem_data,
-    output wire[6:0] opcode  
+)(
+    input  clk, rst_n,                   // clock borda subida, reset assíncrono ativo baixo
+    output [6:0] opcode,                    
+    input  d_mem_we, rf_we,              // Habilita escrita na memória de dados e no banco de registradores
+    input  [3:0] alu_cmd,                // ver abaixo
+    output [3:0] alu_flags,
+    input  alu_src,                      // 0: rf, 1: imm
+            pc_src,                       // 0: +4, 1: +imm
+            rf_src,                       // 0: alu, 1:d_mem
+    output [i_addr_bits-1:0] i_mem_addr,
+    input  [31:0]            i_mem_data,
+    output [d_addr_bits-1:0] d_mem_addr,
+    inout  [63:0]            d_mem_data
+
 );
 
     wire[31:0] instruction;
