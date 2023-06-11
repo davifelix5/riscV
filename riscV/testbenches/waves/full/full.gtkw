@@ -1,10 +1,10 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Sun Jun 11 15:48:03 2023
+[*] Sun Jun 11 16:15:05 2023
 [*]
 [dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\riscV\testbenches\waves\full\waveforms3.vcd"
-[dumpfile_mtime] "Sun Jun 11 15:46:26 2023"
-[dumpfile_size] 172657
+[dumpfile_mtime] "Sun Jun 11 16:14:10 2023"
+[dumpfile_size] 180448
 [savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\riscV\testbenches\waves\full\full.gtkw"
 [timestart] 0
 [size] 1000 600
@@ -22,6 +22,7 @@
 [treeopen] full_tb.UUT.RISCV.FD.RF.registers[5].
 [treeopen] full_tb.UUT.RISCV.FD.RF.registers[6].
 [treeopen] full_tb.UUT.RISCV.FD.RF.registers[7].
+[treeopen] full_tb.UUT.RISCV.FD.RF.registers[8].
 [sst_width] 197
 [signals_width] 174
 [sst_expanded] 1
@@ -33,7 +34,7 @@ full_tb.UUT.RISCV.FD.PC.contador_pc.clk_out
 full_tb.UUT.RISCV.UC.current_state[3:0]
 @24
 full_tb.UUT.RISCV.FD.PC.pc[63:0]
-@421
+@420
 full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
 full_tb.UUT.RISCV.FD.RF.registers[2].xN.OUT[63:0]
 full_tb.UUT.RISCV.FD.RF.registers[3].xN.OUT[63:0]
@@ -41,5 +42,7 @@ full_tb.UUT.RISCV.FD.RF.registers[4].xN.OUT[63:0]
 full_tb.UUT.RISCV.FD.RF.registers[5].xN.OUT[63:0]
 full_tb.UUT.RISCV.FD.RF.registers[6].xN.OUT[63:0]
 full_tb.UUT.RISCV.FD.RF.registers[7].xN.OUT[63:0]
+@25
+full_tb.UUT.RISCV.FD.RF.registers[8].xN.OUT[63:0]
 [pattern_trace] 1
 [pattern_trace] 0
