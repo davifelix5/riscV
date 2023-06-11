@@ -1,62 +1,38 @@
-module full (
+module full #(
+  parameter i_addr_bits = 6,
+  parameter d_addr_bits = 6
+) (
   input wire clk,
-  input wire reset
+  input wire rst_n
 );
 
-  wire[63:0] mem_addr, data_in, data_out, dm_out, mem_out;
-  wire WE_RF, WE_MEM, ULA_din2_sel, load_pc, load_ir, pc_next_sel, pc_adder_sel, addr_sel, branch;
-  wire[1:0] RF_din_sel;
-  wire[6:0] opcode;
-  wire[31:0] im_out;
+  wire [i_addr_bits-1:0] i_mem_addr;
+  wire [31:0] i_mem_data;
+  wire d_mem_we;
+  wire [d_addr_bits-1:0] d_mem_addr;
+  wire [63:0] d_mem_data;
 
-  // Gerenciamento do espaço de endereçamento
-  assign mem_out = mem_addr < 64'h1FFF ? {32'b0, im_out} : dm_out;  
 
-  uc_asm UC (
-    .reset(reset),
+  polirv #(.i_addr_bits(6), .d_addr_bits(6)) RISCV (
     .clk(clk),
-    .opcode(opcode),
-    .WE_RF(WE_RF),
-    .WE_MEM(WE_MEM),
-    .RF_din_sel(RF_din_sel),
-    .ULA_din2_sel(ULA_din2_sel),
-    .addr_sel(addr_sel),
-    .load_pc(load_pc),
-    .load_ir(load_ir),
-    .branch(branch),
-    .pc_next_sel(pc_next_sel),
-    .pc_adder_sel(pc_adder_sel)
+    .rst_n(rst_n),
+    .i_mem_addr(i_mem_addr),
+    .i_mem_data(i_mem_data),
+    .d_mem_we(d_mem_we),
+    .d_mem_addr(d_mem_addr),
+    .d_mem_data(d_mem_data)
   );
 
-  datapath DP (
-    .WE_RF(WE_RF),
-    .RF_din_sel(RF_din_sel),
-    .ULA_din2_sel(ULA_din2_sel),
-    .addr_sel(addr_sel),
-    .load_pc(load_pc),
-    .load_ir(load_ir),
-    .branch(branch),
-    .reset(reset),
-    .CLK(clk),
-    .pc_next_sel(pc_next_sel),
-    .pc_adder_sel(pc_adder_sel),
-    .data_in(mem_out),
-    .data_out(data_out),
-    .mem_addr(mem_addr),
-    .opcode(opcode)
+  datamemory #(.SIZE(64), .addr_width(d_addr_bits)) DM (
+    .d_mem_addr(d_mem_addr),
+    .d_mem_we(d_mem_we),
+    .d_mem_data(d_mem_data),
+    .clk(clk)
   );
 
-  datamemory #(.SIZE(64), .N(8192)) DM (
-    .ADDR(mem_addr[12:0]),
-    .WE(WE_MEM),
-    .D_in(data_out),
-    .D_out(dm_out),
-    .CLK(clk)
-  );
-
-  instruction_memory IM(
-    .ADDR({2'b0, mem_addr[63:2]}),
-    .OUTPUT(im_out)
+  instruction_memory #(.i_addr_bits(i_addr_bits)) IM (
+    .i_mem_addr(i_mem_addr),
+    .i_mem_data(i_mem_data)
   );
   
 endmodule

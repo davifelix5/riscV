@@ -68,6 +68,7 @@ module uc_asm (
       rf_src = 1'b0;
       alu_src = 1'b0;
       pc_src = 1'b0;
+      alu_cmd = 4'b0000;
 			case (current_state)
 			  EXECUTE_ADDSUB: begin
           rf_src = 1'b0;
@@ -93,6 +94,7 @@ module uc_asm (
           alu_cmd = 4'b0010;
 			  end
         EXECUTE_BRANCH: begin
+          pc_src = 1'b1;
           alu_cmd = 4'b0011;
         end
         default: begin 
@@ -101,6 +103,7 @@ module uc_asm (
           rf_src = 1'b0;
           alu_src = 1'b0;
           pc_src = 1'b0;
+          alu_cmd = 4'b0000;
         end
 			endcase
 		end

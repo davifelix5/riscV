@@ -46,9 +46,10 @@ module datapath_with_uc #(
 
     program_counter PC (
         // Sinais de controle
-        .CLK(clk),
-        .RST(rst_n),
+        .clk(clk),
+        .rst_n(rst_n),
         .pc_src(pc_src),
+        .zero(alu_flags[0]),
         // Instrução
         .immediate(extended_imm),
         // Saidas
@@ -66,7 +67,7 @@ module datapath_with_uc #(
         .Din(rf_din),
         // Seletor do registrador em que a palavra Din será escrita
         .rd(rd),
-        .CLK(CLK),
+        .CLK(clk),
         // Saídas de dados
         .D1(rf_out1),
         .D2(rf_out2)
@@ -79,12 +80,10 @@ module datapath_with_uc #(
         // Valores vindos da instrução
         .funct3(i_mem_data[14:12]),
         .funct7(i_mem_data[31:25]),
-        .opcode(opcode),
+        .alu_cmd(alu_cmd),
         // Resultado da operação feita
         .res(ula),
-        .overflow(overflow),
-        .msb(msb),
-        .zero(zero)
+        .alu_flags(alu_flags)
     );
 
 

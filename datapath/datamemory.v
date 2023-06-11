@@ -1,28 +1,26 @@
 
 // Memória de dados
-module datamemory #(parameter SIZE = 64, parameter N = 2048) (
-    input wire[$clog2(N) - 1:0] ADDR, // Endereço de memória
-    input wire WE, // Write-Enable: caso esteja ativo, valor em D_in é salvo no endereço ADDR
-    input wire[SIZE-1:0] D_in, // Entrada de dados
-    output wire[SIZE-1:0] D_out, // Saída de dados
-    input wire CLK
+module datamemory #(parameter SIZE = 64, parameter addr_width = 6) (
+    input wire[addr_width - 1:0] d_mem_addr, // Endereço de memória
+    input wire d_mem_we, // Write-Enable: caso esteja ativo, valor em d_mem_data é salvo no endereço d_mem_addr
+    inout[SIZE-1:0] d_mem_data, // Entrada e saída de dados
+    input wire clk
 );
 
-
-    reg[SIZE-1:0] MEM[N - 1:0];
+    reg[SIZE-1:0] MEM[$pow(2, addr_width) - 1:0];
     
-    // Inicializando a palavra 16 com um valor arbitrário para teste
+    // Inicializando com valores arbitrários para teste
     initial begin
         MEM[16] = 64'd731; 
         MEM[21] = 64'd312; 
         MEM[30] = 64'd1000;
     end
 
-    always @(posedge CLK) begin
-        if (WE)
-            MEM[ADDR] <= D_in;
+    always @(posedge clk) begin
+        if (d_mem_we)
+            MEM[d_mem_addr] <= d_mem_data;
     end
 
-    assign D_out = MEM[ADDR];
+    assign d_mem_data = d_mem_we ? 64'bz : MEM[d_mem_addr];
 
 endmodule

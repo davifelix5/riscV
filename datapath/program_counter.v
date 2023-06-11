@@ -1,19 +1,19 @@
 module program_counter (
     // Sinais de controle
-    input CLK,
-    input RST,
+    input clk,
+    input rst_n,
     input wire pc_src,
+    input wire zero,
     // Valores da instrução
     input wire[63:0] immediate,
     output wire[63:0] pc
 );
 
-    reg sel;
-
     wire[63:0] pc_next;
     wire[63:0] primary_adder_res, secondary_adder_res;
+    wire clk_pc;
 
-    assign pc_next = pc_src ? secondary_adder_res : primary_adder_res;
+    assign pc_next = (pc_src & zero) ? secondary_adder_res : primary_adder_res;
 
     adder #(.SIZE(64)) primary_adder (
         .X(pc),
@@ -29,6 +29,12 @@ module program_counter (
         .S(secondary_adder_res)
     );
 
-    register_with_reset PC (.IN(pc_next), .OUT(pc), .RST(RST), .LOAD(1'b1), .CLK(CLK));
+    pc_counter contador_pc (
+        .clk_in(clk),
+        .rst_n(rst_n),
+        .clk_out(clk_pc)
+    );
+
+    register_with_reset PC (.IN(pc_next), .OUT(pc), .RST(rst_n), .LOAD(1'b1), .CLK(clk_pc));
 
 endmodule

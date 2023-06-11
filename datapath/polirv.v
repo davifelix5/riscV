@@ -10,7 +10,25 @@ module polirv #(
     inout[63:0] d_mem_data
 );
 
-    datapath fd (
+    wire [6:0] opcode;
+    wire rf_we, d_mem_we;
+    wire rf_src, alu_src, pc_src;
+    wire [3:0] alu_flags, alu_cmd;
+
+    uc_asm UC (
+        .rst_n(rst_n),
+        .clk(clk),
+        .opcode(opcode),
+        .rf_we(rf_we),
+        .d_mem_we(d_mem_we),
+        .alu_flags(alu_flags),
+        .alu_cmd(alu_cmd),
+        .rf_src(rf_src),
+        .alu_src(alu_src),
+        .pc_src(pc_src)
+    );
+
+    datapath_with_uc fd (
         .clk(clk),
         .rst_n(rst_n),
         .rf_we(rf_we),
