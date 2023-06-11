@@ -1,3 +1,4 @@
-vvp/
+vvp/*
+!.gitkeep
 run
 *.zip
