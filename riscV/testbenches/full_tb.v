@@ -8,7 +8,7 @@ module full_tb;
   );
 
   initial begin
-    $dumpfile("control_unit/testbenches/waves/full/waveforms3.vcd");
+    $dumpfile("riscV/testbenches/waves/full/waveforms3.vcd");
     $dumpvars(0, UUT);
     clk = 0;
     reset = 1;
