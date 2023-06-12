@@ -1,0 +1,182 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Mon Jun 12 16:05:56 2023
+[*]
+[dumpfile] "C:\Users\davif\Documents\USP\PCS3225\riscV\riscV\testbenches\waves\full\waveforms3.vcd"
+[dumpfile_mtime] "Mon Jun 12 16:02:59 2023"
+[dumpfile_size] 420477
+[savefile] "C:\Users\davif\Documents\USP\PCS3225\riscV\riscV\testbenches\waves\full\mdc.gtkw"
+[timestart] 0
+[size] 1366 705
+[pos] -139 -98
+*-6.000000 2435 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] full_tb.
+[treeopen] full_tb.UUT.
+[treeopen] full_tb.UUT.RISCV.
+[treeopen] full_tb.UUT.RISCV.FD.
+[treeopen] full_tb.UUT.RISCV.FD.PC.
+[treeopen] full_tb.UUT.RISCV.FD.RF.registers[10].
+[treeopen] full_tb.UUT.RISCV.FD.RF.registers[11].
+[treeopen] full_tb.UUT.RISCV.FD.RF.registers[12].
+[treeopen] full_tb.UUT.RISCV.FD.RF.registers[15].
+[treeopen] full_tb.UUT.RISCV.FD.RF.registers[1].
+[treeopen] full_tb.UUT.RISCV.FD.RF.registers[9].
+[sst_width] 197
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 190
+@28
+full_tb.UUT.clk
+@22
+full_tb.UUT.RISCV.UC.current_state[3:0]
+@28
++{full_tb.UUT.RISCV.FD.PC.contador_pc.clk_pc} full_tb.UUT.RISCV.FD.PC.contador_pc.clk_out
+@24
+full_tb.UUT.RISCV.FD.PC.pc[63:0]
+@420
++{full_tb.UUT.RISCV.FD.RF.registers[9].xN.x9[63:0]} full_tb.UUT.RISCV.FD.RF.registers[9].xN.OUT[63:0]
++{full_tb.UUT.RISCV.FD.RF.registers[10].xN.x10[63:0]} full_tb.UUT.RISCV.FD.RF.registers[10].xN.OUT[63:0]
+@22
++{full_tb.UUT.RISCV.FD.RF.registers[15].xN.x15[63:0]} full_tb.UUT.RISCV.FD.RF.registers[15].xN.OUT[63:0]
+@420
++{full_tb.UUT.RISCV.FD.RF.registers[11].xN.x11[63:0]} full_tb.UUT.RISCV.FD.RF.registers[11].xN.OUT[63:0]
+@c00023
++{full_tb.UUT.RISCV.FD.RF.registers[12].xN.x12[63:0]} full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+@28
+(0)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(1)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(2)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(3)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(4)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(5)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(6)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(7)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(8)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(9)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(10)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(11)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(12)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(13)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(14)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(15)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(16)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(17)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(18)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(19)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(20)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(21)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(22)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(23)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(24)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(25)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(26)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(27)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(28)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(29)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(30)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(31)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(32)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(33)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(34)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(35)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(36)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(37)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(38)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(39)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(40)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(41)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(42)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(43)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(44)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(45)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(46)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(47)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(48)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(49)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(50)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(51)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(52)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(53)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(54)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(55)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(56)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(57)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(58)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(59)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(60)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(61)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(62)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+(63)full_tb.UUT.RISCV.FD.RF.registers[12].xN.OUT[63:0]
+@1401203
+-group_end
+@c00024
++{full_tb.UUT.RISCV.FD.RF.registers[1].xN.x1[63:0]} full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+@28
+(0)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(1)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(2)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(3)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(4)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(5)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(6)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(7)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(8)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(9)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(10)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(11)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(12)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(13)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(14)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(15)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(16)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(17)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(18)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(19)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(20)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(21)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(22)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(23)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(24)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(25)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(26)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(27)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(28)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(29)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(30)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(31)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(32)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(33)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(34)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(35)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(36)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(37)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(38)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(39)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(40)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(41)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(42)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(43)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(44)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(45)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(46)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(47)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(48)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(49)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(50)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(51)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(52)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(53)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(54)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(55)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(56)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(57)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(58)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(59)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(60)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(61)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(62)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+(63)full_tb.UUT.RISCV.FD.RF.registers[1].xN.OUT[63:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

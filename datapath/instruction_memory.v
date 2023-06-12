@@ -8,7 +8,7 @@ module instruction_memory #(
     reg[31:0] memory[500:0];
 
     initial begin
-        $readmemb("testes/teste.bin", memory);
+        $readmemb("testes/mdc.bin", memory);
     end
 
     assign i_mem_data = memory[i_mem_addr];

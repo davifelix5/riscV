@@ -29,7 +29,7 @@ module polirv
         .pc_src(pc_src)
     );
 
-    fd FD (
+    fd_grupo_1 FD (
         .clk(clk),
         .rst_n(rst_n),
         .rf_we(rf_we),

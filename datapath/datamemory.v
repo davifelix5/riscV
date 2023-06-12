@@ -11,6 +11,9 @@ module datamemory #(parameter SIZE = 64, parameter addr_width = 6) (
     
     // Inicializando com valores arbitrários para teste
     initial begin
+        MEM[10] = 64'd50;
+        MEM[11] = 64'd12;
+        MEM[15] = {1'b1, 63'b0};
         MEM[16] = 64'd731; 
         MEM[21] = 64'd312; 
         MEM[30] = 64'd1000;

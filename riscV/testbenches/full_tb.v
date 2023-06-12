@@ -14,7 +14,7 @@ module full_tb;
     rst_n = 0;
     #10
     rst_n = 1;
-    #1000
+    #3000
     $finish;
 
   end
